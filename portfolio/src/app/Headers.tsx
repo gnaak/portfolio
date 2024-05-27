@@ -27,9 +27,9 @@ const Headers = () => {
         <div
           className={`flex flex-row justify-center fixed top-0
             bg-white 
-          lg:h-20 md:h-16 h-12 w-full z-50 items-center`}
+          lg:h-16 md:h-16 h-12 w-full z-50 items-center`}
         >
-          <div className="xl:w-4/5 w-full h-full justify-between flex flex-row items-center md:p-10 p-5">
+          <div className="lg:w-3/5 w-full h-full justify-between flex flex-row items-center md:p-10 p-5">
             <div className="flex md:hidden font-bold text-xl">LGH</div>
             <div className="hidden md:flex">
               <span className="text-2xl font-bold ">LGH's Portfolio</span>
@@ -53,9 +53,9 @@ const Headers = () => {
       ) : (
         <div
           className={`flex flex-row justify-center fixed top-0 lg:text-white text-black
-          lg:h-20 md:h-16 h-12 w-full z-50 bg-white lg:bg-black lg:bg-opacity-50 items-center`}
+          lg:h-16 md:h-16 h-12 w-full z-50 bg-white lg:bg-black lg:bg-opacity-50 items-center`}
         >
-          <div className="xl:w-4/5 w-full h-full justify-between flex flex-row items-center md:p-10 p-5">
+          <div className="lg:w-3/5 w-full h-full justify-between flex flex-row items-center md:p-10 p-5">
             <div className="flex md:hidden font-bold text-xl">LGH</div>
             <div className="hidden md:flex">
               <span className="text-2xl font-bold ">LGH's Portfolio</span>
