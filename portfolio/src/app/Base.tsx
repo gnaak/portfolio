@@ -4,7 +4,7 @@ import profile from "@/assets/img/image.png";
 const Base = () => {
   return (
     <>
-      <div className="lg:pt-40 lg:p-10 lg:w-3/5">
+      <div className="lg:pt-20 lg:p-10 lg:w-3/5">
         <div className="flex flex-col lg:gap-14">
           <div className="flex flex-row justify-between">
             <div className="flex justify-center lg:w-1/3">
@@ -14,9 +14,9 @@ const Base = () => {
                 className="w-48 h-48 rounded-full"
               />
             </div>
-            <div className="contact lg:flex flex-col lg:w-2/3 items-center justify-center lg:py-5 lg:px-10">
-              <div className="lg:w-2/3">
-                <span className="font-bold text-blue-950 lg:text-3xl lg:h-1/3 flex items-center">
+            <div className="contact lg:w-2/3 lg:py-5 flex items-center justify-center lg:px-10">
+              <div className="lg:w-2/3 lg:flex flex-col lg:gap-5">
+                <span className="font-bold text-blue-900 lg:text-3xl lg:h-1/3 flex items-center">
                   Contact.
                 </span>
                 <div className="flex flex-row lg:h-2/3 justify-start lg:text-xl items-center lg:gap-5">
