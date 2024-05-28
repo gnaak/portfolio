@@ -7,7 +7,7 @@ const Base = () => {
       <div className="lg:pt-20 lg:px-20 lg:w-3/5">
         <div className="flex flex-col lg:gap-14">
           <div className="flex flex-row justify-between">
-            <div className="flex flex-col items-center lg:px-10 lg:py-7 justify-center lg:w-1/3">
+            <div className="flex flex-col items-center lg:py-7 justify-center lg:w-1/3">
               <div className="flex flex-col lg:gap-3">
                 <span className="lg:text-2xl">LEE GEUN HAG</span>
                 <span className="font-bold lg:text-4xl">이근학</span>

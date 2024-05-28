@@ -1,14 +1,20 @@
 import Image from "next/image";
-import Headers from "./Headers";
-import Base from "./Base";
-import Skills from "./Skills/Skills";
+import Headers from "../components/Headers";
+import Base from "../components/Base";
+import Skills from "../components/Skills/Skills";
+import Certi from "../components/Certificates";
+import Exp from "../components/Experience";
+import Projects from "../components/Projects/Projects";
 
 const Home = () => {
   return (<>
-    <div className="relative flex-col w-full h-screen flex items-center">
+    <div className="relative flex-col w-full h-screen flex items-center gap-20">
       {/* <Headers /> */}
       <Base />
-      <Skills/>
+      <Skills />
+      <Certi />
+      <Exp />
+      <Projects/>
     </div>
   </>)
 }
