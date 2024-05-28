@@ -1,6 +1,3 @@
-import Image from "next/image";
-import profile from "@/assets/img/image.png";
-
 const Base = () => {
   return (
     <>

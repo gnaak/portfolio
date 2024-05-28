@@ -12,11 +12,11 @@ const Certi = () => {
           <div className="flex flex-col gap-2">
             <div className="flex flex-row justify-between items-end">
               <span className="font-bold lg:text-2xl">CERTIFICATES</span>
-              <div className="text-blue-600 cursor-pointer">
+              <div className="text-blue-600 cursor-pointer underline">
                 {open ? (
                   <span onClick={() => setOpen(false)}>닫기</span>
                 ) : (
-                  <span onClick={() => setOpen(true)}>더 보기</span>
+                  <span onClick={() => setOpen(true)}>더보기</span>
                 )}
               </div>
             </div>
@@ -32,11 +32,11 @@ const Certi = () => {
                     <span>ADsP-038001567 (2023.09.15)</span>
                   </div>
                 </div>
-                  <div className="flex flex-col lg:gap-10 lg:w-[48%]">
-                    <span className="font-bold text-xl">ENGLISH</span>
-                    <span className="">OPIc AL 2A5700409328 (2023.01.06)</span>
-                  </div>
+                <div className="flex flex-col lg:gap-10 lg:w-[48%]">
+                  <span className="font-bold text-xl">ENGLISH</span>
+                  <span className="">OPIc AL 2A5700409328 (2023.01.06)</span>
                 </div>
+              </div>
             </>
           ) : null}
         </div>

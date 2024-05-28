@@ -8,7 +8,7 @@ import Projects from "../components/Projects/Projects";
 
 const Home = () => {
   return (<>
-    <div className="relative flex-col w-full h-screen flex items-center gap-20">
+    <div className="relative flex-col w-full h-full flex items-center gap-20 ">
       {/* <Headers /> */}
       <Base />
       <Skills />

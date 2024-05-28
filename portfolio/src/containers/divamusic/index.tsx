@@ -1,55 +1,344 @@
-import diva from "@/assets/projects/DIVA.png";
+"use client";
+import next from "@/assets/skills/next.png";
+import ts from "@/assets/skills/ts.png";
+import react from "@/assets/skills/react.svg";
+import jotai from "@/assets/skills/Jotai.png";
+import tailwind from "@/assets/tailwind.png";
+import landing from "@/assets/projects/landing.gif";
+import home from "@/assets/projects/home.gif";
+import rangecheck from "@/assets/projects/rangecheck.gif";
+import mypage from "@/assets/projects/mypage.gif";
 import Image from "next/image";
+import { useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import As from "./as";
+import Intro from "./Intro";
+import Diva from "./Diva";
+
 const divamusic = () => {
+  const router = useRouter();
+  const [open, setOpen] = useState<boolean>(false);
+
+  const divRef = useRef(null);
+  const introRef = useRef(null);
+  const techRef = useRef(null);
+  const myRef = useRef(null);
+  const carrouselRef = useRef(null);
+  const WebAudioAPIRef = useRef(null);
+  const JotaiRef = useRef(null);
+  const troubleRef = useRef(null);
+  const asRef = useRef(null);
+
+  const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
-      <div className="relative flex-col w-full h-screen flex items-center lg:gap-20 lg:pt-20">
-        <div className="lg:w-3/5 lg:px-20 border h-1/2">
-          <div className="flex flex-col gap-2 lg:px-10">
-            <span className="font-bold lg:text-2xl">DIV★</span>
-            <span className="w-full border border-gray-200"></span>
-          </div>
-          <div className="flex flex-col lg:gap-10 border">
-            <div className="flex flex-row justify-between">
-              <div className="flex flex-col items-center lg:py-7 justify-center lg:w-1/3">
-                <Image
-                  src={diva}
-                  alt="디바"
-                  className="bg-[#] rounded-xl border"
-                  width="256"
-                  height="256"
-                  priority={true}
-                />
-              </div>
-              <div className="contact lg:w-2/3 lg:py-7 flex items-center justify-center lg:px-10">
-                <div className="lg:w-2/3 lg:flex flex-col lg:gap-1">
-                  <div className="flex flex-row lg:h-2/3 justify-start items-center lg:gap-5">
-                    <div className="flex flex-col lg:h-2/3 justify-center lg:text-lg items-start">
-                      <span className="font-bold">[기간]</span>
-                      <span className="font-bold">[팀원]</span>
-                      <span className="font-bold">[담당]</span>
+      <div className="relative flex-col w-full h-screen flex items-center overflow-hidden select-none ">
+        <div className="xl:w-full flex justify-center  overflow-auto">
+          <div className="xl:w-3/5">
+            <div ref={divRef} className="flex flex-col gap-2 xl:px-10 xl:py-20">
+              <span className="font-bold xl:text-2xl">DIV★</span>
+              <span className="w-full border border-gray-200"></span>
+            </div>
+            <div className="flex flex-col xl:gap-10 xl:pb-20">
+              <Diva />
+              <div className="flex flex-col xl:px-10 xl:gap-16">
+                <div ref={introRef} className="flex flex-col xl:gap-5 xl:pt-10">
+                  <Intro />
+                </div>
+                <div ref={techRef} className="flex flex-col xl:gap-5 xl:pt-10">
+                  <span className="font-bold text-xl">사용 기술</span>
+
+                  <div className="flex flex-row xl:gap-20">
+                    <div className="flex flex-col xl:gap-3">
+                      <span className="text-lg font-bold">
+                        프레임워크 & 언어
+                      </span>
+                      <div className="flex flex-row xl:gap-2">
+                        <Image
+                          src={react}
+                          alt="react"
+                          className="w-16 h-16 rounded-xl"
+                        />
+                        <div className="w-16 h-16 border border-gray-300 rounded-xl">
+                          <Image src={next} alt="next" className="w-16 h-16" />
+                        </div>
+                        <Image
+                          src={ts}
+                          alt="ts"
+                          className="w-16 h-16 rounded-xl"
+                        />
+                      </div>
                     </div>
-                    <div className="flex flex-col lg:h-2/3 justify-center lg:text-lg items-start">
-                      <span>2024.01.03 ~ 2024.02.16 (6주)</span>
-                      <span>FE 3명 + BE 3명</span>
-                      <span>프론트엔드</span>
+                    <div className="flex flex-col xl:gap-3">
+                      <span className="text-lg font-bold">상태 관리</span>
+                      <div className="w-16 h-16 border border-gray-300 rounded-xl">
+                        <Image src={jotai} alt="jotai" className="w-16 h-16" />
+                      </div>
+                    </div>
+                    <div className="flex flex-col xl:gap-3">
+                      <span className="text-lg font-bold">스타일링</span>
+                      <div className="w-16 h-16 border border-gray-300 rounded-xl flex justify-center items-center">
+                        <Image
+                          src={tailwind}
+                          alt="tailwind"
+                          className="w-8 h-8"
+                        />
+                      </div>
                     </div>
                   </div>
-                  <div className="flex flex-col border border-black px-10">
-                    <div></div>
-                    <span>ESLint, Prettier 설정</span>
-                    <span>전체 레이아웃 구성</span>
-                    음역대 측정 페이지
-                    <span> 음역대 측정 페이지</span>
-                    <span>마이 페이지</span>
-                    <span>전역 상태 관리</span>
+                </div>
+
+                <div ref={myRef} className="flex flex-col xl:pt-10">
+                  <span className="font-bold text-xl">기여 사항</span>
+                  <div>
+                    <div
+                      ref={carrouselRef}
+                      className="flex flex-col xl:gap-3 xl:pt-10"
+                    >
+                      <span className="font-bold">1️⃣ 캐러셀</span>
+                      <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] ">
+                        <div className="flex flex-row xl:gap-5">
+                          🐫
+                          <div className="flex flex-col w-full">
+                            <div className="flex flex-row">
+                              <span>
+                                캐러셀 구현”만”을 위한 라이브러리 사용 시 필요한
+                                기능에 비해 너무 과도한 리소스를 차지하게 되고,
+                                서비스 성능에 부정적인 영향을 미칠 수 있다고
+                                판단하여 외부 라이브러리를 사용하지 않고 개발을
+                                진행했습니다.
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex flex-row justify-evenly border border-gray-400 xl:py-5 rounded-xl shadow-xl">
+                        <Image
+                          src={landing}
+                          alt="랜딩 페이지"
+                          className="w-auto h-auto"
+                        />
+                        <Image
+                          src={home}
+                          alt="홈 페이지"
+                          className="w-auto h-auto"
+                        />
+                      </div>
+                    </div>
                   </div>
+                  <div>
+                    <div
+                      ref={WebAudioAPIRef}
+                      className="flex flex-col xl:gap-3 xl:pt-10"
+                    >
+                      <span className="font-bold">2️⃣ Web Audio API</span>
+                      <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] ">
+                        <div className="flex flex-row xl:gap-5">
+                          🎵
+                          <div className="flex flex-col w-full">
+                            <div className="flex flex-row">
+                              <span>
+                                사용자의 음성이 마이크를 통해 입력되면,
+                                실시간으로 분석기를 사용해 음역대를 주파수로
+                                변환하고, Pitch.js에서 제공하는 알고리즘 로직을
+                                활용하여 사용자들에게 더 친숙한 헤르츠(Hz)로
+                                제공했습니다.
+                                <br />
+                                <br />
+                                음역대 테스트 신뢰도 향상을 위해 신뢰 구간 95%로
+                                이상값을 제거한 테스트 결과를 옥타브로 표기 변환
+                                후 음역대 정보를 제공했습니다.
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex flex-row justify-evenly border border-gray-400 xl:py-5 rounded-xl shadow-xl">
+                        <Image
+                          src={rangecheck}
+                          alt="음역대 테스트"
+                          className="w-auto h-auto"
+                        />
+                        <Image
+                          src={mypage}
+                          alt="마이 페이지"
+                          className="w-auto h-auto"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      ref={JotaiRef}
+                      className="flex flex-col xl:gap-3 xl:pt-10"
+                    >
+                      <span className="font-bold">3️⃣ Jotai</span>
+                      <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] ">
+                        <div className="flex flex-row xl:gap-5">
+                          📢
+                          <div className="flex flex-col w-full">
+                            <div className="flex flex-row">
+                              <span>
+                                사용자의 음역대를 바탕으로 맞춤형 노래를
+                                추천해주고, 이에 따라 연습모드 / 실전모드로
+                                접속이 가능해야 했습니다. 동적 라우팅을 사용하게
+                                되면, 본인의 음역대에 아닌 노래에도 접속이
+                                가능해지고, UX를 저하시킨다고 판단하여 하나의
+                                페이지에 모드에 따라 다른 컴포넌트가
+                                렌더링되도록 구현했습니다.
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  ref={troubleRef}
+                  className="flex flex-col xl:gap-5  xl:pt-10"
+                >
+                  <span className="font-bold text-xl">트러블 슈팅</span>
+
+                  <div className="flex flex-col xl:gap-3">
+                    <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] ">
+                      <div className="flex flex-row xl:gap-5">
+                        ⚠
+                        <div className="flex flex-col w-full">
+                          <div className="flex flex-row">
+                            <span className="whitespace-pre-wrap ">
+                              사용자의 음성 분석 시 Hz 값을 배열에 담아서 95%
+                              신뢰 구간 중 최저음, 최고음만 DB에 보냈습니다.
+                              사용자의 음성에 따라 배열에 계속 추가되는데,
+                              프론트 단에서 배열을 가지고 있다 보니 1분이
+                              넘어가면 서버가 느려지는 문제가 생겼습니다.
+                              <br />
+                              <br />
+                              사용자에게 실시간으로 음역을 보여주기만 하면
+                              시각화 후 값을 저장하지 않아도 됐겠지만, 최저음,
+                              최고음을 기준으로 노래를 추천해주는 서비스를
+                              기획했기 때문에 배열에 저장할 수 밖에 없었습니다.
+                              <br />
+                              <br />
+                              배열 인덱스, 혹은 특정 시간마다 POST 요청을 보내는
+                              방식을 택할 수도 있었지만, 네트워크 트래픽과 서버
+                              부하를 고려하여 음역대 테스트 시간을 20초로 줄이는
+                              방식을 택했습니다.
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div ref={asRef} className="flex flex-col xl:gap-5  xl:py-10">
+                  <As />
                 </div>
               </div>
             </div>
           </div>
-          <div className="flex flex-row justify-between flex-wrap"></div>
         </div>
+      </div>
+      <div className="absolute top-0 left-0 xl:w-1/6 xl:h-screen flex flex-col xl:justify-between z-30 pb-10">
+        <div className="flex flex-row xl:gap-5 p-3">
+          {open ? (
+            <>
+              <span
+                className="material-symbols-outlined cursor-pointer"
+                onClick={() => setOpen(false)}
+              >
+                keyboard_double_arrow_left
+              </span>
+            </>
+          ) : (
+            <>
+              <span
+                className="material-symbols-outlined cursor-pointer"
+                onClick={() => setOpen(true)}
+              >
+                menu{" "}
+              </span>
+            </>
+          )}
+          <div className="flex flex-row xl:gap-2">
+            <span onClick={() => router.push("/")} className="cursor-pointer">
+              HOME
+            </span>
+            /<span className="cursor-pointer">DIV★</span>
+          </div>
+        </div>
+        {open ? (
+          <>
+            <div className="h-full w-3/4 flex items-start xl:">
+              <div className="w-full xl:p-7 border border-gray-200 shadow-lg bg-gray-100">
+                <div className="flex flex-col xl:gap-10">
+                  <div className="flex flex-col xl:gap-3">
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => scrollToSection(divRef)}
+                    >
+                      DIV★
+                    </span>
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => scrollToSection(introRef)}
+                    >
+                      소개
+                    </span>
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => scrollToSection(techRef)}
+                    >
+                      사용 기술
+                    </span>
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => scrollToSection(myRef)}
+                    >
+                      기여 사항
+                    </span>
+
+                    <div className="flex flex-col xl:gap-2 xl:px-5 text-sm">
+                      <span
+                        className="cursor-pointer"
+                        onClick={() => scrollToSection(carrouselRef)}
+                      >
+                        1️⃣ 캐러셀
+                      </span>
+                      <span
+                        className="cursor-pointer"
+                        onClick={() => scrollToSection(WebAudioAPIRef)}
+                      >
+                        2️⃣ Web Audio API
+                      </span>
+                      <span
+                        className="cursor-pointer"
+                        onClick={() => scrollToSection(JotaiRef)}
+                      >
+                        3️⃣ Jotai
+                      </span>
+                    </div>
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => scrollToSection(troubleRef)}
+                    >
+                      트러블 슈팅
+                    </span>
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => scrollToSection(asRef)}
+                    >
+                      회고
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        ) : null}
       </div>
     </>
   );

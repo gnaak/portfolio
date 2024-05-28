@@ -1,4 +1,4 @@
-import jotai from "@/assets/skills/jotai.png";
+import jotai from "@/assets/skills/Jotai.png";
 import django from "@/assets/skills/django.png";
 import sql from "@/assets/skills/sql.png";
 import Image from "next/image";
