@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Headers from "./Headers";
 import Base from "./Base";
-import Skills from "./Skills";
+import Skills from "./Skills/Skills";
 
 const Home = () => {
   return (<>
