@@ -10,6 +10,7 @@ import profile from "@/assets/projects/skawkaks.png";
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import DarkModeToggle from "@/components/DarkMode";
+import Headers from "@/components/Headers";
 const Home = () => {
   const router = useRouter();
   const [open, setOpen] = useState<boolean>(false);
@@ -36,35 +37,41 @@ const Home = () => {
   return (
     <>
       <div className="relative overflow-hidden h-screen dark:bg-gray-800 dark:text-white ">
-        {/* <Headers /> */}
         <div className="flex flex-col overflow-auto h-full">
+        {/* <Headers /> */}
           <div
             ref={baseRef}
-            className="w-full flex-col flex items-center py-10"
+            className="w-full flex-col flex items-center py-10 border border-black"
           >
             <Base />
           </div>
           <div
             ref={skillRef}
-            className="w-full flex-col flex items-center py-10"
+            className="w-full flex-col flex items-center xl:py-10 lg:py-5"
           >
             <Skills />
           </div>
           <div
             ref={certiRef}
-            className="w-full flex-col flex items-center py-10"
+            className="w-full flex-col flex items-center xl:py-10 lg:py-5"
           >
             <Certi />
           </div>
-          <div ref={expRef} className="w-full flex-col flex items-center py-10">
+          <div
+            ref={expRef}
+            className="w-full flex-col flex items-center xl:py-10 lg:py-5"
+          >
             <Exp />
           </div>
-          <div ref={pjtRef} className="w-full flex-col flex items-center py-10">
+          <div
+            ref={pjtRef}
+            className="w-full flex-col flex items-center xl:py-10 lg:py-5"
+          >
             <Projects />
           </div>
         </div>
-        <div className="absolute top-0 left-0 xl:w-1/6 xl:h-screen flex flex-col xl:justify-between z-30 pb-10 select-none">
-          <div className="flex flex-row xl:gap-5 p-3">
+        <div className="absolute 3xl:top-0 3xl:left-0 lg:top-10 lg:left-10 xl:w-1/6 lg:h-screen flex flex-col lg:gap-10 z-30 pb-10 select-none">
+          <div className="flex flex-row lg:gap-5 p-3">
             {open ? (
               <>
                 <span
@@ -93,9 +100,11 @@ const Home = () => {
             </div>
           </div>
           <>
-            <div className={`h-full w-3/4 flex items-start`}>
+            <div
+              className={`h-full w-full 3xl:w-3/4 3xl:h-3/5 lg:h-3/5 flex items-start`}
+            >
               <div
-                className={`w-full xl:p-7 border border-gray-200 shadow-lg bg-gray-100 transition-opacity duration-5000 dark:dark:bg-gray-700 dark:border-none ${
+                className={`w-full h-full xl:p-7 border border-gray-200 shadow-lg bg-gray-100 transition-opacity duration-5000 dark:dark:bg-gray-700 dark:border-none ${
                   open ? "animate-fadeInLeft" : "animate-fadeOutLeft"
                 }`}
                 onMouseEnter={() => setMenu(true)}
@@ -103,8 +112,8 @@ const Home = () => {
                   setOpen(false);
                 }}
               >
-                <div className="flex flex-col xl:gap-10">
-                  <div className="flex flex-row xl:gap-3">
+                <div className="flex flex-col lg:gap-10  lg:text-sm">
+                  <div className="flex flex-row lg:gap-3">
                     <Image
                       src={profile}
                       alt="프로필"
@@ -112,7 +121,7 @@ const Home = () => {
                     />
                     <span>이근학</span>
                   </div>
-                  <div className="flex flex-col xl:gap-3">
+                  <div className="flex flex-col lg:gap-3">
                     <span
                       className="cursor-pointer"
                       onClick={() => scrollToSection(baseRef)}
@@ -144,7 +153,7 @@ const Home = () => {
                     >
                       PROJECTS
                     </span>
-                    <div className="flex flex-col xl:gap-2 xl:px-3 text-sm">
+                    <div className="flex flex-col lg:gap-2 xl:px-3 lg:px-2 2xl:text-sm lg:text-xs">
                       <span
                         className="cursor-pointer"
                         onClick={() => router.push("/divamusic")}
@@ -172,12 +181,12 @@ const Home = () => {
         </div>
 
         <div
-          className={`absolute top-0 left-0 xl:w-1/6 xl:h-screen z-50 select-none ${
+          className={`absolute 3xl:top-0 left-0 xl:w-1/6 lg:h-screen z-50 select-none ${
             sideBar ? "" : "animate-fadeOutLeft"
           }`}
         >
           <div
-            className="flex flex-col xl:justify-between pb-10 w-3/4 border border-gray-200 bg-gray-100 h-full dark:dark:bg-gray-700 dark:border-none"
+            className="flex flex-col xl:justify-between lg:pr-3 xl:py-0 py-10 3xl:w-3/4 lg:w-full border border-gray-200 bg-gray-100 h-full dark:dark:bg-gray-700 dark:border-none"
             onMouseEnter={() => setSideBarIcon(true)}
             onMouseLeave={() => setSideBarIcon(false)}
           >

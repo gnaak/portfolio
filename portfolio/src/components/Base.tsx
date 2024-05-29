@@ -1,28 +1,30 @@
 const Base = () => {
   return (
     <>
-      <div className="lg:pt-20 lg:px-20 lg:w-3/5">
-        <div className="flex flex-col lg:gap-14">
-          <div className="flex flex-row justify-between dark:text-white">
+      <div className="lg:pt-20 md:pt-10 xl:px-20 lg:w-3/5 border border-black">
+        <div className="flex flex-col lg:gap-14 md:gap-10">
+          <div className="flex flex-row lg:justify-between md:justify-evenly dark:text-white">
             <div className="flex flex-col items-center lg:py-7 justify-center lg:w-1/3">
               <div className="flex flex-col lg:gap-3 text-end">
-                <span className="lg:text-2xl">LEE GEUN HAG</span>
-                <span className="font-bold lg:text-5xl">이근학</span>
-                <span className="lg:text-2xl">1995.01.17</span>
+                <span className="xl:text-2xl md:text-xl">LEE GEUN HAG</span>
+                <span className="font-bold xl:text-5xl md:text-2xl">
+                  이근학
+                </span>
+                <span className="xl:text-2xl md:text-xl ">1995.01.17</span>
               </div>
             </div>
             <div className="contact lg:w-2/3 lg:py-7 flex items-center justify-center lg:px-10">
               <div className="lg:w-2/3 lg:flex flex-col lg:gap-3">
-                <span className="font-bold text-blue-900 lg:text-3xl lg:h-1/3 flex items-center dark:text-blue-600">
+                <span className="font-bold text-blue-900 2xl:text-3xl md:text-xl lg:h-1/3 flex items-center dark:text-blue-600">
                   Contact.
                 </span>
-                <div className="flex flex-row lg:h-2/3 justify-start lg:text-xl items-center lg:gap-5">
-                  <div className="flex flex-col lg:h-2/3 justify-center lg:text-xl items-start">
+                <div className="flex flex-row lg:h-2/3 justify-start xl:text-xl items-center lg:gap-5">
+                  <div className="flex flex-col lg:h-2/3 justify-center items-start">
                     <span className="font-bold">[Email]</span>
                     <span className="font-bold">[Phone]</span>
                     <span className="font-bold">[Github]</span>
                   </div>
-                  <div className="flex flex-col lg:h-2/3 justify-center lg:text-xl items-start">
+                  <div className="flex flex-col lg:h-2/3 justify-center items-start">
                     <a href="mailto:o1027447735@gmail.com">
                       &nbsp;o1027447735@gmail.com
                     </a>
@@ -35,8 +37,7 @@ const Base = () => {
               </div>
             </div>
           </div>
-
-          <div className="bg-[#F1F1EF] lg:text-xl lg:p-4 flex justify-center rounded-xl lg:w-[100%] text-black">
+          <div className="bg-[#F1F1EF] dark:bg-gray-200 xl:text-lg md:p-4 flex justify-center rounded-xl lg:w-[100%] text-black ">
             <div className="flex flex-row lg:gap-5">
               💡
               <div className="">

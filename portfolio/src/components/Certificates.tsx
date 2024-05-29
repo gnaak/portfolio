@@ -7,11 +7,13 @@ const Certi = () => {
 
   return (
     <>
-      <div className="lg:w-3/5 lg:px-20">
+      <div className="lg:w-3/5 xl:px-20">
         <div className="flex flex-col lg:gap-10">
           <div className="flex flex-col gap-2">
             <div className="flex flex-row justify-between items-end">
-              <span className="font-bold lg:text-2xl">CERTIFICATES</span>
+              <span className="font-bold xl:text-2xl lg:text-xl">
+                CERTIFICATES
+              </span>
               <div className="text-blue-600 cursor-pointer underline dark:text-white">
                 {open ? (
                   <span onClick={() => setOpen(false)}>닫기</span>
@@ -25,15 +27,15 @@ const Certi = () => {
           {open ? (
             <>
               <div className="flex flex-row justify-between">
-                <div className="flex flex-col lg:gap-10 lg:w-[48%]">
-                  <span className="font-bold text-xl">COMPUTERS</span>
+                <div className="flex flex-col xl:gap-10 lg:gap-3 lg:w-[48%]">
+                  <span className="font-bold xl:text-xl lg:text-lg">COMPUTERS</span>
                   <div className="flex flex-col gap-3">
                     <span>SQLD-051001897 (2023.12.15)</span>
                     <span>ADsP-038001567 (2023.09.15)</span>
                   </div>
                 </div>
-                <div className="flex flex-col lg:gap-10 lg:w-[48%]">
-                  <span className="font-bold text-xl">ENGLISH</span>
+                <div className="flex flex-col xl:gap-10 lg:gap-3 lg:w-[48%]">
+                  <span className="font-bold xl:text-xl lg:text-lg">ENGLISH</span>
                   <span className="">OPIc AL 2A5700409328 (2023.01.06)</span>
                 </div>
               </div>

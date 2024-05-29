@@ -6,7 +6,7 @@ const Etc = () => {
   return (
     <>
       <div className="flex flex-col lg:gap-3">
-        <span className="text-xl font-bold">협업 툴</span>
+        <span className="xl:text-xl lg:text-lg font-bold">협업 툴</span>
         <div className="skills flex flex-row xl:gap-5 border border-gray-400 rounded-xl shadow-xl p-5">
           <div className="flex flex-row lg:gap-5">
             <div className="lg:w-16 lg:h-16 border border-gray-300 rounded-xl flex items-center justify-center bg-white">

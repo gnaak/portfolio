@@ -10,11 +10,11 @@ const Skills = () => {
   const [open, setOpen] = useState<boolean>(true);
   return (
     <>
-      <div className="lg:w-3/5 lg:px-20 h-full dark:text-white">
+      <div className="lg:w-3/5 xl:px-20 h-full dark:text-white">
         <div className="flex flex-col lg:gap-10">
           <div className="flex flex-col gap-2">
             <div className="flex flex-row justify-between items-end">
-              <span className="font-bold lg:text-2xl">SKILLS</span>
+              <span className="font-bold xl:text-2xl lg:text-xl">SKILLS</span>
               <div className="text-blue-600 cursor-pointer underline dark:text-white">
                 {open ? (
                   <span onClick={() => setOpen(false)}>닫기</span>
