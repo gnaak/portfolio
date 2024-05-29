@@ -3,6 +3,7 @@ import billy from "@/assets/projects/BILLYBULLY.png";
 import readit from "@/assets/projects/skawkaks.png";
 import Image from "next/image";
 import Diva from "./Diva";
+import Readit from "./ReadIt";
 
 const Projects = () => {
   return (
@@ -15,8 +16,7 @@ const Projects = () => {
           </div>
           <div className="flex flex-row justify-between flex-wrap">
             <Diva />
-            <div className="flex flex-col lg:w-[32%] aspect-3/4  border border-gray-400 p-3 rounded-xl shadow-xl lg:gap-3"></div>
-            <div className="flex flex-col lg:w-[32%] aspect-3/4  border border-gray-400 p-3 rounded-xl shadow-xl lg:gap-3"></div>
+<Readit/>            <div className="flex flex-col lg:w-[32%] aspect-3/4  border border-gray-400 p-3 rounded-xl shadow-xl lg:gap-3"></div>
           </div>
         </div>
       </div>

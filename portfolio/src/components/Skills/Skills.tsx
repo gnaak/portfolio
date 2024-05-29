@@ -9,7 +9,7 @@ const Skills = () => {
   const [open, setOpen] = useState<boolean>(true);
   return (
     <>
-      <div className="lg:w-3/5 lg:px-20">
+      <div className="lg:w-3/5 lg:px-20 h-full">
         <div className="flex flex-col lg:gap-10">
           <div className="flex flex-col gap-2">
             <div className="flex flex-row justify-between items-end">

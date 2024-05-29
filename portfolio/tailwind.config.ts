@@ -17,15 +17,39 @@ const config: Config = {
       aspectRatio: {
         "3/4": "3/4",
       },
-    },
-    screens: {
-      xs: "375px",
-      sm: "640px",
-      md: "768px",
-      lg: "1024px",
-      xl: "1280px",
-      "2xl": "1440px",
-      "3xl": "2560px",
+      keyframes: {
+        fadeInLeft: {
+          "0%": { opacity: "0", transform: "translateX(-100%)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        fadeOutLeft: {
+          "0%": { opacity: "1", transform: "translateX(0)" },
+          "100%": { opacity: "0", transform: "translateX(-100%)" },
+        },
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        fadeOut: {
+          "0%": { opacity: "1" },
+          "100%": { opacity: "0" },
+        },
+      },
+      animation: {
+        fadeInLeft: "fadeInLeft 0.5s forwards",
+        fadeOutLeft: "fadeOutLeft 0.5s forwards",
+        fadeIn: "fadeIn 0.5s forwards",
+        fadeOut: "fadeOut 0.5s forwards",
+      },
+      screens: {
+        xs: "375px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1440px",
+        "3xl": "2560px",
+      },
     },
   },
   plugins: [],

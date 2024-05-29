@@ -1,20 +1,20 @@
 "use client";
-import next from "@/assets/skills/next.png";
+import zustand from "@/assets/skills/zustand.png";
+import react_query from "@/assets/skills/react_query.png";
 import ts from "@/assets/skills/ts.png";
 import react from "@/assets/skills/react.svg";
-import jotai from "@/assets/skills/Jotai.png";
 import tailwind from "@/assets/tailwind.png";
-import landing from "@/assets/projects/landing.gif";
-import home from "@/assets/projects/home.gif";
-import rangecheck from "@/assets/projects/rangecheck.gif";
-import mypage from "@/assets/projects/mypage.gif";
+import viewer from "@/assets/projects/viewer.png";
+import infinitequery from "@/assets/projects/infinitequery.png";
+import chart from "@/assets/projects/chart.png";
+import commu from "@/assets/projects/commu.png";
 import As from "./As";
 import Image from "next/image";
 import profile from "@/assets/projects/skawkaks.png";
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Intro from "./Intro";
-import Diva from "./Diva";
+import Readit from "./Readit";
 
 const divamusic = () => {
   const router = useRouter();
@@ -51,11 +51,11 @@ const divamusic = () => {
               ref={divRef}
               className="flex flex-col gap-2 xl:px-10 xl:py-20 xl:pb-10"
             >
-              <span className="font-bold xl:text-2xl">DIV★</span>
+              <span className="font-bold xl:text-2xl">Readit</span>
               <span className="w-full border border-gray-200"></span>
             </div>
             <div className="flex flex-col xl:gap-10 xl:pb-20">
-              <Diva />
+              <Readit />
               <div className="flex flex-col xl:px-10 xl:gap-16">
                 <div ref={introRef} className="flex flex-col xl:gap-5 xl:pt-10">
                   <Intro />
@@ -74,9 +74,7 @@ const divamusic = () => {
                           alt="react"
                           className="w-16 h-16 rounded-xl"
                         />
-                        <div className="w-16 h-16 border border-gray-300 rounded-xl">
-                          <Image src={next} alt="next" className="w-16 h-16" />
-                        </div>
+
                         <Image
                           src={ts}
                           alt="ts"
@@ -86,8 +84,13 @@ const divamusic = () => {
                     </div>
                     <div className="flex flex-col xl:gap-3">
                       <span className="text-lg font-bold">상태 관리</span>
-                      <div className="w-16 h-16 border border-gray-300 rounded-xl">
-                        <Image src={jotai} alt="jotai" className="w-16 h-16" />
+                      <div className="flex flex-row xl:gap-2">
+                        <div className="w-16 h-16 border border-gray-300 rounded-xl items-center justify-center flex">
+                          <Image src={zustand} alt="zustand" />
+                        </div>
+                        <div className="w-16 h-16 border border-gray-300 rounded-xl items-center justify-center flex">
+                          <Image src={react_query} alt="react_query" />
+                        </div>
                       </div>
                     </div>
                     <div className="flex flex-col xl:gap-3">
@@ -110,32 +113,40 @@ const divamusic = () => {
                       ref={carrouselRef}
                       className="flex flex-col xl:gap-3 xl:pt-10"
                     >
-                      <span className="font-bold">1️⃣ 캐러셀</span>
+                      <span className="font-bold">1️⃣ 뷰어 페이지</span>
+                      <span>
+                        뉴스, 비문학 글을 쉽게 읽고 요약하게 도와주는 뷰어
+                        페이지 제작
+                      </span>
                       <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] ">
                         <div className="flex flex-row xl:gap-5">
-                          🐫
+                          📄
                           <div className="flex flex-col w-full">
-                            <div className="flex flex-row">
-                              <span>
-                                캐러셀 구현”만”을 위한 라이브러리 사용 시 필요한
-                                기능에 비해 너무 과도한 리소스를 차지하게 되고,
-                                서비스 성능에 부정적인 영향을 미칠 수 있다고
-                                판단하여 외부 라이브러리를 사용하지 않고 개발을
-                                진행했습니다.
+                            <div className="">
+                              <span className="font-bold">
+                                형광펜, 볼드체, 메모 기능
                               </span>
+                              을 활용하여 독해에 도움을 줄 수 있게
+                              구현하였습니다. 사용자가 메모를 작성하고자 했던
+                              위치와, 내용을 매칭하는데 도움을 주기 위해
+                              onMouseEnter 이벤트를 활용하여 메모를 작성했던
+                              위치로 이동하면 메모가 나타납니다.
+                              <br />
+                              <br /> 임시 저장 후 마이페이지에서 읽던 글 클릭
+                              시, 사용자가 기존에 했던 작업들을 모두 확인하고
+                              수정할 수 있도록 구현했습니다. <br />
+                              <br />글 목록 페이지 이동 외에도 뉴스 링크,
+                              커뮤니티 내부, 읽던 글에서 뷰어 페이지로의
+                              라우팅이 가능해야 했기에 useNavigate의 state를
+                              활용하여 분기 처리 했습니다.
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div className="flex flex-row justify-evenly border border-gray-400 xl:py-5 rounded-xl shadow-xl">
+                      <div className="flex flex-row justify-evenly border border-gray-400 xl:py-7 xl:px-7 rounded-xl shadow-xl">
                         <Image
-                          src={landing}
-                          alt="랜딩 페이지"
-                          className="w-auto h-auto"
-                        />
-                        <Image
-                          src={home}
-                          alt="홈 페이지"
+                          src={viewer}
+                          alt="뷰어 페이지 페이지"
                           className="w-auto h-auto"
                         />
                       </div>
@@ -146,66 +157,111 @@ const divamusic = () => {
                       ref={WebAudioAPIRef}
                       className="flex flex-col xl:gap-3 xl:pt-10"
                     >
-                      <span className="font-bold">2️⃣ Web Audio API</span>
+                      <span className="font-bold">
+                        2️⃣ 글 목록 및 커뮤니티 목록 페이지
+                      </span>
+                      <span>
+                        글 목록과 커뮤니티 목록을 쉽게 검색 할 수 있도록 검색
+                        기능 제공
+                      </span>
                       <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] ">
                         <div className="flex flex-row xl:gap-5">
-                          🎵
+                          🔍
                           <div className="flex flex-col w-full">
-                            <div className="flex flex-row">
-                              <span>
-                                사용자의 음성이 마이크를 통해 입력되면,
-                                실시간으로 분석기를 사용해 음역대를 주파수로
-                                변환하고, Pitch.js에서 제공하는 알고리즘 로직을
-                                활용하여 사용자들에게 더 친숙한 헤르츠(Hz)로
-                                제공했습니다.
-                                <br />
-                                <br />
-                                음역대 테스트 신뢰도 향상을 위해 신뢰 구간 95%로
-                                이상값을 제거한 테스트 결과를 옥타브로 표기 변환
-                                후 음역대 정보를 제공했습니다.
+                            <div className="">
+                              크롤링을 사용하여 뉴스 및 비문학 데이터를 가져와
+                              데이터의 양이 많기 때문에 React Query의 &nbsp;
+                              <span className="font-bold">
+                                useInfiniteQueries를 활용하여 무한스크롤을 구현
                               </span>
+                              했습니다. 스크롤 위치마다 다른 도메인의 글이
+                              나타나는게 아니기 때문에 페이지네이션보다
+                              무한스크롤의 방식이 UX 향상에 좋다고 판단했습니다.
+                              또한 검색 필터를 활용해서 사용자가 원하는 종류의
+                              글을 검색할 수 있도록 구현했습니다.
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div className="flex flex-row justify-evenly border border-gray-400 xl:py-5 rounded-xl shadow-xl">
+                      <div className="flex flex-row justify-evenly border border-gray-400 xl:py-7 xl:px-7 rounded-xl shadow-xl">
                         <Image
-                          src={rangecheck}
-                          alt="음역대 테스트"
-                          className="w-auto h-auto"
-                        />
-                        <Image
-                          src={mypage}
-                          alt="마이 페이지"
+                          src={infinitequery}
+                          alt="글 & 커뮤니티 페이지 페이지"
                           className="w-auto h-auto"
                         />
                       </div>
                     </div>
                   </div>
-                  <div>
-                    <div
-                      ref={JotaiRef}
-                      className="flex flex-col xl:gap-3 xl:pt-10"
-                    >
-                      <span className="font-bold">3️⃣ Jotai</span>
-                      <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] ">
-                        <div className="flex flex-row xl:gap-5">
-                          📢
-                          <div className="flex flex-col w-full">
-                            <div className="flex flex-row">
-                              <span>
-                                사용자의 음역대를 바탕으로 맞춤형 노래를
-                                추천해주고, 이에 따라 연습모드 / 실전모드로
-                                접속이 가능해야 했습니다. 동적 라우팅을 사용하게
-                                되면, 본인의 음역대에 아닌 노래에도 접속이
-                                가능해지고, UX를 저하시킨다고 판단하여 하나의
-                                페이지에 모드에 따라 다른 컴포넌트가
-                                렌더링되도록 구현했습니다.
-                              </span>
-                            </div>
+                  <div
+                    ref={JotaiRef}
+                    className="flex flex-col xl:gap-3 xl:pt-10"
+                  >
+                    <span className="font-bold">3️⃣ 챌린지 페이지</span>
+                    <span>
+                      매일 2개의 비문학 문제를 풀고, 그에 따른 점수 제공
+                    </span>
+                    <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] ">
+                      <div className="flex flex-row xl:gap-5">
+                        📈
+                        <div className="flex flex-col w-full">
+                          <div className="">
+                            chart.js를 활용해 그래프를 구현하여 사용자들의
+                            점수와 본인의 점수를 비교할 수 있습니다.
+                            <br />
+                            <br />
+                            사용자가 챌린지를 진행하지 않은 날이 있는 경우 이전
+                            날의 점수를 배열에 포함하여 표기했으며, 처음
+                            챌린지를 진행한 경우에도 이전 날들을 기본값인
+                            1,000점으로 표기했습니다.
                           </div>
                         </div>
                       </div>
+                    </div>
+                    <div className="flex flex-row justify-evenly border border-gray-400 xl:py-7 xl:px-7 rounded-xl shadow-xl">
+                      <Image
+                        src={chart}
+                        alt="챌린지 페이지"
+                        className="w-auto h-auto"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    ref={JotaiRef}
+                    className="flex flex-col xl:gap-3 xl:pt-10"
+                  >
+                    <span className="font-bold">4️⃣ 커뮤니티 페이지</span>
+                    <span>
+                      함께 글을 읽을 수 있는 커뮤니티에서 구성원이 읽은 글과
+                      요약, 채팅 기능
+                    </span>
+                    <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] ">
+                      <div className="flex flex-row xl:gap-5">
+                        📈
+                        <div className="flex flex-col w-full">
+                          <div className="">
+                            채팅을 구현하기 위해 커뮤니티에 늦게 가입한 사용자도
+                            이전의 채팅 내용을 확인할 수 있게 하기 위해
+                            WebSocket 대신&nbsp;
+                            <span className="font-bold">Polling</span>
+                            방식을 택했습니다.
+                            <br />
+                            <br />
+                            커뮤니티의 목적이 동시간대에 같은 글을 읽는 것이
+                            아닌, 글을 읽는데 어느정도 강제성을 주는 것이기
+                            때문에 사용자가 항상 접속해 있다고 가정할 수
+                            없었습니다. 주기적으로 서버에 요청을 보내기에
+                            네트워크에 부하가 발생할 수 있지만, useQuery의
+                            캐싱을 통해 요청 수를 줄일 수 있었습니다.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex flex-row justify-evenly border border-gray-400 xl:py-7 xl:px-7 rounded-xl shadow-xl">
+                      <Image
+                        src={commu}
+                        alt="커뮤니티 페이지"
+                        className="w-auto h-auto"
+                      />
                     </div>
                   </div>
                 </div>
@@ -283,7 +339,7 @@ const divamusic = () => {
             <span onClick={() => router.push("/")} className="cursor-pointer">
               HOME
             </span>
-            /<span className="cursor-pointer">DIV★</span>
+            /<span className="cursor-pointer">READIT</span>
           </div>
         </div>
         <>

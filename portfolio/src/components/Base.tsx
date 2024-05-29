@@ -39,12 +39,12 @@ const Base = () => {
           <div className="bg-[#F1F1EF] lg:text-xl lg:p-4 flex justify-center rounded-xl lg:w-[100%] ">
             <div className="flex flex-row lg:gap-5">
               💡
-              <div className="flex flex-row">
-                <span>상상을 현실로 옮겨주는 코딩에 흥미를 느낀</span>
+              <div className="">
+                상상을 현실로 옮겨주는 코딩에 흥미를 느낀
                 <span className="font-bold">&nbsp;더 좋은 UX</span>
-                <span>에 관심이 많은 개발자,</span>
+                에 관심이 많은 개발자,
                 <span className="font-bold">&nbsp;이근학</span>
-                <span>입니다.</span>
+                입니다.
               </div>
             </div>
           </div>
