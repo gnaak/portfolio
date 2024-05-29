@@ -12,8 +12,8 @@ const Bad = () => {
           <div className="flex flex-row justify-between">
             <div className="flex flex-row gap-5 w-[48%]">
               <div className="flex flex-row lg:gap-5">
-                <div className="lg:w-16 lg:h-16 border border-gray-300 rounded-xl">
-                  <Image src={jotai} alt="jotai" className="lg:w-16 lg:h-16 " />
+                <div className="lg:w-16 lg:h-16 border border-gray-300 bg-white rounded-xl flex items-center justify-center">
+                  <Image src={jotai} alt="jotai" className="" />
                 </div>
                 <div className="flex flex-col justify-between lg:pt-7">
                   <div className="flex flex-col justify-end">
@@ -41,8 +41,8 @@ const Bad = () => {
           </div>
           <div className="flex flex-row justify-between">
             <div className="flex flex-row lg:gap-5">
-              <div className="lg:w-16 lg:h-16 border border-gray-300 rounded-xl">
-                <Image src={sql} alt="sql" className="lg:w-16 lg:h-16 " />
+              <div className="lg:w-16 lg:h-16 border border-gray-300 bg-white rounded-xl flex items-center justify-center">
+                <Image src={sql} alt="sql" className="" />
               </div>
               <div className="flex flex-col justify-between lg:pt-7">
                 <div className="flex flex-col justify-end">

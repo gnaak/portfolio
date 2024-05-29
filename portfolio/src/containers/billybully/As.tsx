@@ -7,14 +7,15 @@ const As = () => {
         <div className="flex flex-col w-full">
           <div className="flex flex-col gap-1">
             <span>
-              1️⃣ Access Token, Refresh Token의 사용법과 각 토큰을 이용한 사용자
-              인증, 인가 방식을 배웠습니다.
+              1️⃣ 배운 적 없던 툴과 라이브러리를 학습하고 구현에 성공하면서
+              자신감을 얻었습니다.
             </span>
             <span>
-              2️⃣ React Query를 활용한 서버 통신에 익숙해 질 수 있었습니다.
+              2️⃣ 컴포넌트 구성과 데이터 관리에 있어 배울 수 있었습니다.
             </span>
             <span>
-              3️⃣ 프론트 1인으로 설정, 폴더 설계 및 구성 등 처음부터 익힐 수 있었습니다.
+              3️⃣ React Query를 사용하여 캐싱, 상태 관리, 에러 처리에 대해 배울
+              수 있었습니다.
             </span>
           </div>
         </div>

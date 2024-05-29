@@ -111,6 +111,7 @@ const divamusic = () => {
                       className="flex flex-col xl:gap-3 xl:pt-10"
                     >
                       <span className="font-bold">1️⃣ 캐러셀</span>
+                      <span>캐러셀 자체 커스터마이징 진행</span>
                       <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] ">
                         <div className="flex flex-row xl:gap-5">
                           🐫
@@ -147,6 +148,9 @@ const divamusic = () => {
                       className="flex flex-col xl:gap-3 xl:pt-10"
                     >
                       <span className="font-bold">2️⃣ Web Audio API</span>
+                      <span>
+                        기기를 통해 입력된 오디오 소스를 실시간 분석 및 시각화
+                      </span>
                       <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] ">
                         <div className="flex flex-row xl:gap-5">
                           🎵
@@ -188,6 +192,11 @@ const divamusic = () => {
                       className="flex flex-col xl:gap-3 xl:pt-10"
                     >
                       <span className="font-bold">3️⃣ Jotai</span>
+                      <span>
+                        메인 페이지에 라우팅 되었을 때, 하나의 페이지에서
+                        렌더링되어야 하는 컴포넌트가 달라질 수 있어 전역으로
+                        상태 관리를 진행했습니다.
+                      </span>
                       <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] ">
                         <div className="flex flex-row xl:gap-5">
                           📢
@@ -404,7 +413,7 @@ const divamusic = () => {
               </span>
             </div>
             <div
-              className={`w-3/4 xl:p-7 transition-opacity
+              className={`w-full xl:p-7 transition-opacity
               }`}
             >
               <div className="flex flex-col xl:gap-10">

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Bad from "./Bad";
 import Good from "./Good";
 import Normal from "./Normal";
+import Etc from "./Etc";
 
 const Skills = () => {
   const [open, setOpen] = useState<boolean>(true);
@@ -29,6 +30,7 @@ const Skills = () => {
               <Good />
               <Normal />
               <Bad />
+              <Etc/>
             </div>
           ) : null}
         </div>

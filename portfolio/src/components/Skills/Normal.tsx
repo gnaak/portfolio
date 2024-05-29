@@ -17,7 +17,7 @@ const Normal = () => {
                   <Image
                     src={react_query}
                     alt="react_query"
-                    className="lg:w-12 lg:h-12 "
+                    className="w-12"
                   />
                 </div>
                 <div className="flex flex-col justify-between lg:pt-3">

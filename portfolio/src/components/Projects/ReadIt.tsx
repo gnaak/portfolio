@@ -17,13 +17,12 @@ const Readit = () => {
         </div>
         <div className="flex flex-col lg:gap-5 justify-between">
           <div className="flex jus">
-            <span className="font-bold lg:text-lg">Readit.</span>
+            <span className="font-bold lg:text-lg">Readit</span>
           </div>
           <div className="flex flex-col lg:gap-2">
+            <span className="font-bold">프론트엔드(리드)</span>
             <div className="">
-              <span className="font-bold">뉴스, 비문학&nbsp;</span>읽기 요약을
-              통해&nbsp; <span className="font-bold">문해력 향상</span>에 도움을
-              주는 서비스입니다.
+뉴스, 비문학을 통한 문해력 향상 서비스
             </div>
             <div className="flex flex-row lg:gap-2">
               <span className="bg-[#3179c6] px-2 text-white border border-black rounded-md">

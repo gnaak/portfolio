@@ -144,6 +144,20 @@ const Home = () => {
                     >
                       PROJECTS
                     </span>
+                    <div className="flex flex-col xl:gap-2 xl:px-3 text-sm">
+                      <span
+                        className="cursor-pointer"
+                        onClick={() => router.push("/divamusic")}
+                      >
+                        1️⃣ DIV★
+                      </span>
+                      <span
+                        className="cursor-pointer"
+                        onClick={() => router.push("/readit")}
+                      >
+                        2️⃣ READIT
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -218,6 +232,20 @@ const Home = () => {
                     >
                       PROJECTS
                     </span>
+                    <div className="flex flex-col xl:gap-2 xl:px-3 text-sm">
+                      <span
+                        className="cursor-pointer"
+                        onClick={() => router.push("/divamusic")}
+                      >
+                        1️⃣ DIV★
+                      </span>
+                      <span
+                        className="cursor-pointer"
+                        onClick={() => router.push("/readit")}
+                      >
+                        2️⃣ READIT
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>

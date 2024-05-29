@@ -1,4 +1,4 @@
-import readit from "@/assets/projects/readit.png";
+import billybully from "@/assets/projects/BILLYBULLY.png";
 import Image from "next/image";
 
 const Readit = () => {
@@ -7,12 +7,12 @@ const Readit = () => {
       <div className="flex flex-row justify-between">
         <div className="flex flex-col items-center xl:py-7 justify-center xl:w-1/3">
           <div
-            className="flex justify-center items-center  bg-[#EEF5FB] border-gray-400 rounded-xl xl:py-7 xl:w-1/3"
+            className="flex justify-center items-center  bg-yellow-200 border-gray-400 rounded-xl xl:py-7 xl:w-1/3"
             style={{ width: 256, height: 190 }}
           >
             <Image
-              src={readit}
-              alt="리딧"
+              src={billybully}
+              alt="billybully"
               className="bg-[#] rounded-xl "
               priority={true}
             />
@@ -27,15 +27,15 @@ const Readit = () => {
                 <span className="font-bold">[담당]</span>
               </div>
               <div className="flex flex-col xl:h-2/3 justify-center xl:text-lg items-start">
-                <span>2024.04.08 ~ 2024.05.20 (6주)</span>
-                <span>FE 1명 + BE 5명</span>
+                <span>2024.02.22 ~ 2024.04.04 (6주)</span>
+                <span>FE 2명 + BE 4명</span>
                 <span>프론트엔드</span>
               </div>
             </div>
             <div className="flex flex-col gap-0 ">
               <span>✔ ESLint, Prettier 설정</span>
               <span>✔ 전체 레이아웃 구성</span>
-              <span>✔ 전체 페이지</span>
+              <span>✔ 게임 페이지</span>
               <span>✔ 전역 상태 관리</span>
             </div>
           </div>
