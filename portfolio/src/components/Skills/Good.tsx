@@ -7,7 +7,7 @@ import Image from "next/image";
 const Good = () => {
   return (
     <>
-      <div className="flex flex-col lg:gap-3">
+      <div className="flex flex-col lg:gap-3 dark:text-white">
         <span className="text-xl font-bold">활용 가능</span>
         <div className="skills flex flex-col lg:gap-10 border border-gray-400 rounded-xl shadow-xl p-5">
           <div className="flex flex-row justify-between">
@@ -60,7 +60,7 @@ const Good = () => {
             </div>
             <div className="flex flex-row gap-5 w-[48%]">
               <div className="flex flex-row lg:gap-5">
-                <div className="lg:w-16 lg:h-16 border border-gray-300 rounded-xl">
+                <div className="lg:w-16 lg:h-16 border border-gray-300 rounded-xl bg-white">
                   <Image src={next} alt="next" className="lg:w-16 lg:h-16 " />
                 </div>
                 <div className="flex flex-col justify-between lg:pt-3">

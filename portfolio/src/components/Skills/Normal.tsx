@@ -9,16 +9,12 @@ const Normal = () => {
     <>
       <div className="flex flex-col lg:gap-3">
         <span className="text-xl font-bold">사용 가능</span>
-        <div className="skills flex flex-col lg:gap-10 border border-gray-400 bg-gray-100 rounded-xl shadow-xl p-5">
+        <div className="skills flex flex-col lg:gap-10 border border-gray-400 bg-gray-100 rounded-xl shadow-xl p-5 dark:bg-gray-700">
           <div className="flex flex-row justify-between">
             <div className="flex flex-row gap-5 w-[48%]">
               <div className="flex flex-row lg:gap-5">
-                <div className="lg:w-16 lg:h-16 border border-gray-300 rounded-xl flex justify-center items-center">
-                  <Image
-                    src={react_query}
-                    alt="react_query"
-                    className="w-12"
-                  />
+                <div className="lg:w-16 lg:h-16 border border-gray-300 rounded-xl flex justify-center items-center bg-white">
+                  <Image src={react_query} alt="react_query" className="w-12" />
                 </div>
                 <div className="flex flex-col justify-between lg:pt-3">
                   <div className="flex flex-col justify-end">
@@ -30,7 +26,7 @@ const Normal = () => {
             </div>
             <div className="flex flex-row gap-5 w-[48%]">
               <div className="flex flex-row lg:gap-5">
-                <div className="lg:w-16 lg:h-16 border border-gray-300 rounded-xl flex items-center justify-center">
+                <div className="lg:w-16 lg:h-16 border border-gray-300 rounded-xl flex justify-center items-center bg-white">
                   <Image src={zustand} alt="zustand" className="" />
                 </div>
                 <div className="flex flex-col justify-between lg:pt-3">
@@ -47,7 +43,7 @@ const Normal = () => {
           <div className="flex flex-row justify-between">
             <div className="flex flex-row gap-5 w-[48%]">
               <div className="flex flex-row lg:gap-5">
-                <div className="lg:w-16 lg:h-16 border border-gray-300 rounded-xl">
+                <div className="lg:w-16 lg:h-16 border border-gray-300 rounded-xl flex justify-center items-center bg-white">
                   <Image src={vue} alt="vue" className="lg:w-16 lg:h-16 " />
                 </div>
                 <div className="flex flex-col justify-between lg:pt-3">
@@ -60,7 +56,7 @@ const Normal = () => {
             </div>
             <div className="flex flex-row gap-5 w-[48%]">
               <div className="flex flex-row lg:gap-5">
-                <div className="lg:w-16 lg:h-16 border border-gray-300 rounded-xl">
+                <div className="lg:w-16 lg:h-16 border border-gray-300 rounded-xl flex justify-center items-center bg-white">
                   <Image
                     src={python}
                     alt="python"

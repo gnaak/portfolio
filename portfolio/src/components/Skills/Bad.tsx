@@ -8,11 +8,11 @@ const Bad = () => {
     <>
       <div className="flex flex-col lg:gap-3">
         <span className="text-xl font-bold">사용 경험</span>
-        <div className="skills flex flex-col lg:gap-10 border border-gray-400 bg-gray-200 rounded-xl shadow-xl p-5">
+        <div className="skills flex flex-col lg:gap-10 border border-gray-400 bg-gray-200 rounded-xl shadow-xl p-5 dark:bg-gray-500">
           <div className="flex flex-row justify-between">
             <div className="flex flex-row gap-5 w-[48%]">
               <div className="flex flex-row lg:gap-5">
-                <div className="lg:w-16 lg:h-16 border border-gray-300 bg-white rounded-xl flex items-center justify-center">
+                <div className="lg:w-16 lg:h-16 border border-gray-300 rounded-xl flex justify-center items-center bg-white">
                   <Image src={jotai} alt="jotai" className="" />
                 </div>
                 <div className="flex flex-col justify-between lg:pt-7">
@@ -24,7 +24,7 @@ const Bad = () => {
             </div>
             <div className="flex flex-row gap-5 w-[48%]">
               <div className="flex flex-row lg:gap-5">
-                <div className="lg:w-16 lg:h-16 border border-gray-300 rounded-xl">
+                <div className="lg:w-16 lg:h-16 border border-gray-300 rounded-xl flex justify-center items-center bg-white">
                   <Image
                     src={django}
                     alt="django"
@@ -41,7 +41,7 @@ const Bad = () => {
           </div>
           <div className="flex flex-row justify-between">
             <div className="flex flex-row lg:gap-5">
-              <div className="lg:w-16 lg:h-16 border border-gray-300 bg-white rounded-xl flex items-center justify-center">
+              <div className="lg:w-16 lg:h-16 border border-gray-300 rounded-xl flex justify-center items-center bg-white">
                 <Image src={sql} alt="sql" className="" />
               </div>
               <div className="flex flex-col justify-between lg:pt-7">

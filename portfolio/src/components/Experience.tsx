@@ -12,7 +12,7 @@ const Exp = () => {
           <div className="flex flex-col gap-2">
             <div className="flex flex-row justify-between items-end">
               <span className="font-bold lg:text-2xl">EXPERIENCE</span>
-              <div className="text-blue-600 cursor-pointer underline">
+              <div className="text-blue-600 cursor-pointer underline dark:text-white">
                 {open ? (
                   <span onClick={() => setOpen(false)}>닫기</span>
                 ) : (

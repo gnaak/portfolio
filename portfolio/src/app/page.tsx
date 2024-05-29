@@ -10,6 +10,7 @@ import Projects from "../components/Projects/Projects";
 import profile from "@/assets/projects/skawkaks.png";
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import DarkModeToggle from "@/components/DarkMode";
 const Home = () => {
   const router = useRouter();
   const [open, setOpen] = useState<boolean>(false);
@@ -33,7 +34,10 @@ const Home = () => {
 
   return (
     <>
-      <div className="relative overflow-hidden h-screen">
+      <div className="relative overflow-hidden h-screen dark:bg-gray-800 dark:text-white ">
+        <div className="border border-black text-end">
+          <DarkModeToggle />
+        </div>
         {/* <Headers /> */}
         <div className="flex flex-col overflow-auto h-full">
           <div
@@ -99,7 +103,7 @@ const Home = () => {
               }}
             >
               <div
-                className={`w-full xl:p-7 border border-gray-200 shadow-lg bg-gray-100 transition-opacity duration-5000 ${
+                className={`w-full xl:p-7 border border-gray-200 shadow-lg bg-gray-100 transition-opacity duration-5000 dark:dark:bg-gray-700 dark:border-none ${
                   open ? "animate-fadeInLeft" : "animate-fadeOutLeft"
                 }`}
               >
@@ -171,7 +175,7 @@ const Home = () => {
           }`}
         >
           <div
-            className="flex flex-col xl:justify-between pb-10 w-3/4 border border-gray-200 bg-gray-100 h-full"
+            className="flex flex-col xl:justify-between pb-10 w-3/4 border border-gray-200 bg-gray-100 h-full dark:dark:bg-gray-700 dark:border-none"
             onMouseEnter={() => setSideBarIcon(true)}
             onMouseLeave={() => setSideBarIcon(false)}
           >
