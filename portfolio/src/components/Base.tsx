@@ -5,9 +5,9 @@ const Base = () => {
         <div className="flex flex-col lg:gap-14">
           <div className="flex flex-row justify-between dark:text-white">
             <div className="flex flex-col items-center lg:py-7 justify-center lg:w-1/3">
-              <div className="flex flex-col lg:gap-3">
+              <div className="flex flex-col lg:gap-3 text-end">
                 <span className="lg:text-2xl">LEE GEUN HAG</span>
-                <span className="font-bold lg:text-4xl">이근학</span>
+                <span className="font-bold lg:text-5xl">이근학</span>
                 <span className="lg:text-2xl">1995.01.17</span>
               </div>
             </div>

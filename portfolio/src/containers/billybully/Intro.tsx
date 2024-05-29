@@ -11,7 +11,7 @@ const Intro = () => {
             경제를 쉽게! 그리고 빠르게!&nbsp;
             <span className="font-bold ">BillyBully </span>
           </div>
-          <div className="flex flex-row items-center">
+          <div className="flex flex-row items-center xl:gap-1">
             <Image
               src={link}
               alt="깃허브"

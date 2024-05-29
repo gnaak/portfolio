@@ -8,19 +8,19 @@ const Intro = () => {
       <div className="flex flex-col xl:gap-3">
         <div className="flex flex-row justify-between items-center xl:pr-10">
           <span>사용자 음역 분석 기반 음악 추천 및 연습 서비스</span>
-          <div className="flex flex-row items-center">
+          <div className="flex flex-row items-center xl:gap-1">
             <Image
               src={link}
               alt="깃허브"
               className="w-6 h-6"
               priority={false}
             />
-            <span className="text-blue-600 underline">
+            <span className="text-blue-600 underline dark:text-white">
               <a href="https://github.com/gnaak/divamusic">Link</a>
             </span>
           </div>
         </div>
-        <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] ">
+        <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] text-black">
           <div className="flex flex-row xl:gap-5">
             🎤
             <div className="flex flex-col w-full">

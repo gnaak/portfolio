@@ -39,9 +39,10 @@ const divamusic = () => {
 
   const handleCheck = () => {
     setTimeout(() => {
-      if (isMenu) return;
-      else setOpen(false);
-    }, 1000);
+      if (!isMenu) {
+        setOpen(false);
+      }
+    }, 2000);
   };
   return (
     <>
@@ -90,7 +91,11 @@ const divamusic = () => {
                           <Image src={zustand} alt="zustand" />
                         </div>
                         <div className="w-16 h-16 border border-gray-300 rounded-xl items-center justify-center flex">
-                          <Image src={react_query} alt="react_query" className="w-12" />
+                          <Image
+                            src={react_query}
+                            alt="react_query"
+                            className="w-12"
+                          />
                         </div>
                       </div>
                     </div>
@@ -353,15 +358,15 @@ const divamusic = () => {
         <>
           <div
             className={`h-full w-3/4 flex items-start`}
-            onMouseEnter={() => setMenu(true)}
-            onMouseLeave={() => {
-              setOpen(false);
-            }}
           >
             <div
               className={`w-full xl:p-7 border border-gray-200 shadow-lg bg-gray-100 transition-opacity duration-5000 ${
                 open ? "animate-fadeInLeft" : "animate-fadeOutLeft"
               }`}
+              onMouseEnter={() => setMenu(true)}
+              onMouseLeave={() => {
+                setOpen(false);
+              }}
             >
               <div className="flex flex-col xl:gap-10">
                 <div className="flex flex-row xl:gap-3">

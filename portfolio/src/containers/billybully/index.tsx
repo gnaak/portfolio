@@ -38,9 +38,10 @@ const divamusic = () => {
 
   const handleCheck = () => {
     setTimeout(() => {
-      if (isMenu) return;
-      else setOpen(false);
-    }, 1000);
+      if (!isMenu) {
+        setOpen(false);
+      }
+    }, 2000);
   };
   return (
     <>
@@ -290,15 +291,16 @@ const divamusic = () => {
         <>
           <div
             className={`h-full w-3/4 flex items-start`}
-            onMouseEnter={() => setMenu(true)}
-            onMouseLeave={() => {
-              setOpen(false);
-            }}
+
           >
             <div
               className={`w-full xl:p-7 border border-gray-200 shadow-lg bg-gray-100 transition-opacity duration-5000 ${
                 open ? "animate-fadeInLeft" : "animate-fadeOutLeft"
               }`}
+              onMouseEnter={() => setMenu(true)}
+              onMouseLeave={() => {
+                setOpen(false);
+              }}
             >
               <div className="flex flex-col xl:gap-10">
                 <div className="flex flex-row xl:gap-3">

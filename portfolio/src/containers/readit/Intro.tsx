@@ -11,7 +11,7 @@ const Intro = () => {
             문해력을 키우는 가장 쉬운 방법&nbsp;
             <span className="font-bold ">READIT </span>
           </div>
-          <div className="flex flex-row items-center">
+          <div className="flex flex-row items-center xl:gap-1">
             <Image
               src={link}
               alt="깃허브"

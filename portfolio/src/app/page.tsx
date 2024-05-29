@@ -1,7 +1,6 @@
-'use client'
+"use client";
 
 import Image from "next/image";
-import Headers from "../components/Headers";
 import Base from "../components/Base";
 import Skills from "../components/Skills/Skills";
 import Certi from "../components/Certificates";
@@ -22,11 +21,13 @@ const Home = () => {
   const certiRef = useRef(null);
   const expRef = useRef(null);
   const pjtRef = useRef(null);
+
   const handleCheck = () => {
     setTimeout(() => {
-      if (isMenu) return;
-      else setOpen(false);
-    }, 1000);
+      if (!isMenu) {
+        setOpen(false);
+      }
+    }, 2000);
   };
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
@@ -35,9 +36,6 @@ const Home = () => {
   return (
     <>
       <div className="relative overflow-hidden h-screen dark:bg-gray-800 dark:text-white ">
-        <div className="border border-black text-end">
-          <DarkModeToggle />
-        </div>
         {/* <Headers /> */}
         <div className="flex flex-col overflow-auto h-full">
           <div
@@ -95,17 +93,15 @@ const Home = () => {
             </div>
           </div>
           <>
-            <div
-              className={`h-full w-3/4 flex items-start`}
-              onMouseEnter={() => setMenu(true)}
-              onMouseLeave={() => {
-                setOpen(false);
-              }}
-            >
+            <div className={`h-full w-3/4 flex items-start`}>
               <div
                 className={`w-full xl:p-7 border border-gray-200 shadow-lg bg-gray-100 transition-opacity duration-5000 dark:dark:bg-gray-700 dark:border-none ${
                   open ? "animate-fadeInLeft" : "animate-fadeOutLeft"
                 }`}
+                onMouseEnter={() => setMenu(true)}
+                onMouseLeave={() => {
+                  setOpen(false);
+                }}
               >
                 <div className="flex flex-col xl:gap-10">
                   <div className="flex flex-row xl:gap-3">
@@ -160,6 +156,12 @@ const Home = () => {
                         onClick={() => router.push("/readit")}
                       >
                         2️⃣ READIT
+                      </span>
+                      <span
+                        className="cursor-pointer"
+                        onClick={() => router.push("/billybully")}
+                      >
+                        2️⃣ BillyBully
                       </span>
                     </div>
                   </div>

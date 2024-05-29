@@ -1,6 +1,9 @@
-'use client'
+"use client";
 import { useEffect, useState } from "react";
-
+import lightmode from "@/assets/lightmode.svg";
+import Image from "next/image";
+import link from "@/assets/link.png";
+import linkWhite from "@/assets/link_white.png";
 const DarkModeToggle = () => {
   const [darkMode, setDarkMode] = useState(false);
 
@@ -15,6 +18,7 @@ const DarkModeToggle = () => {
   }, []);
 
   const toggleDarkMode = () => {
+    console.log(123)
     if (darkMode) {
       document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
@@ -25,10 +29,37 @@ const DarkModeToggle = () => {
     setDarkMode(!darkMode);
   };
 
+  const [open, setOpen] = useState<boolean>(false)
   return (
-    <button onClick={toggleDarkMode}>
-      {darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
-    </button>
+    <>
+      <div className="absolute top-0 right-12 flex flex-col xl:justify-between select-none">
+        <div className="flex flex-row p-3 justify-between xl:w-24 ">
+          <button onClick={toggleDarkMode}>
+            <div
+              className="w-8 h-8 relative"
+              onMouseEnter={() => setOpen(true)}
+              onMouseLeave={() => setOpen(false)}
+            >
+              <Image src={lightmode} alt="다크모드" />
+              {open ? (
+                <div className="absolute border border-gray-400 top-full left-1/2 transform -translate-x-1/2 right-full w-36 text-xs dark:text-white">
+                  {darkMode ? (
+                    <span>switch to light mode</span>
+                  ) : (
+                    <span>switch to dark mode</span>
+                  )}
+                </div>
+              ) : null}
+            </div>
+          </button>
+          <div className="w-8 h-8">
+            <a href="https://github.com/gnaak">
+              <Image src={link} alt="깃허브" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

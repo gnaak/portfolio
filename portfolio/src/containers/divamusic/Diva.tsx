@@ -9,7 +9,7 @@ const Diva = () => {
           <Image
             src={diva}
             alt="디바"
-            className="bg-[#] rounded-xl border"
+            className="bg-[#] rounded-xl border dark:border-none"
             width="256"
             height="256"
             priority={true}

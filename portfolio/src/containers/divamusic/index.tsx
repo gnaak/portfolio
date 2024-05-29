@@ -11,7 +11,7 @@ import mypage from "@/assets/projects/mypage.gif";
 import As from "./As";
 import Image from "next/image";
 import profile from "@/assets/projects/skawkaks.png";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Intro from "./Intro";
 import Diva from "./Diva";
@@ -38,13 +38,14 @@ const divamusic = () => {
 
   const handleCheck = () => {
     setTimeout(() => {
-      if (isMenu) return;
-      else setOpen(false);
-    }, 1000);
+      if (!isMenu) {
+        setOpen(false);
+      }
+    }, 2000);
   };
   return (
     <>
-      <div className="relative flex-col w-full h-screen flex items-center overflow-hidden select-none ">
+      <div className="relative flex-col w-full h-screen flex items-center overflow-hidden select-none  dark:bg-gray-800 dark:text-white">
         <div className="xl:w-full flex justify-center overflow-auto">
           <div className="xl:w-3/5">
             <div
@@ -72,9 +73,9 @@ const divamusic = () => {
                         <Image
                           src={react}
                           alt="react"
-                          className="w-16 h-16 rounded-xl"
+                          className="w-16 h-16 rounded-xl "
                         />
-                        <div className="w-16 h-16 border border-gray-300 rounded-xl">
+                        <div className="w-16 h-16 border border-gray-300 rounded-xl bg-white">
                           <Image src={next} alt="next" className="w-16 h-16" />
                         </div>
                         <Image
@@ -86,18 +87,14 @@ const divamusic = () => {
                     </div>
                     <div className="flex flex-col xl:gap-3">
                       <span className="text-lg font-bold">상태 관리</span>
-                      <div className="w-16 h-16 border border-gray-300 rounded-xl">
-                        <Image src={jotai} alt="jotai" className="w-16 h-16" />
+                      <div className="w-16 h-16 border border-gray-300 rounded-xl flex justify-center items-center bg-white">
+                        <Image src={jotai} alt="jotai" className="" />
                       </div>
                     </div>
                     <div className="flex flex-col xl:gap-3">
                       <span className="text-lg font-bold">스타일링</span>
-                      <div className="w-16 h-16 border border-gray-300 rounded-xl flex justify-center items-center">
-                        <Image
-                          src={tailwind}
-                          alt="tailwind"
-                          className="w-8 h-8"
-                        />
+                      <div className="w-16 h-16 border border-gray-300 rounded-xl flex justify-center items-center bg-white">
+                        <Image src={tailwind} alt="tailwind" className="" />
                       </div>
                     </div>
                   </div>
@@ -112,7 +109,7 @@ const divamusic = () => {
                     >
                       <span className="font-bold">1️⃣ 캐러셀</span>
                       <span>캐러셀 자체 커스터마이징 진행</span>
-                      <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] ">
+                      <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] text-black">
                         <div className="flex flex-row xl:gap-5">
                           🐫
                           <div className="flex flex-col w-full">
@@ -151,7 +148,7 @@ const divamusic = () => {
                       <span>
                         기기를 통해 입력된 오디오 소스를 실시간 분석 및 시각화
                       </span>
-                      <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] ">
+                      <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%]  text-black">
                         <div className="flex flex-row xl:gap-5">
                           🎵
                           <div className="flex flex-col w-full">
@@ -197,7 +194,7 @@ const divamusic = () => {
                         렌더링되어야 하는 컴포넌트가 달라질 수 있어 전역으로
                         상태 관리를 진행했습니다.
                       </span>
-                      <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] ">
+                      <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%]  text-black">
                         <div className="flex flex-row xl:gap-5">
                           📢
                           <div className="flex flex-col w-full">
@@ -225,7 +222,7 @@ const divamusic = () => {
                   <span className="font-bold text-xl">트러블 슈팅</span>
 
                   <div className="flex flex-col xl:gap-3">
-                    <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] ">
+                    <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] text-black">
                       <div className="flex flex-row xl:gap-5">
                         ⚠
                         <div className="flex flex-col w-full">
@@ -263,8 +260,8 @@ const divamusic = () => {
           </div>
         </div>
       </div>
-      <div className="absolute top-0 left-0 xl:w-1/6 xl:h-screen flex flex-col xl:justify-between z-30 pb-10 select-none">
-        <div className="flex flex-row xl:gap-5 p-3">
+      <div className="absolute top-0 left-0 xl:w-1/6 xl:h-screen flex flex-col xl:justify-between z-30 pb-10 select-none  dark:text-white">
+        <div className="flex flex-row xl:gap-5 p-3 ">
           {open ? (
             <>
               <span
@@ -296,17 +293,15 @@ const divamusic = () => {
           </div>
         </div>
         <>
-          <div
-            className={`h-full w-3/4 flex items-start`}
-            onMouseEnter={() => setMenu(true)}
-            onMouseLeave={() => {
-              setOpen(false);
-            }}
-          >
+          <div className={`h-full w-3/4 flex items-start`}>
             <div
               className={`w-full xl:p-7 border border-gray-200 shadow-lg bg-gray-100 transition-opacity duration-5000 ${
                 open ? "animate-fadeInLeft" : "animate-fadeOutLeft"
-              }`}
+              } dark:bg-gray-700 dark:border-none`}
+              onMouseEnter={() => setMenu(true)}
+              onMouseLeave={() => {
+                setOpen(false);
+              }}
             >
               <div className="flex flex-col xl:gap-10">
                 <div className="flex flex-row xl:gap-3">
@@ -385,10 +380,10 @@ const divamusic = () => {
       <div
         className={`absolute top-0 left-0 xl:w-1/6 xl:h-screen z-50 select-none ${
           sideBar ? "" : "animate-fadeOutLeft"
-        }`}
+        }  dark:text-white `}
       >
         <div
-          className="flex flex-col xl:justify-between pb-10 w-3/4 border border-gray-200 bg-gray-100 h-full"
+          className="flex flex-col xl:justify-between pb-10 w-3/4 border border-gray-200 bg-gray-100 h-full dark:bg-gray-700 dark:border-none"
           onMouseEnter={() => setSideBarIcon(true)}
           onMouseLeave={() => setSideBarIcon(false)}
         >

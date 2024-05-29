@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/style/globals.css";
+import DarkModeToggle from "@/components/DarkMode";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,10 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
         />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <DarkModeToggle />
+      </body>
     </html>
   );
 }
