@@ -83,4 +83,11 @@
 
 ### DIVA (05.28)
 > 메뉴바가 onMouseEnter/Leave까지는 되는데 거기에 조건문을 걸면 될 때가 있고 안될 때가 있어서 삭제
-> onClick으로 메뉴바 
+> 
+> onClick으로 메뉴바
+
+### 프로젝트 내용 정리 && 다크모드 (05.29)
+> tailwind.config.ts에 darkMode를 클래스로 추가해주고,
+> localstorage 테마 이용해서 다크모드, 라이트모드 설정
+> 
+> 다크모드 시 어둡게, 글씨 하얗게 << 이런거 설정
