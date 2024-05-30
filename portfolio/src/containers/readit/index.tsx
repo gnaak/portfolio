@@ -32,6 +32,8 @@ const Divamusic = () => {
   const commuRef = useRef(null);
   const troubleRef = useRef(null);
   const asRef = useRef(null);
+  const [num, setNum] = useState(0);
+  const [num2, setNum2] = useState(0);
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
@@ -96,7 +98,11 @@ const Divamusic = () => {
                           <Image src={zustand} alt="zustand" />
                         </div>
                         <div className="xl:w-16 xl:h-16 md:w-12 md:h-12 w-10 h-10 border border-gray-300 rounded-xl flex justify-center items-center bg-white shrink-0">
-                          <Image src={react_query} alt="react_query" />
+                          <Image
+                            src={react_query}
+                            alt="react_query"
+                            className="w-12"
+                          />
                         </div>
                       </div>
                     </div>
@@ -105,11 +111,7 @@ const Divamusic = () => {
                         스타일링
                       </span>
                       <div className="xl:w-16 xl:h-16 md:w-12 md:h-12 w-10 h-10 border border-gray-300 rounded-xl flex justify-center items-center bg-white shrink-0">
-                        <Image
-                          src={tailwind}
-                          alt="tailwind"
-                          className="w-8 h-8"
-                        />
+                        <Image src={tailwind} alt="tailwind" className="w-12" />
                       </div>
                     </div>
                   </div>
@@ -336,6 +338,7 @@ const Divamusic = () => {
                 onClick={() => {
                   setSideBar(true);
                   setOpen(false);
+                  setNum(1);
                 }}
               >
                 keyboard_double_arrow_right
@@ -345,7 +348,10 @@ const Divamusic = () => {
             <>
               <span
                 className="material-symbols-outlined cursor-pointer"
-                onMouseEnter={() => setOpen(true)}
+                onMouseEnter={() => {
+                  setOpen(true);
+                  setNum2(1);
+                }}
               >
                 menu{" "}
               </span>
@@ -362,7 +368,11 @@ const Divamusic = () => {
           <div className={`h-full 3xl:w-3/4 w-full xl:flex hidden items-start`}>
             <div
               className={`w-full p-7 border border-gray-200 shadow-lg bg-gray-100 transition-opacity duration-5000 ${
-                open ? "animate-fadeInLeft" : "animate-fadeOutLeft"
+                open
+                  ? "animate-fadeInLeft"
+                  : num2 === 0
+                  ? "opacity-0"
+                  : "animate-fadeOutLeft "
               } dark:bg-gray-700 dark:border-none`}
               onMouseEnter={() => setMenu(true)}
               onMouseLeave={() => {
@@ -450,9 +460,13 @@ const Divamusic = () => {
       </div>
 
       <div
-        className={`absolute top-0 left-0 w-1/6 xl:h-screen z-50 select-none xl:inline hidden ${
-          sideBar ? "" : "animate-fadeOutLeft"
-        }  dark:text-white `}
+        className={`absolute top-0 left-0 w-1/6 xl:h-screen  select-none xl:inline hidden ${
+          sideBar
+            ? "z-50"
+            : num === 0
+            ? "opacity-0"
+            : "z-50 animate-fadeOutLeft"
+        } dark:text-white`}
       >
         <div
           className="flex flex-col xl:justify-between pb-10 3xl:w-3/4 w-full border border-gray-200 bg-gray-100 h-full dark:bg-gray-700 dark:border-none"

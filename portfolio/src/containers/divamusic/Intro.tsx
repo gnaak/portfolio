@@ -6,13 +6,13 @@ const Intro = () => {
     <>
       <span className="font-bold md:text-xl">소개</span>
       <div className="flex flex-col xl:gap-3 gap-2 ">
-        <div className="flex flex-row justify-between items-center xl:pr-10">
+        <div className="flex flex-row justify-between items-center xl:pr-5">
           <span className="md:text-base text-sm">사용자 음역 분석 기반 음악 추천 및 연습 서비스</span>
           <div className="md:flex flex-row items-center gap-1 hidden">
             <Image
               src={link}
               alt="깃허브"
-              className="w-6 h-6"
+              className="w-8 h-8"
               priority={false}
             />
             <span className="text-blue-600 underline dark:text-white">

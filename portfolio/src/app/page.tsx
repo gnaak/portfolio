@@ -21,6 +21,8 @@ const Home = () => {
   const certiRef = useRef(null);
   const expRef = useRef(null);
   const pjtRef = useRef(null);
+  const [num, setNum] = useState(0);
+  const [num2, setNum2] = useState(0);
 
   const handleCheck = () => {
     setTimeout(() => {
@@ -73,6 +75,7 @@ const Home = () => {
                   onClick={() => {
                     setSideBar(true);
                     setOpen(false);
+                    setNum(1);
                   }}
                 >
                   keyboard_double_arrow_right
@@ -82,7 +85,10 @@ const Home = () => {
               <>
                 <span
                   className="material-symbols-outlined cursor-pointer"
-                  onMouseEnter={() => setOpen(true)}
+                  onMouseEnter={() => {
+                    setOpen(true);
+                    setNum2(1);
+                  }}
                 >
                   menu{" "}
                 </span>
@@ -93,10 +99,16 @@ const Home = () => {
             </div>
           </div>
           <>
-            <div className={`h-full 3xl:w-3/4 w-full xl:flex hidden items-start`}>
+            <div
+              className={`h-full 3xl:w-3/4 w-full xl:flex hidden items-start`}
+            >
               <div
                 className={`w-full p-7 border border-gray-200 shadow-lg bg-gray-100 transition-opacity duration-5000 ${
-                  open ? "animate-fadeInLeft" : "animate-fadeOutLeft"
+                  open
+                    ? "animate-fadeInLeft"
+                    : num2 === 0
+                    ? "opacity-0"
+                    : "animate-fadeOutLeft "
                 } dark:bg-gray-700 dark:border-none`}
                 onMouseEnter={() => setMenu(true)}
                 onMouseLeave={() => {
@@ -172,9 +184,13 @@ const Home = () => {
         </div>
 
         <div
-          className={`absolute top-0 left-0 w-1/6 xl:h-screen z-50 select-none xl:inline hidden ${
-            sideBar ? "" : "animate-fadeOutLeft"
-          }  dark:text-white `}
+          className={`absolute top-0 left-0 w-1/6 xl:h-screen  select-none xl:inline hidden ${
+            sideBar
+              ? "z-50"
+              : num === 0
+              ? "opacity-0"
+              : "z-50 animate-fadeOutLeft"
+          } dark:text-white`}
         >
           <div
             className="flex flex-col xl:justify-between pb-10 3xl:w-3/4 w-full border border-gray-200 bg-gray-100 h-full dark:bg-gray-700 dark:border-none"

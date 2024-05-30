@@ -6,7 +6,7 @@ const Intro = () => {
     <>
       <span className="font-bold text-xl">소개</span>
       <div className="flex flex-col xl:gap-3 gap-2 ">
-        <div className="flex flex-row justify-between items-center xl:pr-10">
+        <div className="flex flex-row justify-between items-center xl:pr-5">
           <div className="md:text-base text-sm">
             경제를 쉽게! 그리고 빠르게!&nbsp;
             <span className="font-bold ">BillyBully </span>
@@ -15,7 +15,7 @@ const Intro = () => {
             <Image
               src={link}
               alt="깃허브"
-              className="w-6 h-6"
+              className="w-8 h-8"
               priority={false}
             />
             <span className="text-blue-600 underline dark:text-white">
