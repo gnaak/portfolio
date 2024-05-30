@@ -11,9 +11,9 @@ const Normal = () => {
         <span className="xl:text-xl lg:text-lg font-bold md:text-base text-sm">
           사용 가능
         </span>
-        <div className="skills flex flex-row flex-wrap md:gap-3 xl:gap-5 border border-gray-400 rounded-xl shadow-xl md:p-5 p-2 md:justify-none justify-evenly">
+        <div className="skills flex flex-row flex-wrap md:gap-3 xl:gap-5 border md:border-gray-400 rounded-xl md:shadow-xl shadow-md md:p-5 p-2 md:justify-none justify-evenly">
           <div className="flex flex-row lg:gap-5 md:gap-3 md:w-[48%] w-[22%] justify-center">
-            <div className="lg:w-16 lg:h-16 w-12 h-12 border border-gray-300 rounded-xl flex justify-center items-center bg-white shrink-0">
+            <div className="lg:w-16 lg:h-16 md:w-12 md:h-12 w-10 h-10 border border-gray-300 rounded-xl flex justify-center items-center bg-white shrink-0">
               <Image src={react_query} alt="react_query" className="w-12" />
             </div>
             <span className="lg:pt-3 xl:text-base lg:text-sm md:text-xs md:inline hidden">
@@ -21,7 +21,7 @@ const Normal = () => {
             </span>
           </div>
           <div className="flex flex-row lg:gap-5 md:gap-3 md:w-[48%] w-[22%] justify-center">
-            <div className="lg:w-16 lg:h-16 w-12 h-12 border border-gray-300 rounded-xl flex justify-center items-center bg-white shrink-0">
+            <div className="lg:w-16 lg:h-16 md:w-12 md:h-12 w-10 h-10 border border-gray-300 rounded-xl flex justify-center items-center bg-white shrink-0">
               <Image src={zustand} alt="zustand" className="" />
             </div>
             <span className="lg:pt-3 xl:text-base lg:text-sm md:text-xs md:inline hidden">
@@ -30,7 +30,7 @@ const Normal = () => {
             </span>
           </div>
           <div className="flex flex-row lg:gap-5 md:gap-3 md:w-[48%] w-[22%] justify-center">
-            <div className="lg:w-16 lg:h-16 w-12 h-12 border border-gray-300 rounded-xl flex justify-center items-center bg-white shrink-0">
+            <div className="lg:w-16 lg:h-16 md:w-12 md:h-12 w-10 h-10 border border-gray-300 rounded-xl flex justify-center items-center bg-white shrink-0">
               <Image
                 src={vue}
                 alt="vue"
@@ -42,7 +42,7 @@ const Normal = () => {
             </span>
           </div>
           <div className="flex flex-row lg:gap-5 md:gap-3 md:w-[48%] w-[22%] justify-center">
-            <div className="lg:w-16 lg:h-16 w-12 h-12 border border-gray-300 rounded-xl flex justify-center items-center bg-white shrink-0">
+            <div className="lg:w-16 lg:h-16 md:w-12 md:h-12 w-10 h-10 border border-gray-300 rounded-xl flex justify-center items-center bg-white shrink-0">
               <Image src={python} alt="python" className="lg:w-16 lg:h-16 " />
             </div>
             <span className="lg:pt-3 xl:text-base lg:text-sm md:text-xs md:inline hidden">
