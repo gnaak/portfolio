@@ -23,9 +23,7 @@ const Diva = () => {
           </div>
           <div className="flex flex-col lg:gap-2">
             <span className="font-bold">SSAFY 공통PJT 최우수상 (1등)</span>
-            <div className="">
-음역 기반 음악 추천 및 연습 서비스
-            </div>
+            <div className="">음역 기반 음악 추천 및 연습 서비스</div>
             <div className="flex flex-row lg:gap-2">
               <span className="bg-[#3179c6] px-2 text-white border border-black rounded-md">
                 Typescript

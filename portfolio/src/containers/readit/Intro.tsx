@@ -5,26 +5,26 @@ const Intro = () => {
   return (
     <>
       <span className="font-bold text-xl">소개</span>
-      <div className="flex flex-col xl:gap-3">
+      <div className="flex flex-col xl:gap-3 gap-2 ">
         <div className="flex flex-row justify-between items-center xl:pr-10">
-          <div>
+          <div className="md:text-base text-sm">
             문해력을 키우는 가장 쉬운 방법&nbsp;
             <span className="font-bold ">READIT </span>
           </div>
-          <div className="flex flex-row items-center xl:gap-1">
+          <div className="md:flex flex-row items-center gap-1 hidden">
             <Image
               src={link}
               alt="깃허브"
               className="w-6 h-6"
               priority={false}
             />
-            <span className="text-blue-600 underline">
+            <span className="text-blue-600 underline dark:text-white">
               <a href="https://github.com/gnaak/readit">Link</a>
             </span>
           </div>
         </div>
-        <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] ">
-          <div className="flex flex-row xl:gap-5">
+        <div className="bg-[#F1F1EF] p-4 md:flex hidden rounded-xl w-[100%] text-black lg:px-5">
+          <div className="flex flex-row xl:gap-5 gap-3">
             📚
             <div className="">
               <span className="font-bold">뉴스, 비문학&nbsp;</span>읽기 요약을

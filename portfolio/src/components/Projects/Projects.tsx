@@ -9,8 +9,8 @@ import BillyBully from "./BillyBully";
 const Projects = () => {
   return (
     <>
-      <div className="lg:w-3/5 xl:px-20 md:w-4/5">
-        <div className="flex flex-col lg:gap-10">
+      <div className="lg:w-3/5 xl:px-20 w-4/5">
+        <div className="flex flex-col lg:gap-10 gap-5">
           <div className="flex flex-col gap-2">
             <span className="font-bold 2xl:text-2xl lg:text-xl">PROJECTS</span>
             <span className="w-full border border-gray-200"></span>

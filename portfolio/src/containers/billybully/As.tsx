@@ -1,11 +1,11 @@
 const As = () => {
   return (
     <>
-      <span className="font-bold text-xl">회고</span>
+      <span className="font-bold md:text-xl">회고</span>
 
       <div className="flex flex-col xl:gap-3">
         <div className="flex flex-col w-full">
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1 md:text-base text-sm ">
             <span>
               1️⃣ 배운 적 없던 툴과 라이브러리를 학습하고 구현에 성공하면서
               자신감을 얻었습니다.

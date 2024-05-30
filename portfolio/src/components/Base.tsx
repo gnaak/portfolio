@@ -43,7 +43,7 @@ const Base = () => {
           <div className="bg-[#F1F1EF] dark:bg-gray-200 xl:text-lg md:p-3 flex justify-center rounded-xl sm:w-[100%] text-black shrink-0 ">
             <div className="flex flex-row lg:gap-5 sm:gap-1 md:p-0 p-2 items-center">
               💡
-              <div className=" lg:text-xl md:text-base text-sm">
+              <div className=" xl:text-xl md:text-base text-sm">
                 <span className=" hidden lg:inline">
                   상상을 현실로 옮겨주는 코딩에 흥미를 느낀
                 </span>

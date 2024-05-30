@@ -45,91 +45,96 @@ const divamusic = () => {
   };
   return (
     <>
-      <div className="relative flex-col w-full h-screen flex items-center overflow-hidden select-none ">
+      <div className="relative flex-col w-full h-screen flex items-center overflow-hidden select-none  dark:bg-gray-800 dark:text-white">
         <div className="xl:w-full flex justify-center overflow-auto">
-          <div className="xl:w-3/5">
+          <div className="w-3/5">
             <div
               ref={divRef}
-              className="flex flex-col gap-2 xl:px-10 xl:py-20 xl:pb-10"
+              className="flex flex-col gap-2 xl:px-10 py-20 pb-10"
             >
-              <span className="font-bold xl:text-2xl">Billy Bully</span>
+              <span className="font-bold text-2xl">Billy Bully</span>
               <span className="w-full border border-gray-200"></span>
             </div>
-            <div className="flex flex-col xl:gap-10 xl:pb-20">
+            <div className="flex flex-col gap-10 pb-20">
               <Readit />
-              <div className="flex flex-col xl:px-10 xl:gap-16">
-                <div ref={introRef} className="flex flex-col xl:gap-5 xl:pt-10">
+              <div className="flex flex-col xl:px-10 md:gap-16 gap-10">
+                <div
+                  ref={introRef}
+                  className="flex flex-col lg:gap-5 gap-3 xl:pt-10"
+                >
                   <Intro />
                 </div>
-                <div ref={techRef} className="flex flex-col xl:gap-5 xl:pt-10">
-                  <span className="font-bold text-xl">사용 기술</span>
+                <div ref={techRef} className="flex flex-col gap-5 xl:pt-10">
+                  <span className="font-bold md:text-xl">사용 기술</span>
 
-                  <div className="flex flex-row xl:gap-20">
-                    <div className="flex flex-col xl:gap-3">
-                      <span className="text-lg font-bold">
+                  <div className="flex flex-row lg:gap-20 md:gap-10 gap-3 flex-wrap md:flex-nowrap">
+                    <div className="flex flex-col gap-3">
+                      <span className="lg:text-lg font-bold md:inline hidden">
                         프레임워크 & 언어
                       </span>
-                      <div className="flex flex-row xl:gap-2">
+                      <div className="flex flex-row gap-2">
                         <Image
                           src={react}
                           alt="react"
-                          className="w-16 h-16 rounded-xl"
+                          className="xl:w-16 xl:h-16 md:w-12 md:h-12 h-10 w-10 rounded-xl"
                         />
 
                         <Image
                           src={ts}
                           alt="ts"
-                          className="w-16 h-16 rounded-xl"
+                          className="xl:w-16 xl:h-16 md:w-12 md:h-12 h-10 w-10 rounded-xl"
                         />
                       </div>
                     </div>
-                    <div className="flex flex-col xl:gap-3">
-                      <span className="text-lg font-bold">상태 관리</span>
-                      <div className="flex flex-row xl:gap-2">
-                        <div className="w-16 h-16 border border-gray-300 rounded-xl items-center justify-center flex">
+                    <div className="flex flex-col gap-3">
+                      <span className="lg:text-lg font-bold md:inline hidden">
+                        상태 관리
+                      </span>
+                      <div className="flex flex-row gap-2">
+                        <div className="xl:w-16 xl:h-16 md:w-12 md:h-12 w-10 h-10 border border-gray-300 rounded-xl flex justify-center items-center bg-white shrink-0">
                           <Image src={zustand} alt="zustand" />
                         </div>
-                        <div className="w-16 h-16 border border-gray-300 rounded-xl items-center justify-center flex">
-                          <Image
-                            src={react_query}
-                            alt="react_query"
-                            className="w-12"
-                          />
+                        <div className="xl:w-16 xl:h-16 md:w-12 md:h-12 w-10 h-10 border border-gray-300 rounded-xl flex justify-center items-center bg-white shrink-0">
+                          <Image src={react_query} alt="react_query" />
                         </div>
                       </div>
                     </div>
-                    <div className="flex flex-col xl:gap-3">
-                      <span className="text-lg font-bold">스타일링</span>
-                      <div className="w-16 h-16 border border-gray-300 rounded-xl flex justify-center items-center">
+                    <div className="flex flex-col gap-3">
+                      <span className="lg:text-lg font-bold md:inline hidden">
+                        스타일링
+                      </span>
+                      <div className="xl:w-16 xl:h-16 md:w-12 md:h-12 w-10 h-10 border border-gray-300 rounded-xl flex justify-center items-center bg-white shrink-0">
                         <Image src={emotion} alt="emotion" className="" />
                       </div>
                     </div>
-                    <div className="flex flex-col xl:gap-3">
+                    {/* <div className="flex flex-col xl:gap-3">
                       <span className="text-lg font-bold">기타</span>
                       <div className="w-16 h-16 border border-gray-300 rounded-xl flex justify-center items-center">
                         <Image src={blender} alt="emotion" className="w-12" />
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
 
                 <div ref={myRef} className="flex flex-col xl:pt-10">
-                  <span className="font-bold text-xl">기여 사항</span>
+                  <span className="font-bold md:text-xl">기여 사항</span>
                   <div>
                     <div
                       ref={viewerRef}
-                      className="flex flex-col xl:gap-3 xl:pt-10"
+                      className="flex flex-col gap-3 lg:pt-10 pt-5"
                     >
-                      <span className="font-bold">1️⃣ 맵 & 캐릭터</span>
-                      <span>
+                      <span className="font-bold md:text-base text-sm">
+                        1️⃣ 맵 & 캐릭터
+                      </span>
+                      <span className="md:text-base text-sm">
                         3D 모델링을 끝낸 맵과 캐릭터를 three.js를 활용하여
                         렌더링
                       </span>
-                      <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] ">
-                        <div className="flex flex-row xl:gap-5">
+                      <div className="bg-[#F1F1EF] p-4 md:flex hidden rounded-xl w-[100%] text-black lg:px-5 lg:text-base text-sm">
+                        <div className="flex flex-row xl:gap-5 gap-3">
                           🎮
                           <div className="flex flex-col w-full">
-                            <div className="">
+                            <div className="flex flex-row">
                               블렌더를 사용하여 자체 맵을 제작하고, three.js를
                               활용해 맵과 캐릭터 렌더링을 진행했습니다.
                               입체적으로 화면에 보여주기 위해 크기, 카메라 위치
@@ -143,7 +148,7 @@ const divamusic = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="flex flex-row justify-evenly border border-gray-400 xl:py-7 xl:px-7 rounded-xl shadow-xl">
+                      <div className="flex flex-row justify-evenly xl:border lg:border-gray-400 xl:py-5 rounded-xl md:shadow-xl shadow-md">
                         <Image
                           src={map}
                           alt="게임 페이지"
@@ -155,12 +160,16 @@ const divamusic = () => {
                   <div>
                     <div
                       ref={infiniteRef}
-                      className="flex flex-col xl:gap-3 xl:pt-10"
+                      className="flex flex-col gap-3 pt-10"
                     >
-                      <span className="font-bold">2️⃣ 주사위</span>
-                      <span>three.js를 활용한 주사위 커스터마이징</span>
-                      <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] ">
-                        <div className="flex flex-row xl:gap-5">
+                      <span className="font-bold md:text-base text-sm">
+                        2️⃣ 주사위
+                      </span>
+                      <span className="md:text-base text-sm">
+                        three.js를 활용한 주사위 커스터마이징
+                      </span>
+                      <div className="bg-[#F1F1EF] p-4 md:flex hidden rounded-xl w-[100%] text-black lg:px-5 lg:text-base text-sm">
+                        <div className="flex flex-row xl:gap-5 gap-3">
                           🎲
                           <div className="flex flex-col w-full">
                             <div className="">
@@ -175,7 +184,7 @@ const divamusic = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="flex flex-row justify-evenly border border-gray-400 xl:py-7 xl:px-7 rounded-xl shadow-xl">
+                      <div className="flex flex-row justify-evenly xl:border lg:border-gray-400 xl:py-5 rounded-xl md:shadow-xl shadow-md">
                         <Image
                           src={dice}
                           alt="주사위"
@@ -184,17 +193,16 @@ const divamusic = () => {
                       </div>
                     </div>
                   </div>
-                  <div
-                    ref={challengRef}
-                    className="flex flex-col xl:gap-3 xl:pt-10"
-                  >
-                    <span className="font-bold">3️⃣ Zustand</span>
-                    <span>
+                  <div ref={challengRef} className="flex flex-col gap-3 pt-10">
+                    <span className="font-bold md:text-base text-sm">
+                      3️⃣ Zustand
+                    </span>
+                    <span className="md:text-base text-sm">
                       플레이어가 보유한 자산에 영향을 끼칠 수 있는 요소가
                       다양하여 전역 상태로 관리{" "}
                     </span>
-                    <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] ">
-                      <div className="flex flex-row xl:gap-5">
+                    <div className="bg-[#F1F1EF] p-4 md:flex hidden rounded-xl w-[100%] text-black lg:px-5 lg:text-base text-sm">
+                      <div className="flex flex-row xl:gap-5 gap-3">
                         ⁉
                         <div className="flex flex-col w-full">
                           <div className="">
@@ -207,20 +215,20 @@ const divamusic = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="flex flex-row justify-evenly border border-gray-400 xl:py-7 xl:px-7 rounded-xl shadow-xl">
+                    <div className="flex flex-row justify-evenly xl:border lg:border-gray-400 xl:py-5 rounded-xl md:shadow-xl shadow-md">
                       <Image src={cards} alt="카드" className="w-auto h-auto" />
                     </div>
                   </div>
                 </div>
                 <div
                   ref={troubleRef}
-                  className="flex flex-col xl:gap-5  xl:pt-10"
+                  className="md:flex flex-col gap-5  xl:pt-10 hidden"
                 >
-                  <span className="font-bold text-xl">트러블 슈팅</span>
+                  <span className="font-bold md:text-xl">트러블 슈팅</span>
 
                   <div className="flex flex-col xl:gap-3">
-                    <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] ">
-                      <div className="flex flex-row xl:gap-5">
+                    <div className="bg-[#F1F1EF] p-4 flex rounded-xl w-[100%] text-black lg:px-5 lg:text-base text-sm">
+                      <div className="flex flex-row xl:gap-5 gap-3">
                         ⚠
                         <div className="flex flex-col w-full">
                           <div className="flex flex-row">
@@ -248,7 +256,7 @@ const divamusic = () => {
                     </div>
                   </div>
                 </div>
-                <div ref={asRef} className="flex flex-col xl:gap-5  xl:py-10">
+                <div ref={asRef} className="flex flex-col gap-5  xl:py-10">
                   <As />
                 </div>
               </div>
@@ -289,10 +297,7 @@ const divamusic = () => {
           </div>
         </div>
         <>
-          <div
-            className={`h-full w-3/4 flex items-start`}
-
-          >
+          <div className={`h-full w-3/4 flex items-start`}>
             <div
               className={`w-full xl:p-7 border border-gray-200 shadow-lg bg-gray-100 transition-opacity duration-5000 ${
                 open ? "animate-fadeInLeft" : "animate-fadeOutLeft"

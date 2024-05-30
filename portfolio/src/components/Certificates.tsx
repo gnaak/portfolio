@@ -32,13 +32,13 @@ const Certi = () => {
                     COMPUTERS
                   </span>
                   <div className="flex flex-col md:gap-3">
-                    <span>
+                    <span className="md:text-base text-sm">
                       SQLD
                       <span className="md:inline hidden">
                         -051001897 (2023.12.15)
                       </span>
                     </span>
-                    <span>
+                    <span className="md:text-base text-sm">
                       ADsP
                       <span className="md:inline hidden">
                         -038001567 (2023.09.15)
@@ -50,7 +50,7 @@ const Certi = () => {
                   <span className="xl:text-xl lg:text-lg font-bold md:text-base text-sm">
                     ENGLISH
                   </span>
-                  <span className="lg:text-base">
+                  <span className="md:text-base text-sm">
                     OPIc AL
                     <span className="md:inline hidden">
                       2A5700409328 (2023.01.06)

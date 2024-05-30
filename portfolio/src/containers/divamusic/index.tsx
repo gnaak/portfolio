@@ -47,53 +47,64 @@ const divamusic = () => {
     <>
       <div className="relative flex-col w-full h-screen flex items-center overflow-hidden select-none  dark:bg-gray-800 dark:text-white">
         <div className="xl:w-full flex justify-center overflow-auto">
-          <div className="xl:w-3/5">
+          <div className="w-3/5">
             <div
               ref={divRef}
-              className="flex flex-col gap-2 xl:px-10 xl:py-20 xl:pb-10"
+              className="flex flex-col gap-2 xl:px-10 py-20 pb-10"
             >
-              <span className="font-bold xl:text-2xl">DIV★</span>
+              <span className="font-bold text-2xl">DIV★</span>
               <span className="w-full border border-gray-200"></span>
             </div>
-            <div className="flex flex-col xl:gap-10 xl:pb-20">
+            <div className="flex flex-col gap-10 pb-20">
               <Diva />
-              <div className="flex flex-col xl:px-10 xl:gap-16">
-                <div ref={introRef} className="flex flex-col xl:gap-5 xl:pt-10">
+              <div className="flex flex-col xl:px-10 md:gap-16 gap-10">
+                <div
+                  ref={introRef}
+                  className="flex flex-col lg:gap-5 gap-3 xl:pt-10"
+                >
                   <Intro />
                 </div>
-                <div ref={techRef} className="flex flex-col xl:gap-5 xl:pt-10">
-                  <span className="font-bold text-xl">사용 기술</span>
+                <div ref={techRef} className="flex flex-col gap-5 xl:pt-10">
+                  <span className="font-bold md:text-xl">사용 기술</span>
 
-                  <div className="flex flex-row xl:gap-20">
-                    <div className="flex flex-col xl:gap-3">
-                      <span className="text-lg font-bold">
+                  <div className="flex flex-row md:gap-20 gap-3 flex-wrap md:flex-nowrap">
+                    <div className="flex flex-col gap-3">
+                      <span className="lg:text-lg font-bold md:inline hidden">
                         프레임워크 & 언어
                       </span>
-                      <div className="flex flex-row xl:gap-2">
+                      <div className="flex flex-row gap-2">
                         <Image
                           src={react}
                           alt="react"
-                          className="w-16 h-16 rounded-xl "
+                          className="xl:w-16 xl:h-16 md:w-12 md:h-12 h-10 w-10 rounded-xl"
                         />
-                        <div className="w-16 h-16 border border-gray-300 rounded-xl bg-white">
-                          <Image src={next} alt="next" className="w-16 h-16" />
+                        <div className="xl:w-16 xl:h-16 md:w-12 md:h-12 w-10 h-10 border border-gray-300 rounded-xl flex justify-center items-center bg-white shrink-0">
+                          <Image
+                            src={next}
+                            alt="next"
+                            className="xl:w-16 xl:h-16"
+                          />
                         </div>
                         <Image
                           src={ts}
                           alt="ts"
-                          className="w-16 h-16 rounded-xl"
+                          className="xl:w-16 xl:h-16 md:w-12 md:h-12 h-10 w-10 rounded-xl"
                         />
                       </div>
                     </div>
-                    <div className="flex flex-col xl:gap-3">
-                      <span className="text-lg font-bold">상태 관리</span>
-                      <div className="w-16 h-16 border border-gray-300 rounded-xl flex justify-center items-center bg-white">
+                    <div className="flex flex-col gap-3">
+                      <span className="lg:text-lg font-bold md:inline hidden">
+                        상태 관리
+                      </span>
+                      <div className="xl:w-16 xl:h-16 md:w-12 md:h-12 w-10 h-10 border border-gray-300 rounded-xl flex justify-center items-center bg-white shrink-0">
                         <Image src={jotai} alt="jotai" className="" />
                       </div>
                     </div>
-                    <div className="flex flex-col xl:gap-3">
-                      <span className="text-lg font-bold">스타일링</span>
-                      <div className="w-16 h-16 border border-gray-300 rounded-xl flex justify-center items-center bg-white">
+                    <div className="flex flex-col gap-3">
+                      <span className="lg:text-lg font-bold md:inline hidden">
+                        스타일링
+                      </span>
+                      <div className="xl:w-16 xl:h-16 md:w-12 md:h-12 w-10 h-10 border border-gray-300 rounded-xl flex justify-center items-center bg-white shrink-0">
                         <Image src={tailwind} alt="tailwind" className="" />
                       </div>
                     </div>
@@ -101,16 +112,20 @@ const divamusic = () => {
                 </div>
 
                 <div ref={myRef} className="flex flex-col xl:pt-10">
-                  <span className="font-bold text-xl">기여 사항</span>
+                  <span className="font-bold md:text-xl">기여 사항</span>
                   <div>
                     <div
                       ref={carrouselRef}
-                      className="flex flex-col xl:gap-3 xl:pt-10"
+                      className="flex flex-col gap-3 lg:pt-10 pt-5"
                     >
-                      <span className="font-bold">1️⃣ 캐러셀</span>
-                      <span>캐러셀 자체 커스터마이징 진행</span>
-                      <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] text-black">
-                        <div className="flex flex-row xl:gap-5">
+                      <span className="font-bold md:text-base text-sm">
+                        1️⃣ 캐러셀
+                      </span>
+                      <span className="md:text-base text-sm">
+                        캐러셀 자체 커스터마이징 진행
+                      </span>
+                      <div className="bg-[#F1F1EF] p-4 md:flex hidden rounded-xl w-[100%] text-black lg:px-5 lg:text-base text-sm">
+                        <div className="flex flex-row xl:gap-5 gap-3">
                           🐫
                           <div className="flex flex-col w-full">
                             <div className="flex flex-row">
@@ -125,11 +140,11 @@ const divamusic = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="flex flex-row justify-evenly border border-gray-400 xl:py-5 rounded-xl shadow-xl">
+                      <div className="flex flex-row justify-evenly border md:border-gray-400 xl:py-5 rounded-xl md:shadow-xl shadow-md">
                         <Image
                           src={landing}
                           alt="랜딩 페이지"
-                          className="w-auto h-auto"
+                          className="w-auto h-auto md:inline hidden"
                         />
                         <Image
                           src={home}
@@ -142,14 +157,16 @@ const divamusic = () => {
                   <div>
                     <div
                       ref={WebAudioAPIRef}
-                      className="flex flex-col xl:gap-3 xl:pt-10"
+                      className="flex flex-col gap-3 pt-10"
                     >
-                      <span className="font-bold">2️⃣ Web Audio API</span>
-                      <span>
+                      <span className="font-bold md:text-base text-sm">
+                        2️⃣ Web Audio API
+                      </span>
+                      <span className="md:text-base text-sm">
                         기기를 통해 입력된 오디오 소스를 실시간 분석 및 시각화
                       </span>
-                      <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%]  text-black">
-                        <div className="flex flex-row xl:gap-5">
+                      <div className="bg-[#F1F1EF] p-4 md:flex hidden rounded-xl w-[100%] text-black lg:px-5 lg:text-base text-sm">
+                        <div className="flex flex-row xl:gap-5 gap-3">
                           🎵
                           <div className="flex flex-col w-full">
                             <div className="flex flex-row">
@@ -169,7 +186,7 @@ const divamusic = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="flex flex-row justify-evenly border border-gray-400 xl:py-5 rounded-xl shadow-xl">
+                      <div className="flex flex-row justify-evenly border md:border-gray-400 xl:py-5 rounded-xl md:shadow-xl shadow-md">
                         <Image
                           src={rangecheck}
                           alt="음역대 테스트"
@@ -178,24 +195,23 @@ const divamusic = () => {
                         <Image
                           src={mypage}
                           alt="마이 페이지"
-                          className="w-auto h-auto"
+                          className="w-auto h-auto md:inline hidden"
                         />
                       </div>
                     </div>
                   </div>
                   <div>
-                    <div
-                      ref={JotaiRef}
-                      className="flex flex-col xl:gap-3 xl:pt-10"
-                    >
-                      <span className="font-bold">3️⃣ Jotai</span>
-                      <span>
+                    <div ref={JotaiRef} className="flex flex-col gap-3 pt-10">
+                      <span className="font-bold md:text-base text-sm">
+                        3️⃣ Jotai
+                      </span>
+                      <span className="md:text-base text-sm">
                         메인 페이지에 라우팅 되었을 때, 하나의 페이지에서
                         렌더링되어야 하는 컴포넌트가 달라질 수 있어 전역으로
                         상태 관리를 진행했습니다.
                       </span>
-                      <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%]  text-black">
-                        <div className="flex flex-row xl:gap-5">
+                      <div className="bg-[#F1F1EF] p-4 md:flex hidden rounded-xl w-[100%] text-black lg:px-5 lg:text-base text-sm">
+                        <div className="flex flex-row xl:gap-5 gap-3">
                           📢
                           <div className="flex flex-col w-full">
                             <div className="flex flex-row">
@@ -215,15 +231,12 @@ const divamusic = () => {
                     </div>
                   </div>
                 </div>
-                <div
-                  ref={troubleRef}
-                  className="flex flex-col xl:gap-5  xl:pt-10"
-                >
-                  <span className="font-bold text-xl">트러블 슈팅</span>
+                <div ref={troubleRef} className="md:flex flex-col gap-5  xl:pt-10 hidden">
+                  <span className="font-bold md:text-xl">트러블 슈팅</span>
 
                   <div className="flex flex-col xl:gap-3">
-                    <div className="bg-[#F1F1EF] xl:p-4 flex rounded-xl xl:w-[100%] text-black">
-                      <div className="flex flex-row xl:gap-5">
+                    <div className="bg-[#F1F1EF] p-4 flex rounded-xl w-[100%] text-black lg:px-5 lg:text-base text-sm">
+                      <div className="flex flex-row xl:gap-5 gap-3">
                         ⚠
                         <div className="flex flex-col w-full">
                           <div className="flex flex-row">
@@ -252,7 +265,7 @@ const divamusic = () => {
                     </div>
                   </div>
                 </div>
-                <div ref={asRef} className="flex flex-col xl:gap-5  xl:py-10">
+                <div ref={asRef} className="flex flex-col gap-5  xl:py-10">
                   <As />
                 </div>
               </div>
@@ -260,222 +273,7 @@ const divamusic = () => {
           </div>
         </div>
       </div>
-      <div className="absolute top-0 left-0 xl:w-1/6 xl:h-screen flex flex-col xl:justify-between z-30 pb-10 select-none  dark:text-white">
-        <div className="flex flex-row xl:gap-5 p-3 ">
-          {open ? (
-            <>
-              <span
-                className="material-symbols-outlined cursor-pointer"
-                onMouseLeave={handleCheck}
-                onClick={() => {
-                  setSideBar(true);
-                  setOpen(false);
-                }}
-              >
-                keyboard_double_arrow_right
-              </span>
-            </>
-          ) : (
-            <>
-              <span
-                className="material-symbols-outlined cursor-pointer"
-                onMouseEnter={() => setOpen(true)}
-              >
-                menu{" "}
-              </span>
-            </>
-          )}
-          <div className="flex flex-row xl:gap-2">
-            <span onClick={() => router.push("/")} className="cursor-pointer">
-              HOME
-            </span>
-            /<span className="cursor-pointer">DIV★</span>
-          </div>
-        </div>
-        <>
-          <div className={`h-full w-3/4 flex items-start`}>
-            <div
-              className={`w-full xl:p-7 border border-gray-200 shadow-lg bg-gray-100 transition-opacity duration-5000 ${
-                open ? "animate-fadeInLeft" : "animate-fadeOutLeft"
-              } dark:bg-gray-700 dark:border-none`}
-              onMouseEnter={() => setMenu(true)}
-              onMouseLeave={() => {
-                setOpen(false);
-              }}
-            >
-              <div className="flex flex-col xl:gap-10">
-                <div className="flex flex-row xl:gap-3">
-                  <Image
-                    src={profile}
-                    alt="프로필"
-                    className="w-6 h-6 rounded-full"
-                  />
-                  <span>이근학</span>
-                </div>
-                <div className="flex flex-col xl:gap-3">
-                  <span
-                    className="cursor-pointer"
-                    onClick={() => scrollToSection(divRef)}
-                  >
-                    DIV★
-                  </span>
-                  <span
-                    className="cursor-pointer"
-                    onClick={() => scrollToSection(introRef)}
-                  >
-                    소개
-                  </span>
-                  <span
-                    className="cursor-pointer"
-                    onClick={() => scrollToSection(techRef)}
-                  >
-                    사용 기술
-                  </span>
-                  <span
-                    className="cursor-pointer"
-                    onClick={() => scrollToSection(myRef)}
-                  >
-                    기여 사항
-                  </span>
 
-                  <div className="flex flex-col xl:gap-2 xl:px-5 text-sm">
-                    <span
-                      className="cursor-pointer"
-                      onClick={() => scrollToSection(carrouselRef)}
-                    >
-                      1️⃣ 캐러셀
-                    </span>
-                    <span
-                      className="cursor-pointer"
-                      onClick={() => scrollToSection(WebAudioAPIRef)}
-                    >
-                      2️⃣ Web Audio API
-                    </span>
-                    <span
-                      className="cursor-pointer"
-                      onClick={() => scrollToSection(JotaiRef)}
-                    >
-                      3️⃣ Jotai
-                    </span>
-                  </div>
-                  <span
-                    className="cursor-pointer"
-                    onClick={() => scrollToSection(troubleRef)}
-                  >
-                    트러블 슈팅
-                  </span>
-                  <span
-                    className="cursor-pointer"
-                    onClick={() => scrollToSection(asRef)}
-                  >
-                    회고
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </>
-      </div>
-
-      <div
-        className={`absolute top-0 left-0 xl:w-1/6 xl:h-screen z-50 select-none ${
-          sideBar ? "" : "animate-fadeOutLeft"
-        }  dark:text-white `}
-      >
-        <div
-          className="flex flex-col xl:justify-between pb-10 w-3/4 border border-gray-200 bg-gray-100 h-full dark:bg-gray-700 dark:border-none"
-          onMouseEnter={() => setSideBarIcon(true)}
-          onMouseLeave={() => setSideBarIcon(false)}
-        >
-          <div className="flex flex-col">
-            <div className="flex flex-row items-center justify-between xl:gap-5 p-3">
-              <div className="flex flex-row xl:gap-3">
-                <Image
-                  src={profile}
-                  alt="프로필"
-                  className="w-6 h-6 rounded-full"
-                />
-                <span>이근학</span>
-              </div>
-
-              <span
-                className={`material-symbols-outlined cursor-pointer  ${
-                  sideBarIcon ? "animate-fadeIn" : "animate-fadeOut"
-                }`}
-                onClick={() => setSideBar(false)}
-              >
-                keyboard_double_arrow_left
-              </span>
-            </div>
-            <div
-              className={`w-full xl:p-7 transition-opacity
-              }`}
-            >
-              <div className="flex flex-col xl:gap-10">
-                <div className="flex flex-col xl:gap-3">
-                  <span
-                    className="cursor-pointer"
-                    onClick={() => scrollToSection(divRef)}
-                  >
-                    DIV★
-                  </span>
-                  <span
-                    className="cursor-pointer"
-                    onClick={() => scrollToSection(introRef)}
-                  >
-                    소개
-                  </span>
-                  <span
-                    className="cursor-pointer"
-                    onClick={() => scrollToSection(techRef)}
-                  >
-                    사용 기술
-                  </span>
-                  <span
-                    className="cursor-pointer"
-                    onClick={() => scrollToSection(myRef)}
-                  >
-                    기여 사항
-                  </span>
-
-                  <div className="flex flex-col xl:gap-2 xl:px-5 text-sm">
-                    <span
-                      className="cursor-pointer"
-                      onClick={() => scrollToSection(carrouselRef)}
-                    >
-                      1️⃣ 캐러셀
-                    </span>
-                    <span
-                      className="cursor-pointer"
-                      onClick={() => scrollToSection(WebAudioAPIRef)}
-                    >
-                      2️⃣ Web Audio API
-                    </span>
-                    <span
-                      className="cursor-pointer"
-                      onClick={() => scrollToSection(JotaiRef)}
-                    >
-                      3️⃣ Jotai
-                    </span>
-                  </div>
-                  <span
-                    className="cursor-pointer"
-                    onClick={() => scrollToSection(troubleRef)}
-                  >
-                    트러블 슈팅
-                  </span>
-                  <span
-                    className="cursor-pointer"
-                    onClick={() => scrollToSection(asRef)}
-                  >
-                    회고
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </>
   );
 };

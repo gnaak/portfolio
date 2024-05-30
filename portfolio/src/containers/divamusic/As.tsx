@@ -1,11 +1,11 @@
 const As = () => {
   return (
     <>
-      <span className="font-bold text-xl">회고</span>
+      <span className="font-bold md:text-xl">회고</span>
 
       <div className="flex flex-col xl:gap-3">
         <div className="flex flex-col w-full">
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1 md:text-base text-sm ">
             <span>
               1️⃣ 기획부터 배포 단계까지 진행하며 서비스 구체화의 중요성을
               깨달았습니다.
