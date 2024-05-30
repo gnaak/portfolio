@@ -1,4 +1,3 @@
-"use client";
 import next from "@/assets/skills/next.png";
 import ts from "@/assets/skills/ts.png";
 import react from "@/assets/skills/react.svg";

@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import Bad from "./Bad";
 import Good from "./Good";

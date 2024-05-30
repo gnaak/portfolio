@@ -1,5 +1,3 @@
-"use client";
-
 import billybully from "@/assets/projects/BILLYBULLY.png";
 import Image from "next/image";
 import { useRouter } from "next/navigation";

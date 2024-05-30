@@ -1,4 +1,3 @@
-"use client";
 import zustand from "@/assets/skills/zustand.png";
 import react_query from "@/assets/skills/react_query.png";
 import ts from "@/assets/skills/ts.png";

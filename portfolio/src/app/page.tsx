@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Base from "../components/Base";
 import Skills from "../components/Skills/Skills";

@@ -1,5 +1,3 @@
-"use client";
-
 import readit from "@/assets/projects/readit.png";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
