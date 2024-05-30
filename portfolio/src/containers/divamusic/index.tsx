@@ -1,3 +1,4 @@
+"use client";
 import next from "@/assets/skills/next.png";
 import ts from "@/assets/skills/ts.png";
 import react from "@/assets/skills/react.svg";
@@ -10,7 +11,7 @@ import mypage from "@/assets/projects/mypage.gif";
 import As from "./As";
 import Image from "next/image";
 import profile from "@/assets/projects/skawkaks.png";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Intro from "./Intro";
 import Diva from "./Diva";

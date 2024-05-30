@@ -1,3 +1,5 @@
+"use client";
+
 import diva from "@/assets/projects/DIVA.png";
 import Image from "next/image";
 import { useRouter } from "next/navigation";

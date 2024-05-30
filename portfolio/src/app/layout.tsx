@@ -18,7 +18,10 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <head>
-
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+        />
       </head>
       <body className={inter.className}>
         {children}

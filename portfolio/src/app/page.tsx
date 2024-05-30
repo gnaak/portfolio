@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Base from "../components/Base";
 import Skills from "../components/Skills/Skills";
@@ -33,7 +35,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="relative overflow-hidden h-screen dark:bg-gray-800 dark:text-white ">
+      <div className="relative overflow-hidden h-screen dark:bg-gray-800 dark:text-white">
         {/* <Headers /> */}
         <div className="flex flex-col overflow-auto h-full">
           <div
