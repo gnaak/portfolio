@@ -273,7 +273,222 @@ const divamusic = () => {
           </div>
         </div>
       </div>
+    <div className="absolute top-0 left-0 w-1/6 xl:h-screen flex flex-col xl:justify-between z-30 pb-10 select-none  dark:text-white">
+        <div className="flex flex-row xl:gap-5 gap-3 p-3 ">
+          {open ? (
+            <>
+              <span
+                className="material-symbols-outlined cursor-pointer"
+                onMouseLeave={handleCheck}
+                onClick={() => {
+                  setSideBar(true);
+                  setOpen(false);
+                }}
+              >
+                keyboard_double_arrow_right
+              </span>
+            </>
+          ) : (
+            <>
+              <span
+                className="material-symbols-outlined cursor-pointer"
+                onMouseEnter={() => setOpen(true)}
+              >
+                menu{" "}
+              </span>
+            </>
+          )}
+          <div className="flex flex-row gap-2">
+            <span onClick={() => router.push("/")} className="cursor-pointer">
+              HOME
+            </span>
+            /<span className="cursor-pointer">DIV★</span>
+          </div>
+        </div>
+        <>
+          <div className={`h-full 3xl:w-3/4 w-full xl:flex items-start hidden `}>
+            <div
+              className={`w-full p-7 border border-gray-200 shadow-lg bg-gray-100 transition-opacity duration-5000 ${
+                open ? "animate-fadeInLeft" : "animate-fadeOutLeft"
+              } dark:bg-gray-700 dark:border-none`}
+              onMouseEnter={() => setMenu(true)}
+              onMouseLeave={() => {
+                setOpen(false);
+              }}
+            >
+              <div className="flex flex-col gap-10">
+                <div className="flex flex-row gap-3">
+                  <Image
+                    src={profile}
+                    alt="프로필"
+                    className="w-6 h-6 rounded-full"
+                  />
+                  <span>이근학</span>
+                </div>
+                <div className="flex flex-col xl:gap-3">
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => scrollToSection(divRef)}
+                  >
+                    DIV★
+                  </span>
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => scrollToSection(introRef)}
+                  >
+                    소개
+                  </span>
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => scrollToSection(techRef)}
+                  >
+                    사용 기술
+                  </span>
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => scrollToSection(myRef)}
+                  >
+                    기여 사항
+                  </span>
 
+                  <div className="flex flex-col xl:gap-2 xl:px-5 text-sm">
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => scrollToSection(carrouselRef)}
+                    >
+                      1️⃣ 캐러셀
+                    </span>
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => scrollToSection(WebAudioAPIRef)}
+                    >
+                      2️⃣ Web Audio API
+                    </span>
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => scrollToSection(JotaiRef)}
+                    >
+                      3️⃣ Jotai
+                    </span>
+                  </div>
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => scrollToSection(troubleRef)}
+                  >
+                    트러블 슈팅
+                  </span>
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => scrollToSection(asRef)}
+                  >
+                    회고
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      </div>
+
+      <div
+        className={`absolute top-0 left-0 w-1/6 xl:h-screen z-50 select-none xl:inline hidden ${
+          sideBar ? "" : "animate-fadeOutLeft"
+        }  dark:text-white `}
+      >
+        <div
+          className="flex flex-col xl:justify-between pb-10 3xl:w-3/4 w-full border border-gray-200 bg-gray-100 h-full dark:bg-gray-700 dark:border-none"
+          onMouseEnter={() => setSideBarIcon(true)}
+          onMouseLeave={() => setSideBarIcon(false)}
+        >
+          <div className="flex flex-col">
+            <div className="flex flex-row items-center justify-between gap-5 p-3">
+              <div className="flex flex-row gap-3">
+                <Image
+                  src={profile}
+                  alt="프로필"
+                  className="w-6 h-6 rounded-full"
+                />
+                <span>이근학</span>
+              </div>
+
+              <span
+                className={`material-symbols-outlined cursor-pointer  ${
+                  sideBarIcon ? "animate-fadeIn" : "animate-fadeOut"
+                }`}
+                onClick={() => setSideBar(false)}
+              >
+                keyboard_double_arrow_left
+              </span>
+            </div>
+            <div
+              className={`w-full p-7 transition-opacity
+              }`}
+            >
+              <div className="flex flex-col gap-10">
+                <div className="flex flex-col gap-3">
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => scrollToSection(divRef)}
+                  >
+                    DIV★
+                  </span>
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => scrollToSection(introRef)}
+                  >
+                    소개
+                  </span>
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => scrollToSection(techRef)}
+                  >
+                    사용 기술
+                  </span>
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => scrollToSection(myRef)}
+                  >
+                    기여 사항
+                  </span>
+
+                  <div className="flex flex-col xl:gap-2 xl:px-5 text-sm">
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => scrollToSection(carrouselRef)}
+                    >
+                      1️⃣ 캐러셀
+                    </span>
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => scrollToSection(WebAudioAPIRef)}
+                    >
+                      2️⃣ Web Audio API
+                    </span>
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => scrollToSection(JotaiRef)}
+                    >
+                      3️⃣ Jotai
+                    </span>
+                  </div>
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => scrollToSection(troubleRef)}
+                  >
+                    트러블 슈팅
+                  </span>
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => scrollToSection(asRef)}
+                  >
+                    회고
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

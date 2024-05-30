@@ -326,8 +326,8 @@ const divamusic = () => {
           </div>
         </div>
       </div>
-      <div className="absolute top-0 left-0 xl:w-1/6 xl:h-screen flex flex-col xl:justify-between z-30 pb-10 select-none">
-        <div className="flex flex-row xl:gap-5 p-3">
+      <div className="absolute top-0 left-0 w-1/6 xl:h-screen flex flex-col xl:justify-between z-30 pb-10 select-none  dark:text-white">
+        <div className="flex flex-row xl:gap-5 gap-3 p-3 ">
           {open ? (
             <>
               <span
@@ -351,7 +351,7 @@ const divamusic = () => {
               </span>
             </>
           )}
-          <div className="flex flex-row xl:gap-2">
+          <div className="flex flex-row gap-2">
             <span onClick={() => router.push("/")} className="cursor-pointer">
               HOME
             </span>
@@ -359,18 +359,18 @@ const divamusic = () => {
           </div>
         </div>
         <>
-          <div className={`h-full w-3/4 flex items-start`}>
+          <div className={`h-full 3xl:w-3/4 w-full xl:flex hidden items-start`}>
             <div
-              className={`w-full xl:p-7 border border-gray-200 shadow-lg bg-gray-100 transition-opacity duration-5000 ${
+              className={`w-full p-7 border border-gray-200 shadow-lg bg-gray-100 transition-opacity duration-5000 ${
                 open ? "animate-fadeInLeft" : "animate-fadeOutLeft"
-              }`}
+              } dark:bg-gray-700 dark:border-none`}
               onMouseEnter={() => setMenu(true)}
               onMouseLeave={() => {
                 setOpen(false);
               }}
             >
-              <div className="flex flex-col xl:gap-10">
-                <div className="flex flex-row xl:gap-3">
+              <div className="flex flex-col gap-10">
+                <div className="flex flex-row gap-3">
                   <Image
                     src={profile}
                     alt="프로필"
@@ -450,12 +450,12 @@ const divamusic = () => {
       </div>
 
       <div
-        className={`absolute top-0 left-0 xl:w-1/6 xl:h-screen z-50 select-none ${
+        className={`absolute top-0 left-0 w-1/6 xl:h-screen z-50 select-none xl:inline hidden ${
           sideBar ? "" : "animate-fadeOutLeft"
-        }`}
+        }  dark:text-white `}
       >
         <div
-          className="flex flex-col xl:justify-between pb-10 w-3/4 border border-gray-200 bg-gray-100 h-full"
+          className="flex flex-col xl:justify-between pb-10 3xl:w-3/4 w-full border border-gray-200 bg-gray-100 h-full dark:bg-gray-700 dark:border-none"
           onMouseEnter={() => setSideBarIcon(true)}
           onMouseLeave={() => setSideBarIcon(false)}
         >
