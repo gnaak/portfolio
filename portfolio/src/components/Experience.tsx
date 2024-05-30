@@ -7,11 +7,11 @@ const Exp = () => {
 
   return (
     <>
-      <div className="lg:w-3/5 xl:px-20">
+      <div className="lg:w-3/5 xl:px-20 md:w-4/5">
         <div className="flex flex-col lg:gap-5">
           <div className="flex flex-col gap-2">
             <div className="flex flex-row justify-between items-end">
-              <span className="font-bold xl:text-2xl lg:text-xl">
+              <span className="font-bold xl:text-2xl lg:text-xl md:text-lg">
                 EXPERIENCE
               </span>
               <div className="text-blue-600 cursor-pointer underline dark:text-white">

@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode:'class',
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -43,9 +43,8 @@ const config: Config = {
         fadeOut: "fadeOut 0.5s forwards",
       },
       screens: {
-        xs: "375px",
-        sm: "640px",
-        md: "768px",
+        sm: "320px",
+        md: "640px",
         lg: "1024px",
         xl: "1280px",
         "2xl": "1440px",

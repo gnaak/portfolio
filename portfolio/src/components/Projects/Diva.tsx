@@ -9,7 +9,7 @@ const Diva = () => {
   return (
     <>
       <div
-        className="flex flex-col justify-between xl:w-[32%] lg:w-[48%] aspect-3/4  border border-gray-400 p-3 rounded-xl shadow-xl lg:gap-7 hover:cursor-pointer hover:-translate-y-1 hover:scale-105 duration-300"
+        className="flex flex-col justify-between xl:w-[32%] md:w-[48%] aspect-3/4  border border-gray-400 p-3 rounded-xl shadow-xl lg:gap-7 hover:cursor-pointer hover:-translate-y-1 hover:scale-105 duration-300"
         onClick={() => router.push("/divamusic")}
       >
         <Image

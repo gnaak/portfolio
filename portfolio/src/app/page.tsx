@@ -36,36 +36,36 @@ const Home = () => {
 
   return (
     <>
-      <div className="relative overflow-hidden h-screen dark:bg-gray-800 dark:text-white ">
+      <div className="relative overflow-hidden h-screen dark:bg-gray-800 dark:text-white">
         <div className="flex flex-col overflow-auto h-full">
-        {/* <Headers /> */}
+          {/* <Headers /> */}
           <div
             ref={baseRef}
-            className="w-full flex-col flex items-center py-10 border border-black"
+            className="w-full flex-col flex items-center py-10"
           >
             <Base />
           </div>
           <div
             ref={skillRef}
-            className="w-full flex-col flex items-center xl:py-10 lg:py-5"
+            className="w-full flex-col flex items-center xl:py-10 md:py-5"
           >
             <Skills />
           </div>
           <div
             ref={certiRef}
-            className="w-full flex-col flex items-center xl:py-10 lg:py-5"
+            className="w-full flex-col flex items-center xl:py-10 md:py-5"
           >
             <Certi />
           </div>
           <div
             ref={expRef}
-            className="w-full flex-col flex items-center xl:py-10 lg:py-5"
+            className="w-full flex-col flex items-center xl:py-10 md:py-5"
           >
             <Exp />
           </div>
           <div
             ref={pjtRef}
-            className="w-full flex-col flex items-center xl:py-10 lg:py-5"
+            className="w-full flex-col flex items-center xl:py-10 md:py-5"
           >
             <Projects />
           </div>

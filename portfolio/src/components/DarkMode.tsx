@@ -32,7 +32,7 @@ const DarkModeToggle = () => {
   const [open, setOpen] = useState<boolean>(false)
   return (
     <>
-      <div className="absolute 3xl:top-0 3xl:right-12 lg:top-10 lg:right-10 flex flex-col xl:justify-between select-none">
+      <div className="absolute 3xl:top-0 3xl:right-12 md:top-10 md:right-10 flex flex-col xl:justify-between select-none">
         <div className="flex flex-row p-3 justify-between lg:w-24 ">
           <button onClick={toggleDarkMode}>
             <div
