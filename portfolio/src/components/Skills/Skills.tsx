@@ -14,10 +14,10 @@ const Skills = () => {
         <div className="flex flex-col lg:gap-10 gap-5">
           <div className="flex flex-col gap-2">
             <div className="flex flex-row justify-between items-end">
-              <span className="font-bold xl:text-2xl lg:text-xl text-lg">
+              <span className="font-bold xl:text-2xl lg:text-xl md:text-lg">
                 SKILLS
               </span>
-              <div className="text-blue-600 cursor-pointer underline dark:text-white">
+              <div className="text-blue-600 cursor-pointer underline dark:text-white md:text-base text-sm">
                 {open ? (
                   <span onClick={() => setOpen(false)}>닫기</span>
                 ) : (
@@ -28,7 +28,7 @@ const Skills = () => {
             <span className="w-full border border-gray-200"></span>
           </div>
           {open ? (
-            <div className="flex flex-col lg:gap-10 md:gap-5">
+            <div className="flex flex-col lg:gap-10 gap-5">
               <Good />
               <Normal />
               <Bad />

@@ -41,31 +41,31 @@ const Home = () => {
           {/* <Headers /> */}
           <div
             ref={baseRef}
-            className="w-full flex-col flex items-center py-10"
+            className="w-full flex-col flex items-center md:py-10 md:pt-20 pt-10 py-5"
           >
             <Base />
           </div>
           <div
             ref={skillRef}
-            className="w-full flex-col flex items-center xl:py-10 md:py-5"
+            className="w-full flex-col flex items-center md:py-10 py-5"
           >
             <Skills />
           </div>
           <div
             ref={certiRef}
-            className="w-full flex-col flex items-center xl:py-10 md:py-5"
+            className="w-full flex-col flex items-center md:py-10 py-5"
           >
             <Certi />
           </div>
           <div
             ref={expRef}
-            className="w-full flex-col flex items-center xl:py-10 md:py-5"
+            className="w-full flex-col flex items-center md:py-10 py-5"
           >
             <Exp />
           </div>
           <div
             ref={pjtRef}
-            className="w-full flex-col flex items-center xl:py-10 md:py-5"
+            className="w-full flex-col flex items-center md:py-10 py-5"
           >
             <Projects />
           </div>
