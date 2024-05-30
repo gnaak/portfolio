@@ -16,7 +16,7 @@ import { useRouter } from "next/navigation";
 import Intro from "./Intro";
 import Readit from "./Readit";
 
-const divamusic = () => {
+const Divamusic = () => {
   const router = useRouter();
   const [open, setOpen] = useState<boolean>(false);
   const [isMenu, setMenu] = useState<boolean>(false);
@@ -558,4 +558,4 @@ const divamusic = () => {
   );
 };
 
-export default divamusic;
+export default Divamusic;
