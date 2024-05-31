@@ -18,6 +18,10 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <head>
+        <meta
+          name="google-site-verification"
+          content="ZEH9an07MXfybFG1man-w14tXUm_ec_cKXbJE0IXsLQ"
+        />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
