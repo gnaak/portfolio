@@ -31,7 +31,7 @@ const DarkModeToggle = () => {
   return (
     <>
       <div className="absolute top-0 3xl:right-0 w-screen right-0 flex flex-col items-end select-none bg-white  dark:bg-gray-900">
-        <div className="lg:px-10 px-5">
+        <div className="xl:px-10 md:px-3 px-1">
 
         <div className="flex flex-row p-2 justify-between w-20">
           <button onClick={toggleDarkMode}>

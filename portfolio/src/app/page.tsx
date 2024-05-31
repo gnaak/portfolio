@@ -100,7 +100,7 @@ const Home = () => {
                 </span>
               </>
             )}
-            <div className="flex flex-row gap-2">
+            <div className="md:flex hidden flex-row gap-2">
               <span className="cursor-pointer">HOME</span>
             </div>
           </div>

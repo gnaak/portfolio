@@ -306,7 +306,7 @@ const BillyBully = () => {
               </span>
             </>
           )}
-          <div className="flex flex-row gap-2">
+          <div className="md:flex hidden flex-row gap-2">
             <span onClick={() => router.push("/")} className="cursor-pointer">
               HOME
             </span>
