@@ -40,7 +40,7 @@ const Exp = () => {
                     건국대학교 화학공학부
                   </span>
                   <span className="xl:text-lg md:inline hidden">
-                    (2023.07.05 - 2024.06.30)
+                    (2015.03.02 - 2021.08.31)
                   </span>
                 </div>
               </div>
