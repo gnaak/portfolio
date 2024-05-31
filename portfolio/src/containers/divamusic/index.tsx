@@ -156,12 +156,11 @@ const Divamusic = () => {
                         <Image
                           src={landing}
                           alt="랜딩 페이지"
-                          className="w-auto h-auto md:inline hidden"
+                          className="md:inline hidden"
                         />
                         <Image
                           src={home}
                           alt="홈 페이지"
-                          className="w-auto h-auto"
                         />
                       </div>
                     </div>
@@ -202,12 +201,11 @@ const Divamusic = () => {
                         <Image
                           src={rangecheck}
                           alt="음역대 테스트"
-                          className="w-auto h-auto"
                         />
                         <Image
                           src={mypage}
                           alt="마이 페이지"
-                          className="w-auto h-auto md:inline hidden"
+                          className=" md:inline hidden"
                         />
                       </div>
                     </div>

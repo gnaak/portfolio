@@ -169,7 +169,6 @@ const Divamusic = () => {
                         <Image
                           src={viewer}
                           alt="뷰어 페이지 페이지"
-                          className="w-auto h-auto"
                         />
                       </div>
                     </div>
@@ -209,7 +208,6 @@ const Divamusic = () => {
                         <Image
                           src={infinitequery}
                           alt="글 & 커뮤니티 페이지 페이지"
-                          className="w-auto h-auto"
                         />
                       </div>
                     </div>
@@ -242,7 +240,6 @@ const Divamusic = () => {
                       <Image
                         src={chart}
                         alt="챌린지 페이지"
-                        className="w-auto h-auto"
                       />
                     </div>
                   </div>
@@ -280,7 +277,6 @@ const Divamusic = () => {
                       <Image
                         src={commu}
                         alt="커뮤니티 페이지"
-                        className="w-auto h-auto"
                       />
                     </div>
                   </div>

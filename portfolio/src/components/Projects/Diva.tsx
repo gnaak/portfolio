@@ -21,7 +21,7 @@ const Diva = () => {
           <div className="flex flex-col lg:gap-2">
             <span className="font-bold 3xl:text-lg">DIVA</span>
             <span className="font-bold 3xl:text-base md:text-sm text-xs">
-              SSAFY 공통PJT 최우수상
+              SSAFY 프로젝트 최우수상
             </span>
             <span className="3xl:text-base md:text-sm text-xs">
               사용자 음역대 기반 음악 추천 및 연습 서비스

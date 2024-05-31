@@ -167,7 +167,6 @@ const BillyBully = () => {
                         <Image
                           src={map}
                           alt="게임 페이지"
-                          className="w-auto h-auto"
                         />
                       </div>
                     </div>
@@ -203,7 +202,6 @@ const BillyBully = () => {
                         <Image
                           src={dice}
                           alt="주사위"
-                          className="w-auto h-auto"
                         />
                       </div>
                     </div>
@@ -231,7 +229,7 @@ const BillyBully = () => {
                       </div>
                     </div>
                     <div className="flex flex-row justify-evenly xl:border lg:border-gray-400 xl:py-5 rounded-xl md:shadow-xl shadow-md">
-                      <Image src={cards} alt="카드" className="w-auto h-auto" />
+                      <Image src={cards} alt="카드"/>
                     </div>
                   </div>
                 </div>
