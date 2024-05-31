@@ -15,6 +15,7 @@ import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Intro from "./Intro";
 import Diva from "./Diva";
+import { useMediaQuery } from "react-responsive";
 
 const Divamusic = () => {
   const router = useRouter();
@@ -22,6 +23,8 @@ const Divamusic = () => {
   const [isMenu, setMenu] = useState<boolean>(false);
   const [sideBar, setSideBar] = useState<boolean>(false);
   const [sideBarIcon, setSideBarIcon] = useState<boolean>(false);
+  const [smallMenu, setSmallMenu] = useState<boolean>(false);
+
   const divRef = useRef(null);
   const introRef = useRef(null);
   const techRef = useRef(null);
@@ -33,6 +36,7 @@ const Divamusic = () => {
   const asRef = useRef(null);
   const [num, setNum] = useState(0);
   const [num2, setNum2] = useState(0);
+  const isLargeScreen = useMediaQuery({ query: "(min-width: 1280px)" });
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
@@ -44,6 +48,11 @@ const Divamusic = () => {
         setOpen(false);
       }
     }, 2000);
+  };
+
+  const handleMouseEnter = () => {
+    setOpen(true);
+    setNum2(1);
   };
 
   return (
@@ -299,10 +308,8 @@ const Divamusic = () => {
             <>
               <span
                 className="material-symbols-outlined cursor-pointer"
-                onMouseEnter={() => {
-                  setOpen(true);
-                  setNum2(1);
-                }}
+                onMouseEnter={() => (isLargeScreen ? handleMouseEnter() : null)}
+                onClick={() => (isLargeScreen ? null : setSmallMenu(true))}
               >
                 menu{" "}
               </span>
@@ -316,6 +323,58 @@ const Divamusic = () => {
           </div>
         </div>
         <>
+          {smallMenu ? (
+            <div className="absolute top-12 left-0 z-50 justify-between items-center p-3 flex flex-row w-screen bg-gray-100 dark:bg-gray-700">
+              <div className="flex flex-row px-2 md:gap-5 gap-5 md:px-10 md:text-base text-sm">
+                <span
+                  className="cursor-pointer"
+                  onClick={() => scrollToSection(divRef)}
+                >
+                  DIV★
+                </span>
+                <span
+                  className="cursor-pointer"
+                  onClick={() => scrollToSection(introRef)}
+                >
+                  소개
+                </span>
+                <span
+                  className="cursor-pointer"
+                  onClick={() => scrollToSection(techRef)}
+                >
+                  사용 기술
+                </span>
+                <span
+                  className="cursor-pointer"
+                  onClick={() => scrollToSection(myRef)}
+                >
+                  기여 사항
+                </span>
+
+                <span
+                  className="cursor-pointer md:inline hidden"
+                  onClick={() => scrollToSection(troubleRef)}
+                >
+                  트러블 슈팅
+                </span>
+                <span
+                  className="cursor-pointer"
+                  onClick={() => scrollToSection(asRef)}
+                >
+                  회고
+                </span>
+              </div>
+              <div className="flex flex-row justify-center">
+                <span
+                  className="material-symbols-outlined cursor-pointer"
+                  onClick={() => setSmallMenu(false)}
+                >
+                  close
+                </span>
+              </div>
+            </div>
+          ) : null}
+
           <div
             className={`h-full 3xl:w-3/4 w-full xl:flex items-start hidden `}
           >

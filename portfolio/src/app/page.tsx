@@ -10,12 +10,14 @@ import profile from "@/assets/projects/skawkaks.png";
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import DarkModeToggle from "@/components/DarkMode";
+import { useMediaQuery } from "react-responsive";
 const Home = () => {
   const router = useRouter();
   const [open, setOpen] = useState<boolean>(false);
   const [isMenu, setMenu] = useState<boolean>(false);
   const [sideBar, setSideBar] = useState<boolean>(false);
   const [sideBarIcon, setSideBarIcon] = useState<boolean>(false);
+  const [smallMenu, setSmallMenu] = useState<boolean>(false);
   const baseRef = useRef(null);
   const skillRef = useRef(null);
   const certiRef = useRef(null);
@@ -23,7 +25,7 @@ const Home = () => {
   const pjtRef = useRef(null);
   const [num, setNum] = useState(0);
   const [num2, setNum2] = useState(0);
-
+  const isLargeScreen = useMediaQuery({ query: "(min-width: 1280px)" });
   const handleCheck = () => {
     setTimeout(() => {
       if (!isMenu) {
@@ -35,6 +37,10 @@ const Home = () => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleMouseEnter = () => {
+    setOpen(true);
+    setNum2(1);
+  };
   return (
     <>
       <div className="relative overflow-hidden h-screen dark:bg-gray-800 dark:text-white">
@@ -52,6 +58,9 @@ const Home = () => {
           >
             <Skills />
           </div>
+          <div ref={pjtRef} className="w-full flex-col flex items-center py-10">
+            <Projects />
+          </div>
           <div
             ref={certiRef}
             className="w-full flex-col flex items-center py-10"
@@ -61,11 +70,8 @@ const Home = () => {
           <div ref={expRef} className="w-full flex-col flex items-center py-10">
             <Exp />
           </div>
-          <div ref={pjtRef} className="w-full flex-col flex items-center py-10">
-            <Projects />
-          </div>
         </div>
-        <div className="absolute top-0 left-0 w-1/6 xl:h-screen flex flex-col xl:justify-between z-30 pb-10 select-none  dark:text-white">
+        <div className="absolute top-0 left-0 w-1/6 xl:h-screen flex flex-col xl:justify-between z-30  select-none  dark:text-white">
           <div className="flex flex-row xl:gap-5 gap-3 p-3 ">
             {open ? (
               <>
@@ -85,10 +91,10 @@ const Home = () => {
               <>
                 <span
                   className="material-symbols-outlined cursor-pointer"
-                  onMouseEnter={() => {
-                    setOpen(true);
-                    setNum2(1);
-                  }}
+                  onMouseEnter={() =>
+                    isLargeScreen ? handleMouseEnter() : null
+                  }
+                  onClick={() => (isLargeScreen ? null : setSmallMenu(true))}
                 >
                   menu{" "}
                 </span>
@@ -99,6 +105,51 @@ const Home = () => {
             </div>
           </div>
           <>
+            {smallMenu ? (
+              <div className="absolute top-12 left-0 z-50 justify-between items-center p-3 flex flex-row w-screen bg-gray-100 dark:bg-gray-700">
+                <div className="flex flex-row px-2 md:gap-5 gap-5 md:px-10 md:text-base text-sm">
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => scrollToSection(baseRef)}
+                  >
+                    소개
+                  </span>
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => scrollToSection(skillRef)}
+                  >
+                    SKILLS
+                  </span>
+                  <span
+                    className="cursor-pointer md:inline hidden"
+                    onClick={() => scrollToSection(certiRef)}
+                  >
+                    CERTIFICATES{" "}
+                  </span>
+                  <span
+                    className="cursor-pointer md:inline hidden"
+                    onClick={() => scrollToSection(expRef)}
+                  >
+                    EXPERIENCE{" "}
+                  </span>
+
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => scrollToSection(pjtRef)}
+                  >
+                    PROJECTS
+                  </span>
+                </div>
+                <div className="flex flex-row justify-center">
+                  <span
+                    className="material-symbols-outlined cursor-pointer"
+                    onClick={() => setSmallMenu(false)}
+                  >
+                    close
+                  </span>
+                </div>
+              </div>
+            ) : null}
             <div
               className={`h-full 3xl:w-3/4 w-full xl:flex hidden items-start`}
             >
@@ -189,7 +240,7 @@ const Home = () => {
               ? "z-50"
               : num === 0
               ? "opacity-0"
-              : "z-50 animate-fadeOutLeft"
+              : "z-40 animate-fadeOutLeft"
           } dark:text-white`}
         >
           <div
