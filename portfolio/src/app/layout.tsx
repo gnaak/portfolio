@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "이근학 포트폴리오",
   description: "FE개발자 이근학 포트폴리오",
+  
 };
 
 export default function RootLayout({
@@ -21,6 +22,10 @@ export default function RootLayout({
         <meta
           name="google-site-verification"
           content="ZEH9an07MXfybFG1man-w14tXUm_ec_cKXbJE0IXsLQ"
+        />
+        <meta
+          name="naver-site-verification"
+          content="b04871ffbc9a3d5f2480fe0818fb3b9f4e7d97dd"
         />
         <link
           rel="stylesheet"
