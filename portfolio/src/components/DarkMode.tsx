@@ -17,7 +17,6 @@ const DarkModeToggle = () => {
   }, []);
 
   const toggleDarkMode = () => {
-    console.log(123);
     if (darkMode) {
       document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
@@ -43,7 +42,7 @@ const DarkModeToggle = () => {
               >
               <Image src={lightmode} alt="다크모드" />
               {open ? (
-                <div className="absolute border border-gray-400 top-full left-1/2 transform -translate-x-1/2 right-full w-36 text-xs dark:text-white">
+                <div className="absolute border border-gray-400 top-full left-1/2 transform -translate-x-1/2 right-full w-36 text-xs dark:text-white xl:inline hidden">
                   {darkMode ? (
                     <span>switch to light mode</span>
                   ) : (

@@ -49,7 +49,7 @@ const BillyBully = () => {
     <>
       <div className="relative flex-col w-full h-screen flex items-center overflow-hidden select-none  dark:bg-gray-800 dark:text-white">
         <div className="xl:w-full flex justify-center overflow-auto">
-          <div className="w-3/5">
+          <div className="lg:w-3/5 w-4/5">
             <div
               ref={divRef}
               className="flex flex-col gap-2 xl:px-10 py-20 pb-10"
@@ -280,8 +280,7 @@ const BillyBully = () => {
                 onClick={() => {
                   setSideBar(true);
                   setOpen(false);
-                                    setNum(1);
-
+                  setNum(1);
                 }}
               >
                 keyboard_double_arrow_right

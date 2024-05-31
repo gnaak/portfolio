@@ -4,8 +4,8 @@ import Image from "next/image";
 const Diva = () => {
   return (
     <>
-      <div className="flex md:flex-row flex-col justify-between">
-        <div className="flex flex-col items-center xl:py-7 justify-center xl:w-1/3 md:w-1/4 md:justify-start">
+      <div className="flex flex-row justify-between">
+        <div className="flex flex-col items-center xl:py-7 justify-center xl:w-1/3 md:w-1/2 w-full md:justify-start">
           <Image
             src={diva}
             alt="디바"

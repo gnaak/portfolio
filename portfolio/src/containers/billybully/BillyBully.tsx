@@ -5,12 +5,12 @@ const Readit = () => {
   return (
     <>
       <div className="flex md:flex-row flex-col justify-between">
-        <div className="flex flex-col items-center xl:py-7 justify-center xl:w-1/3 md:w-1/4 md:justify-start">
+        <div className="flex flex-col items-center xl:py-7 justify-center xl:w-1/3 md:w-1/2 w-full md:justify-start">
           <div className="flex justify-center items-center  bg-yellow-200 border-gray-400 rounded-xl xl:py-7 xl:w-3/4  aspect-4/3 ">
             <Image
               src={billybully}
               alt="billybully"
-              className="bg-[#]"
+              className="bg-[#] p-3"
               width="256"
               height="256"
               priority={true}

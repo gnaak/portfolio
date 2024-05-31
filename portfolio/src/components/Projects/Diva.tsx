@@ -9,29 +9,31 @@ const Diva = () => {
   return (
     <>
       <div
-        className="flex flex-col justify-between xl:w-[32%] md:w-[48%] aspect-3/4  border border-gray-400 p-3 rounded-xl shadow-xl lg:gap-7 hover:cursor-pointer hover:-translate-y-1 hover:scale-105 duration-300"
+        className="flex xl:flex-col xl:items-start items-center flex-row xl:justify-between xl:w-[24%] w-full xl:aspect-square  border border-gray-400 p-3 gap-5 rounded-xl shadow-xl hover:cursor-pointer hover:-translate-y-1 hover:scale-105 duration-300"
         onClick={() => router.push("/divamusic")}
       >
         <Image
           src={diva}
           alt="디바"
-          className="w-20 h-20 bg-[#080D44] rounded-xl "
+          className="2xl:w-20 2xl:h-20 md:w-16 md:h-16 h-12 w-12 bg-[#080D44] rounded-xl aspect-4/3 "
         />
         <div className="flex flex-col lg:gap-5 justify-between">
-          <div className="flex jus">
-            <span className="font-bold lg:text-lg">DIVA</span>
-          </div>
           <div className="flex flex-col lg:gap-2">
-            <span className="font-bold">SSAFY 공통PJT 최우수상 (1등)</span>
-            <div className="">음역 기반 음악 추천 및 연습 서비스</div>
-            <div className="flex flex-row lg:gap-2">
-              <span className="bg-[#3179c6] px-2 text-white border border-black rounded-md">
-                Typescript
-              </span>
-              <span className="bg-[#000000] px-2 text-white border border-black rounded-md">
-                Next.js
-              </span>
-            </div>
+            <span className="font-bold 3xl:text-lg">DIVA</span>
+            <span className="font-bold 3xl:text-base md:text-sm text-xs">
+              SSAFY 공통PJT 최우수상
+            </span>
+            <span className="3xl:text-base md:text-sm text-xs">
+              사용자 음역대 기반 음악 추천 및 연습 서비스
+            </span>
+          </div>
+          <div className="3xl:flex flex-row lg:gap-2 hidden">
+            <span className="bg-[#3179c6] px-2 text-white border border-black rounded-md">
+              Typescript
+            </span>
+            <span className="bg-[#000000] px-2 text-white border border-black rounded-md">
+              Next.js
+            </span>
           </div>
         </div>
       </div>
