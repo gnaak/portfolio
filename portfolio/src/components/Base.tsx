@@ -45,7 +45,7 @@ const Base = () => {
               💡
               <div className=" xl:text-xl md:text-base text-sm">
                 <span className=" hidden lg:inline">
-                  상상을 현실로 옮겨주는 코딩에 흥미를 느낀
+                  상상을 현실로 옮겨주는데 흥미를 느낀
                 </span>
                 <span className="hidden md:inline">
                   <span className="font-bold">&nbsp;더 좋은 UX</span>에 관심이

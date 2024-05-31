@@ -1,7 +1,3 @@
-import diva from "@/assets/projects/DIVA.png";
-import billy from "@/assets/projects/BILLYBULLY.png";
-import readit from "@/assets/projects/skawkaks.png";
-import Image from "next/image";
 import Diva from "./Diva";
 import Readit from "./ReadIt";
 import BillyBully from "./BillyBully";

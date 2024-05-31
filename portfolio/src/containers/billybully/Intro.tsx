@@ -1,5 +1,6 @@
 import Image from "next/image";
 import link from "@/assets/link.png";
+import notion from "@/assets/notion.png";
 
 const Intro = () => {
   return (
@@ -12,15 +13,30 @@ const Intro = () => {
             <span className="font-bold ">BillyBully </span>
           </div>
           <div className="md:flex flex-row items-center gap-1 hidden">
-            <Image
-              src={link}
-              alt="깃허브"
-              className="w-8 h-8"
-              priority={false}
-            />
-            <span className="text-blue-600 underline dark:text-white">
-              <a href="https://github.com/gnaak/billybully">Link</a>
-            </span>
+            <div className="flex flex-row gap-1 items-center">
+              <Image
+                src={notion}
+                alt="노션"
+                className="w-6 h-6"
+                priority={false}
+              />
+              <span className="text-blue-600 underline dark:text-white">
+                <a href="https://www.notion.so/gnaak/SSAFY-Billy-Bully-cef0cdf8e23c407e9e15dccd60b630d7">
+                  Link
+                </a>
+              </span>
+            </div>
+            <div className="flex flex-row gap- items-center">
+              <Image
+                src={link}
+                alt="깃허브"
+                className="w-8 h-8"
+                priority={false}
+              />
+              <span className="text-blue-600 underline dark:text-white">
+                <a href="https://github.com/gnaak/divamusic">Link</a>
+              </span>
+            </div>
           </div>
         </div>
         <div className="bg-[#F1F1EF] p-4 md:flex hidden rounded-xl w-[100%] text-black lg:px-5">
