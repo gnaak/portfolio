@@ -188,18 +188,6 @@ const Home = () => {
                     >
                       SKILLS
                     </span>
-                    <span
-                      className="cursor-pointer"
-                      onClick={() => scrollToSection(certiRef)}
-                    >
-                      CERTIFICATES{" "}
-                    </span>
-                    <span
-                      className="cursor-pointer"
-                      onClick={() => scrollToSection(expRef)}
-                    >
-                      EXPERIENCE{" "}
-                    </span>
 
                     <span
                       className="cursor-pointer"
@@ -227,6 +215,18 @@ const Home = () => {
                         3️⃣ BillyBully
                       </span>
                     </div>
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => scrollToSection(certiRef)}
+                    >
+                      CERTIFICATES{" "}
+                    </span>
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => scrollToSection(expRef)}
+                    >
+                      EXPERIENCE{" "}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -288,19 +288,6 @@ const Home = () => {
                     </span>
                     <span
                       className="cursor-pointer"
-                      onClick={() => scrollToSection(certiRef)}
-                    >
-                      CERTIFICATES
-                    </span>
-                    <span
-                      className="cursor-pointer"
-                      onClick={() => scrollToSection(expRef)}
-                    >
-                      EXPERIENCE{" "}
-                    </span>
-
-                    <span
-                      className="cursor-pointer"
                       onClick={() => scrollToSection(pjtRef)}
                     >
                       PROJECTS
@@ -325,6 +312,18 @@ const Home = () => {
                         3️⃣ BillyBully
                       </span>
                     </div>
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => scrollToSection(certiRef)}
+                    >
+                      CERTIFICATES
+                    </span>
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => scrollToSection(expRef)}
+                    >
+                      EXPERIENCE{" "}
+                    </span>
                   </div>
                 </div>
               </div>
