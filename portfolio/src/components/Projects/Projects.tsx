@@ -15,12 +15,11 @@ const Projects = () => {
             <span className="font-bold 2xl:text-2xl lg:text-xl">PROJECTS</span>
             <span className="w-full border border-gray-200"></span>
           </div>
-          <div className="flex xl:flex-row flex-col justify-between xl:gap-0 gap-5 flex-wrap">
+          <div className="flex xl:flex-row flex-col justify-start xl:gap-5 gap-5 flex-wrap">
             <Diva />
             <Readit />
             <BillyBully />
 
-            <div className="flex flex-col justify-between lg:w-[24%] md:w-[48%] aspect-square  border border-gray-400 p-3 rounded-xl shadow-xl lg:gap-7 hover:cursor-pointer hover:-translate-y-1 hover:scale-105 duration-300"></div>
           </div>
         </div>
       </div>
