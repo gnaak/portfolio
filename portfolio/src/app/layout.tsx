@@ -6,9 +6,14 @@ import DarkModeToggle from "@/components/DarkMode";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "이근학 포트폴리오",
+  title: "Gnaak's",
   description: "FE개발자 이근학 포트폴리오",
-  
+  icons: {
+    icon: "/favicon.ico",
+  },
+  verification: {
+    google: "ZEH9an07MXfybFG1man-w14tXUm_ec_cKXbJE0IXsLQ",
+  },
 };
 
 export default function RootLayout({
@@ -19,6 +24,10 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no"
+        />
         <meta
           name="google-site-verification"
           content="ZEH9an07MXfybFG1man-w14tXUm_ec_cKXbJE0IXsLQ"
