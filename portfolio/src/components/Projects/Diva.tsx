@@ -12,11 +12,10 @@ const Diva = () => {
         className="flex xl:flex-col xl:items-start items-center flex-row xl:justify-between xl:w-[24%] w-full xl:aspect-square  border border-gray-400 p-3 gap-5 rounded-xl shadow-xl hover:cursor-pointer hover:-translate-y-1 hover:scale-105 duration-300"
         onClick={() => router.push("/divamusic")}
       >
-        <Image
-          src={diva}
-          alt="디바"
-          className="2xl:w-20 2xl:h-20 md:w-16 md:h-16 h-12 w-12 bg-[#080D44] rounded-xl aspect-4/3 "
-        />
+        <div className="2xl:w-20 2xl:h-20 md:w-16 md:h-16 w-12 h-12 flex justify-center items-center border bg-[#080D44] border-gray-400 rounded-xl shrink-0">
+          <Image src={diva} alt="디바" className="object-contain" />
+        </div>
+
         <div className="flex flex-col lg:gap-5 justify-between">
           <div className="flex flex-col lg:gap-2">
             <span className="font-bold 3xl:text-lg">DIVA</span>

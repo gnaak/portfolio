@@ -5,7 +5,7 @@ const Readit = () => {
   return (
     <>
       <div className="flex flex-row justify-between">
-        <div className="flex flex-col items-center xl:py-7 justify-center xl:w-1/3 md:w-1/2 w-full md:justify-start">
+        <div className="flex flex-col items-center xl:py-7 justify-center xl:w-1/3 md:w-1/3 w-full md:justify-start">
           <div className="flex justify-center items-center  bg-[#EEF5FB] border-gray-400 rounded-xl xl:py-7 xl:w-3/4  aspect-4/3 ">
             <Image
               src={readit}

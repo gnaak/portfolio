@@ -7,107 +7,159 @@ import Certi from "../components/Certificates";
 import Exp from "../components/Experience";
 import Projects from "../components/Projects/Projects";
 import profile from "@/assets/projects/skawkaks.png";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import DarkModeToggle from "@/components/DarkMode";
-import { useMediaQuery } from "react-responsive";
+import useStore from "@/store";
 const Home = () => {
   const router = useRouter();
-  const [open, setOpen] = useState<boolean>(false);
-  const [isMenu, setMenu] = useState<boolean>(false);
-  const [sideBar, setSideBar] = useState<boolean>(false);
   const [sideBarIcon, setSideBarIcon] = useState<boolean>(false);
-  const [smallMenu, setSmallMenu] = useState<boolean>(false);
   const baseRef = useRef(null);
   const skillRef = useRef(null);
   const certiRef = useRef(null);
   const expRef = useRef(null);
   const pjtRef = useRef(null);
-  const [num, setNum] = useState(0);
-  const [num2, setNum2] = useState(0);
-  const isLargeScreen = useMediaQuery({ query: "(min-width: 1280px)" });
-  const handleCheck = () => {
-    setTimeout(() => {
-      if (!isMenu) {
-        setOpen(false);
-      }
-    }, 2000);
-  };
+  const {
+    menu,
+    setMenu,
+    isMenu,
+    setIsMenu,
+    sideMenu,
+    setSideMenu,
+    num1,
+    num2,
+    smallMenu,
+    setSmallMenu,
+    setNum1,
+    setNum2,
+  } = useStore();
+
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const handleMouseEnter = () => {
-    setOpen(true);
-    setNum2(1);
-  };
+  useEffect(() => {
+    setNum1(0);
+    setNum2(0);
+    setMenu(false);
+    setIsMenu(false);
+    setSideMenu(false);
+    setSmallMenu(false);
+  }, []);
+
   return (
     <>
-      <div className="relative overflow-hidden h-screen dark:bg-gray-800 dark:text-white">
-        {/* <Headers /> */}
-        <div className="flex flex-col overflow-auto h-full">
-          <div
-            ref={baseRef}
-            className="w-full flex-col flex items-center py-10"
-          >
-            <Base />
-          </div>
-          <div
-            ref={skillRef}
-            className="w-full flex-col flex items-center py-10"
-          >
-            <Skills />
-          </div>
-          <div ref={pjtRef} className="w-full flex-col flex items-center py-10">
-            <Projects />
-          </div>
-          <div
-            ref={certiRef}
-            className="w-full flex-col flex items-center py-10"
-          >
-            <Certi />
-          </div>
-          <div ref={expRef} className="w-full flex-col flex items-center py-10">
-            <Exp />
-          </div>
+      <div className="relative flex flex-col  h-auto dark:bg-gray-800 dark:text-white">
+        <div ref={baseRef} className="w-full flex-col flex items-center pt-10">
+          <Base />
         </div>
-        <div className="absolute top-0 left-0 w-1/6 xl:h-screen flex flex-col xl:justify-between z-30  select-none  dark:text-white">
-          <div className="flex flex-row xl:gap-5 gap-3 p-3 ">
-            {open ? (
-              <>
+        <div
+          ref={skillRef}
+          className="w-full flex-col flex items-center xl:pt-20 md:pt-16 pt-12"
+        >
+          <Skills />
+        </div>
+        <div
+          ref={pjtRef}
+          className="w-full flex-col flex items-center xl:pt-20 md:pt-16 pt-12"
+        >
+          <Projects />
+        </div>
+        <div
+          ref={certiRef}
+          className="w-full flex-col flex items-center xl:pt-20 md:pt-16 pt-12"
+        >
+          <Certi />
+        </div>
+        <div
+          ref={expRef}
+          className="w-full flex-col flex items-center xl:py-20 md:py-16 py-12"
+        >
+          <Exp />
+        </div>
+      </div>
+      <div className="fixed top-20 left-0 w-1/6 xl:h-screen flex flex-col xl:justify-between z-30  select-none  dark:text-white">
+        <>
+          {smallMenu ? (
+            <div className="fixed top-12 left-0 z-50 justify-between items-center p-3 flex flex-row w-screen bg-gray-100 dark:bg-gray-700">
+              <div className="flex flex-row px-2 md:gap-5 gap-5 md:px-10 md:text-base text-sm">
                 <span
-                  className="material-symbols-outlined cursor-pointer"
-                  onMouseLeave={handleCheck}
+                  className="cursor-pointer"
                   onClick={() => {
-                    setSideBar(true);
-                    setOpen(false);
-                    setNum(1);
+                    scrollToSection(baseRef);
+                    setSmallMenu(false);
                   }}
                 >
-                  keyboard_double_arrow_right
+                  소개
                 </span>
-              </>
-            ) : (
-              <>
+                <span
+                  className="cursor-pointer"
+                  onClick={() => {
+                    scrollToSection(skillRef);
+                    setSmallMenu(false);
+                  }}
+                >
+                  SKILLS
+                </span>
+                <span
+                  className="cursor-pointer"
+                  onClick={() => {
+                    scrollToSection(pjtRef);
+                    setSmallMenu(false);
+                  }}
+                >
+                  PROJECTS
+                </span>
+                <span
+                  className="cursor-pointer md:inline hidden"
+                  onClick={() => {
+                    scrollToSection(certiRef);
+                    setSmallMenu(false);
+                  }}
+                >
+                  CERTIFICATES{" "}
+                </span>
+                <span
+                  className="cursor-pointer md:inline hidden"
+                  onClick={() => {
+                    scrollToSection(expRef);
+                    setSmallMenu(false);
+                  }}
+                >
+                  EXPERIENCE{" "}
+                </span>
+              </div>
+              <div className="flex flex-row justify-center">
                 <span
                   className="material-symbols-outlined cursor-pointer"
-                  onMouseEnter={() =>
-                    isLargeScreen ? handleMouseEnter() : null
-                  }
-                  onClick={() => (isLargeScreen ? null : setSmallMenu(true))}
+                  onClick={() => setSmallMenu(false)}
                 >
-                  menu{" "}
+                  close
                 </span>
-              </>
-            )}
-            <div className="md:flex hidden flex-row gap-2">
-              <span className="cursor-pointer">HOME</span>
+              </div>
             </div>
-          </div>
-          <>
-            {smallMenu ? (
-              <div className="absolute top-12 left-0 z-50 justify-between items-center p-3 flex flex-row w-screen bg-gray-100 dark:bg-gray-700">
-                <div className="flex flex-row px-2 md:gap-5 gap-5 md:px-10 md:text-base text-sm">
+          ) : null}
+          <div className={`h-full 3xl:w-3/4 w-full xl:flex hidden items-start`}>
+            <div
+              className={`w-full p-7 border border-gray-200 shadow-lg bg-gray-100 transition-opacity duration-5000 ${
+                menu
+                  ? "animate-fadeInLeft"
+                  : num2 === 0
+                  ? "opacity-0"
+                  : "animate-fadeOutLeft "
+              } dark:bg-gray-700 dark:border-none`}
+              onMouseEnter={() => setIsMenu(true)}
+              onMouseLeave={() => setMenu(false)}
+            >
+              <div className="flex flex-col gap-10">
+                <div className="flex flex-row gap-3">
+                  <Image
+                    src={profile}
+                    alt="프로필"
+                    className="w-6 h-6 rounded-full"
+                  />
+                  <span>이근학</span>
+                </div>
+                <div className="flex flex-col xl:gap-3">
                   <span
                     className="cursor-pointer"
                     onClick={() => scrollToSection(baseRef)}
@@ -120,18 +172,6 @@ const Home = () => {
                   >
                     SKILLS
                   </span>
-                  <span
-                    className="cursor-pointer md:inline hidden"
-                    onClick={() => scrollToSection(certiRef)}
-                  >
-                    CERTIFICATES{" "}
-                  </span>
-                  <span
-                    className="cursor-pointer md:inline hidden"
-                    onClick={() => scrollToSection(expRef)}
-                  >
-                    EXPERIENCE{" "}
-                  </span>
 
                   <span
                     className="cursor-pointer"
@@ -139,192 +179,135 @@ const Home = () => {
                   >
                     PROJECTS
                   </span>
-                </div>
-                <div className="flex flex-row justify-center">
+                  <div className="flex flex-col xl:gap-2 xl:px-3 text-sm">
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => router.push("/divamusic")}
+                    >
+                      1️⃣ DIV★
+                    </span>
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => router.push("/readit")}
+                    >
+                      2️⃣ READIT
+                    </span>
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => router.push("/billybully")}
+                    >
+                      3️⃣ BillyBully
+                    </span>
+                  </div>
                   <span
-                    className="material-symbols-outlined cursor-pointer"
-                    onClick={() => setSmallMenu(false)}
+                    className="cursor-pointer"
+                    onClick={() => scrollToSection(certiRef)}
                   >
-                    close
+                    CERTIFICATES{" "}
+                  </span>
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => scrollToSection(expRef)}
+                  >
+                    EXPERIENCE{" "}
                   </span>
                 </div>
               </div>
-            ) : null}
-            <div
-              className={`h-full 3xl:w-3/4 w-full xl:flex hidden items-start`}
-            >
-              <div
-                className={`w-full p-7 border border-gray-200 shadow-lg bg-gray-100 transition-opacity duration-5000 ${
-                  open
-                    ? "animate-fadeInLeft"
-                    : num2 === 0
-                    ? "opacity-0"
-                    : "animate-fadeOutLeft "
-                } dark:bg-gray-700 dark:border-none`}
-                onMouseEnter={() => setMenu(true)}
-                onMouseLeave={() => {
-                  setOpen(false);
-                }}
-              >
-                <div className="flex flex-col gap-10">
-                  <div className="flex flex-row gap-3">
-                    <Image
-                      src={profile}
-                      alt="프로필"
-                      className="w-6 h-6 rounded-full"
-                    />
-                    <span>이근학</span>
-                  </div>
-                  <div className="flex flex-col xl:gap-3">
-                    <span
-                      className="cursor-pointer"
-                      onClick={() => scrollToSection(baseRef)}
-                    >
-                      소개
-                    </span>
-                    <span
-                      className="cursor-pointer"
-                      onClick={() => scrollToSection(skillRef)}
-                    >
-                      SKILLS
-                    </span>
-
-                    <span
-                      className="cursor-pointer"
-                      onClick={() => scrollToSection(pjtRef)}
-                    >
-                      PROJECTS
-                    </span>
-                    <div className="flex flex-col xl:gap-2 xl:px-3 text-sm">
-                      <span
-                        className="cursor-pointer"
-                        onClick={() => router.push("/divamusic")}
-                      >
-                        1️⃣ DIV★
-                      </span>
-                      <span
-                        className="cursor-pointer"
-                        onClick={() => router.push("/readit")}
-                      >
-                        2️⃣ READIT
-                      </span>
-                      <span
-                        className="cursor-pointer"
-                        onClick={() => router.push("/billybully")}
-                      >
-                        3️⃣ BillyBully
-                      </span>
-                    </div>
-                    <span
-                      className="cursor-pointer"
-                      onClick={() => scrollToSection(certiRef)}
-                    >
-                      CERTIFICATES{" "}
-                    </span>
-                    <span
-                      className="cursor-pointer"
-                      onClick={() => scrollToSection(expRef)}
-                    >
-                      EXPERIENCE{" "}
-                    </span>
-                  </div>
-                </div>
-              </div>
             </div>
-          </>
-        </div>
+          </div>
+        </>
+      </div>
 
+      <div
+        className={`fixed top-0 left-0 w-1/6 xl:h-screen  select-none xl:inline hidden ${
+          sideMenu
+            ? "z-50"
+            : num1 === 0
+            ? "opacity-0"
+            : "z-40 animate-fadeOutLeft"
+        } dark:text-white`}
+      >
         <div
-          className={`absolute top-0 left-0 w-1/6 xl:h-screen  select-none xl:inline hidden ${
-            sideBar
-              ? "z-50"
-              : num === 0
-              ? "opacity-0"
-              : "z-40 animate-fadeOutLeft"
-          } dark:text-white`}
+          className="flex flex-col xl:justify-between pb-10 3xl:w-3/4 w-full border border-gray-200 bg-gray-100 h-full dark:bg-gray-700 dark:border-none"
+          onMouseEnter={() => setSideBarIcon(true)}
+          onMouseLeave={() => setSideBarIcon(false)}
         >
-          <div
-            className="flex flex-col xl:justify-between pb-10 3xl:w-3/4 w-full border border-gray-200 bg-gray-100 h-full dark:bg-gray-700 dark:border-none"
-            onMouseEnter={() => setSideBarIcon(true)}
-            onMouseLeave={() => setSideBarIcon(false)}
-          >
-            <div className="flex flex-col">
-              <div className="flex flex-row items-center justify-between xl:gap-5 p-3">
-                <div className="flex flex-row xl:gap-3">
-                  <Image
-                    src={profile}
-                    alt="프로필"
-                    className="w-6 h-6 rounded-full"
-                  />
-                  <span>이근학</span>
-                </div>
-
-                <span
-                  className={`material-symbols-outlined cursor-pointer  ${
-                    sideBarIcon ? "animate-fadeIn" : "animate-fadeOut"
-                  }`}
-                  onClick={() => setSideBar(false)}
-                >
-                  keyboard_double_arrow_left
-                </span>
+          <div className="flex flex-col">
+            <div className="flex flex-row items-center justify-between xl:gap-5 p-3">
+              <div className="flex flex-row xl:gap-3">
+                <Image
+                  src={profile}
+                  alt="프로필"
+                  className="w-6 h-6 rounded-full"
+                />
+                <span>이근학</span>
               </div>
-              <div
-                className={`w-3/4 xl:p-7 transition-opacity
-              }`}
+
+              <span
+                className={`material-symbols-outlined cursor-pointer  ${
+                  sideBarIcon ? "animate-fadeIn" : "animate-fadeOut"
+                }`}
+                onClick={() => setSideMenu(false)}
               >
-                <div className="flex flex-col xl:gap-10">
-                  <div className="flex flex-col xl:gap-3">
+                keyboard_double_arrow_left
+              </span>
+            </div>
+            <div
+              className={`w-3/4 xl:p-7 transition-opacity
+              }`}
+            >
+              <div className="flex flex-col xl:gap-10">
+                <div className="flex flex-col xl:gap-3">
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => scrollToSection(baseRef)}
+                  >
+                    소개{" "}
+                  </span>
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => scrollToSection(skillRef)}
+                  >
+                    SKILLS{" "}
+                  </span>
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => scrollToSection(pjtRef)}
+                  >
+                    PROJECTS
+                  </span>
+                  <div className="flex flex-col xl:gap-2 xl:px-3 text-sm">
                     <span
                       className="cursor-pointer"
-                      onClick={() => scrollToSection(baseRef)}
+                      onClick={() => router.push("/divamusic")}
                     >
-                      소개{" "}
+                      1️⃣ DIV★
                     </span>
                     <span
                       className="cursor-pointer"
-                      onClick={() => scrollToSection(skillRef)}
+                      onClick={() => router.push("/readit")}
                     >
-                      SKILLS{" "}
+                      2️⃣ READIT
                     </span>
                     <span
                       className="cursor-pointer"
-                      onClick={() => scrollToSection(pjtRef)}
+                      onClick={() => router.push("/billybully")}
                     >
-                      PROJECTS
-                    </span>
-                    <div className="flex flex-col xl:gap-2 xl:px-3 text-sm">
-                      <span
-                        className="cursor-pointer"
-                        onClick={() => router.push("/divamusic")}
-                      >
-                        1️⃣ DIV★
-                      </span>
-                      <span
-                        className="cursor-pointer"
-                        onClick={() => router.push("/readit")}
-                      >
-                        2️⃣ READIT
-                      </span>
-                      <span
-                        className="cursor-pointer"
-                        onClick={() => router.push("/billybully")}
-                      >
-                        3️⃣ BillyBully
-                      </span>
-                    </div>
-                    <span
-                      className="cursor-pointer"
-                      onClick={() => scrollToSection(certiRef)}
-                    >
-                      CERTIFICATES
-                    </span>
-                    <span
-                      className="cursor-pointer"
-                      onClick={() => scrollToSection(expRef)}
-                    >
-                      EXPERIENCE{" "}
+                      3️⃣ BillyBully
                     </span>
                   </div>
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => scrollToSection(certiRef)}
+                  >
+                    CERTIFICATES
+                  </span>
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => scrollToSection(expRef)}
+                  >
+                    EXPERIENCE{" "}
+                  </span>
                 </div>
               </div>
             </div>

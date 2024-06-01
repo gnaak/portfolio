@@ -21,7 +21,7 @@ const Bad = () => {
           </div>
           <div className="flex flex-row lg:gap-5 md:gap-3 md:w-[48%] w-[22%] md:justify-start justify-center">
             <div className="xl:w-16 xl:h-16 md:w-12 md:h-12 w-10 h-10 border border-gray-300 rounded-xl flex justify-center items-center bg-white shrink-0">
-              <Image src={django} alt="django" className="xl:w-16 xl:h-16 " />
+              <Image src={django} alt="django" className="" />
             </div>
             <span className="xl:pt-3 xl:text-base lg:text-sm md:text-xs md:inline hidden">
               Serializer을 사용해 본 경험이 있습니다.

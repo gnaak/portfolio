@@ -8,6 +8,12 @@ const useStore = create<RootState>((set) => ({
   setIsMenu: (isMenu) => set({ isMenu }),
   sideMenu: false,
   setSideMenu: (sideMenu) => set({ sideMenu }),
+  smallMenu: false,
+  setSmallMenu: (smallMenu) => set({ smallMenu }),
+  num1: 0,
+  setNum1: (num1) => set({ num1 }),
+  num2: 0,
+  setNum2: (num2) => set({ num2 }),
 }));
 
 export default useStore;

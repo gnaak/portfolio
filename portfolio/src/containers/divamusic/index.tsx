@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import next from "@/assets/skills/next.png";
 import ts from "@/assets/skills/ts.png";
@@ -11,19 +12,27 @@ import mypage from "@/assets/projects/mypage.gif";
 import As from "./As";
 import Image from "next/image";
 import profile from "@/assets/projects/skawkaks.png";
-import { useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import Intro from "./Intro";
 import Diva from "./Diva";
-import { useMediaQuery } from "react-responsive";
+import useStore from "@/store";
 
 const Divamusic = () => {
-  const router = useRouter();
-  const [open, setOpen] = useState<boolean>(false);
-  const [isMenu, setMenu] = useState<boolean>(false);
-  const [sideBar, setSideBar] = useState<boolean>(false);
   const [sideBarIcon, setSideBarIcon] = useState<boolean>(false);
-  const [smallMenu, setSmallMenu] = useState<boolean>(false);
+  const {
+    menu,
+    setMenu,
+    isMenu,
+    setIsMenu,
+    sideMenu,
+    setSideMenu,
+    num1,
+    num2,
+    smallMenu,
+    setSmallMenu,
+    setNum1,
+    setNum2,
+  } = useStore();
 
   const divRef = useRef(null);
   const introRef = useRef(null);
@@ -34,26 +43,19 @@ const Divamusic = () => {
   const JotaiRef = useRef(null);
   const troubleRef = useRef(null);
   const asRef = useRef(null);
-  const [num, setNum] = useState(0);
-  const [num2, setNum2] = useState(0);
-  const isLargeScreen = useMediaQuery({ query: "(min-width: 1280px)" });
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const handleCheck = () => {
-    setTimeout(() => {
-      if (!isMenu) {
-        setOpen(false);
-      }
-    }, 2000);
-  };
-
-  const handleMouseEnter = () => {
-    setOpen(true);
-    setNum2(1);
-  };
+  useEffect(() => {
+    setNum1(0);
+    setNum2(0);
+    setMenu(false);
+    setIsMenu(false);
+    setSideMenu(false);
+    setSmallMenu(false);
+  }, []);
 
   return (
     <>
@@ -67,16 +69,19 @@ const Divamusic = () => {
               <span className="font-bold text-2xl">DIV★</span>
               <span className="w-full border border-gray-200"></span>
             </div>
-            <div className="flex flex-col gap-10 pb-20">
+            <div className="flex flex-col pb-20">
               <Diva />
-              <div className="flex flex-col xl:px-10 md:gap-16 gap-10">
+              <div className="flex flex-col xl:px-10">
                 <div
                   ref={introRef}
-                  className="flex flex-col lg:gap-5 gap-3 xl:pt-10"
+                  className="flex flex-col lg:gap-5 gap-3 xl:pt-20 md:pt-16 pt-12"
                 >
                   <Intro />
                 </div>
-                <div ref={techRef} className="flex flex-col gap-5 xl:pt-10">
+                <div
+                  ref={techRef}
+                  className="flex flex-col lg:gap-5 gap-3 xl:pt-20 md:pt-16 pt-12"
+                >
                   <span className="font-bold md:text-xl">사용 기술</span>
 
                   <div className="flex flex-row md:gap-20 gap-3 flex-wrap md:flex-nowrap">
@@ -123,12 +128,15 @@ const Divamusic = () => {
                   </div>
                 </div>
 
-                <div ref={myRef} className="flex flex-col xl:pt-10">
+                <div
+                  ref={myRef}
+                  className="flex flex-col xl:pt-20 md:pt-16 pt-12"
+                >
                   <span className="font-bold md:text-xl">기여 사항</span>
                   <div>
                     <div
                       ref={carrouselRef}
-                      className="flex flex-col gap-3 lg:pt-10 pt-5"
+                      className="flex flex-col gap-3 lg:pt-12 pt-10"
                     >
                       <span className="font-bold md:text-base text-sm">
                         1️⃣ 캐러셀
@@ -152,23 +160,20 @@ const Divamusic = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="flex flex-row justify-evenly border md:border-gray-400 xl:py-5 rounded-xl md:shadow-xl shadow-md">
+                      <div className="flex flex-row justify-evenly xl:border lg:border-gray-400 xl:py-5 rounded-xl md:shadow-xl shadow-md">
                         <Image
                           src={landing}
                           alt="랜딩 페이지"
                           className="md:inline hidden"
                         />
-                        <Image
-                          src={home}
-                          alt="홈 페이지"
-                        />
+                        <Image src={home} alt="홈 페이지" />
                       </div>
                     </div>
                   </div>
                   <div>
                     <div
                       ref={WebAudioAPIRef}
-                      className="flex flex-col gap-3 pt-10"
+                      className="flex flex-col gap-3 lg:pt-12 pt-10"
                     >
                       <span className="font-bold md:text-base text-sm">
                         2️⃣ Web Audio API
@@ -197,11 +202,8 @@ const Divamusic = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="flex flex-row justify-evenly border md:border-gray-400 xl:py-5 rounded-xl md:shadow-xl shadow-md">
-                        <Image
-                          src={rangecheck}
-                          alt="음역대 테스트"
-                        />
+                      <div className="flex flex-row justify-evenly xl:border lg:border-gray-400 xl:py-5 rounded-xl md:shadow-xl shadow-md">
+                        <Image src={rangecheck} alt="음역대 테스트" />
                         <Image
                           src={mypage}
                           alt="마이 페이지"
@@ -211,7 +213,10 @@ const Divamusic = () => {
                     </div>
                   </div>
                   <div>
-                    <div ref={JotaiRef} className="flex flex-col gap-3 pt-10">
+                    <div
+                      ref={JotaiRef}
+                      className="flex flex-col gap-3 lg:pt-12 pt-10"
+                    >
                       <span className="font-bold md:text-base text-sm">
                         3️⃣ Jotai
                       </span>
@@ -243,7 +248,7 @@ const Divamusic = () => {
                 </div>
                 <div
                   ref={troubleRef}
-                  className="md:flex flex-col gap-5  xl:pt-10 hidden"
+                  className="md:flex flex-col xl:pt-20 md:pt-16 hidden gap-3"
                 >
                   <span className="font-bold md:text-xl">트러블 슈팅</span>
 
@@ -278,7 +283,10 @@ const Divamusic = () => {
                     </div>
                   </div>
                 </div>
-                <div ref={asRef} className="flex flex-col gap-5  xl:py-10">
+                <div
+                  ref={asRef}
+                  className="flex flex-col gap-3 xl:py-20 md:py-16 pt-12"
+                >
                   <As />
                 </div>
               </div>
@@ -286,78 +294,63 @@ const Divamusic = () => {
           </div>
         </div>
       </div>
-      <div className="absolute top-0 left-0 w-1/6 xl:h-screen flex flex-col xl:justify-between z-30 pb-10 select-none  dark:text-white">
-        <div className="flex flex-row xl:gap-5 gap-3 p-3 ">
-          {open ? (
-            <>
-              <span
-                className="material-symbols-outlined cursor-pointer"
-                onMouseLeave={handleCheck}
-                onClick={() => {
-                  setSideBar(true);
-                  setOpen(false);
-                  setNum(1);
-                }}
-              >
-                keyboard_double_arrow_right
-              </span>
-            </>
-          ) : (
-            <>
-              <span
-                className="material-symbols-outlined cursor-pointer"
-                onMouseEnter={() => (isLargeScreen ? handleMouseEnter() : null)}
-                onClick={() => (isLargeScreen ? null : setSmallMenu(true))}
-              >
-                menu{" "}
-              </span>
-            </>
-          )}
-          <div className="md:flex hidden flex-row gap-2">
-            <span onClick={() => router.push("/")} className="cursor-pointer">
-              HOME
-            </span>
-            /<span className="cursor-pointer">DIV★</span>
-          </div>
-        </div>
+      <div className="fixed top-20 left-0 w-1/6 xl:h-screen flex flex-col xl:justify-between z-30  select-none  dark:text-white">
         <>
           {smallMenu ? (
-            <div className="absolute top-12 left-0 z-50 justify-between items-center p-3 flex flex-row w-screen bg-gray-100 dark:bg-gray-700">
+            <div className="fixed top-12 left-0 z-50 justify-between items-center p-3 flex flex-row w-screen bg-gray-100 dark:bg-gray-700">
               <div className="flex flex-row px-2 md:gap-5 gap-5 md:px-10 md:text-base text-sm">
                 <span
-                  className="cursor-pointer"
-                  onClick={() => scrollToSection(divRef)}
+                  className="cursor-pointer flex"
+                  onClick={() => {
+                    scrollToSection(divRef);
+                    setSmallMenu(false);
+                  }}
                 >
                   DIV★
                 </span>
                 <span
                   className="cursor-pointer"
-                  onClick={() => scrollToSection(introRef)}
+                  onClick={() => {
+                    scrollToSection(introRef);
+                    setSmallMenu(false);
+                  }}
                 >
                   소개
                 </span>
                 <span
                   className="cursor-pointer"
-                  onClick={() => scrollToSection(techRef)}
+                  onClick={() => {
+                    scrollToSection(techRef);
+                    setSmallMenu(false);
+                  }}
                 >
                   사용 기술
                 </span>
                 <span
                   className="cursor-pointer"
-                  onClick={() => scrollToSection(myRef)}
+                  onClick={() => {
+                    scrollToSection(myRef);
+                    setSmallMenu(false);
+                  }}
                 >
                   기여 사항
                 </span>
 
                 <span
                   className="cursor-pointer md:inline hidden"
-                  onClick={() => scrollToSection(troubleRef)}
+                  onClick={() => {
+                    scrollToSection(troubleRef);
+                    setSmallMenu(false);
+                  }}
                 >
                   트러블 슈팅
                 </span>
                 <span
                   className="cursor-pointer"
-                  onClick={() => scrollToSection(asRef)}
+                  onClick={() => {
+                    scrollToSection(asRef);
+                    setSmallMenu(false);
+                  }}
                 >
                   회고
                 </span>
@@ -378,15 +371,15 @@ const Divamusic = () => {
           >
             <div
               className={`w-full p-7 border border-gray-200 shadow-lg bg-gray-100 transition-opacity duration-5000 ${
-                open
+                menu
                   ? "animate-fadeInLeft"
                   : num2 === 0
                   ? "opacity-0"
                   : "animate-fadeOutLeft "
               } dark:bg-gray-700 dark:border-none`}
-              onMouseEnter={() => setMenu(true)}
+              onMouseEnter={() => setIsMenu(true)}
               onMouseLeave={() => {
-                setOpen(false);
+                setMenu(false);
               }}
             >
               <div className="flex flex-col gap-10">
@@ -464,10 +457,10 @@ const Divamusic = () => {
       </div>
 
       <div
-        className={`absolute top-0 left-0 w-1/6 xl:h-screen  select-none xl:inline hidden ${
-          sideBar
+        className={`fixed top-0 left-0 w-1/6 xl:h-screen  select-none xl:inline hidden ${
+          sideMenu
             ? "z-50"
-            : num === 0
+            : num1 === 0
             ? "opacity-0"
             : "z-50 animate-fadeOutLeft"
         } dark:text-white`}
@@ -492,7 +485,7 @@ const Divamusic = () => {
                 className={`material-symbols-outlined cursor-pointer  ${
                   sideBarIcon ? "animate-fadeIn" : "animate-fadeOut"
                 }`}
-                onClick={() => setSideBar(false)}
+                onClick={() => setSideMenu(false)}
               >
                 keyboard_double_arrow_left
               </span>
