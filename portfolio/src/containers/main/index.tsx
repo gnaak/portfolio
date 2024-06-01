@@ -2,11 +2,11 @@
 "use client";
 
 import Image from "next/image";
-import Base from "@/components/Base";
-import Skills from "@/components/Skills/Skills";
-import Certi from "@/components/Certificates";
-import Exp from "@/components/Experience";
-import Projects from "@/components/Projects/Projects";
+import Base from "@/containers/main/Base";
+import Skills from "@/containers/main/Skills/Skills";
+import Certi from "@/containers/main/Certificates";
+import Exp from "@/containers/main/Experience";
+import Projects from "@/containers/main/Projects/Projects";
 import profile from "@/assets/projects/skawkaks.png";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
