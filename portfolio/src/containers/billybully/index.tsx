@@ -15,13 +15,18 @@ import { useEffect, useRef, useState } from "react";
 import Intro from "./Intro";
 import Readit from "./BillyBully";
 import useStore from "@/store";
+import useClear from "@/hooks/clear";
 
 const BillyBully = () => {
+  const clearall = useClear();
+  useEffect(() => {
+    clearall();
+  }, []);
+
   const [sideBarIcon, setSideBarIcon] = useState<boolean>(false);
   const {
     menu,
     setMenu,
-    isMenu,
     setIsMenu,
     sideMenu,
     setSideMenu,
@@ -29,8 +34,6 @@ const BillyBully = () => {
     num2,
     smallMenu,
     setSmallMenu,
-    setNum1,
-    setNum2,
   } = useStore();
   const divRef = useRef(null);
   const introRef = useRef(null);
@@ -45,15 +48,6 @@ const BillyBully = () => {
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
-
-  useEffect(() => {
-    setNum1(0);
-    setNum2(0);
-    setMenu(false);
-    setIsMenu(false);
-    setSideMenu(false);
-    setSmallMenu(false);
-  }, []);
 
   return (
     <>

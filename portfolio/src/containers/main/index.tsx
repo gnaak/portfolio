@@ -14,9 +14,9 @@ import useStore from "@/store";
 import useClear from "@/hooks/clear";
 const Home = () => {
   const clearall = useClear();
-    useEffect(() => {
-      clearall();
-    }, []);
+  useEffect(() => {
+    clearall();
+  }, []);
   const router = useRouter();
   const [sideBarIcon, setSideBarIcon] = useState<boolean>(false);
   const baseRef = useRef(null);
@@ -39,8 +39,6 @@ const Home = () => {
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
-
-
 
   return (
     <>

@@ -16,8 +16,13 @@ import { useEffect, useRef, useState } from "react";
 import Intro from "./Intro";
 import Readit from "./Readit";
 import useStore from "@/store";
+import useClear from "@/hooks/clear";
 
 const ProjectReadit = () => {
+  const clearall = useClear();
+  useEffect(() => {
+    clearall();
+  }, []);
   const [sideBarIcon, setSideBarIcon] = useState<boolean>(false);
   const {
     menu,
@@ -30,8 +35,6 @@ const ProjectReadit = () => {
     num2,
     smallMenu,
     setSmallMenu,
-    setNum1,
-    setNum2,
   } = useStore();
   const divRef = useRef(null);
   const introRef = useRef(null);
@@ -48,14 +51,6 @@ const ProjectReadit = () => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  useEffect(() => {
-    setNum1(0);
-    setNum2(0);
-    setMenu(false);
-    setIsMenu(false);
-    setSideMenu(false);
-    setSmallMenu(false);
-  }, []);
   return (
     <>
       <div className="relative flex-col w-full h-screen flex items-center overflow-hidden select-none  dark:bg-gray-800 dark:text-white">

@@ -27,6 +27,6 @@ const As = () => {
       </div>
     </>
   );
-}
+};
 
 export default As;

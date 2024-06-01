@@ -1,6 +1,6 @@
 import Image from "next/image";
 import link from "@/assets/link.png";
-import notion from '@/assets/notion.png'
+import notion from "@/assets/notion.png";
 const Intro = () => {
   return (
     <>

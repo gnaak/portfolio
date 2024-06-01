@@ -17,8 +17,13 @@ import { useEffect, useRef, useState } from "react";
 import Intro from "./Intro";
 import Readit from "./Readit";
 import useStore from "@/store";
+import useClear from "@/hooks/clear";
 
 const Gnaak = () => {
+  const clearall = useClear();
+  useEffect(() => {
+    clearall();
+  }, []);
   const [sideBarIcon, setSideBarIcon] = useState<boolean>(false);
   const {
     menu,
@@ -30,8 +35,6 @@ const Gnaak = () => {
     num2,
     smallMenu,
     setSmallMenu,
-    setNum1,
-    setNum2,
   } = useStore();
   const divRef = useRef(null);
   const introRef = useRef(null);
@@ -47,14 +50,6 @@ const Gnaak = () => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  useEffect(() => {
-    setNum1(0);
-    setNum2(0);
-    setMenu(false);
-    setIsMenu(false);
-    setSideMenu(false);
-    setSmallMenu(false);
-  }, []);
   return (
     <>
       <div className="relative flex-col w-full h-screen flex items-center overflow-hidden select-none  dark:bg-gray-800 dark:text-white">
@@ -235,7 +230,11 @@ const Gnaak = () => {
                     </div>
                     <div className="flex flex-row justify-evenly xl:border lg:border-gray-400 xl:py-5 rounded-xl md:shadow-xl shadow-md shrink-0">
                       <Image src={mobile1} alt="모바일1" />
-                      <Image src={mobile2} alt="모바일2" className="md:inline hidden" />
+                      <Image
+                        src={mobile2}
+                        alt="모바일2"
+                        className="md:inline hidden"
+                      />
                     </div>
                   </div>
                   <div
@@ -253,7 +252,11 @@ const Gnaak = () => {
                         ⚙
                         <div className="flex flex-col w-full">
                           <div className="">
-                            lighthouse로 웹 성능을 측정해가며 불필요한 코드 제거 및 최적화를 진행했습니다. 데스크탑의 경우 좋은 성능을 보였으나, 모바일 화면의 경우 성능이 85까지 내려와 불필요한 코드를 줄이고 컴포넌트 화를 통해 리팩토링 예정입니다.
+                            lighthouse로 웹 성능을 측정해가며 불필요한 코드 제거
+                            및 최적화를 진행했습니다. 데스크탑의 경우 좋은
+                            성능을 보였으나, 모바일 화면의 경우 성능이 85까지
+                            내려와 불필요한 코드를 줄이고 컴포넌트 화를 통해
+                            리팩토링 예정입니다.
                           </div>
                         </div>
                       </div>
@@ -286,7 +289,8 @@ const Gnaak = () => {
                     setSmallMenu(false);
                   }}
                 >
-Gnaak's                </span>
+                  Gnaak's{" "}
+                </span>
                 <span
                   className="cursor-pointer"
                   onClick={() => {
@@ -312,7 +316,8 @@ Gnaak's                </span>
                     setSmallMenu(false);
                   }}
                 >
-진행 상황                </span>
+                  진행 상황{" "}
+                </span>
                 <span
                   className="cursor-pointer"
                   onClick={() => {
@@ -361,7 +366,8 @@ Gnaak's                </span>
                     className="cursor-pointer"
                     onClick={() => scrollToSection(divRef)}
                   >
-Gnaak's                  </span>
+                    Gnaak's{" "}
+                  </span>
                   <span
                     className="cursor-pointer"
                     onClick={() => scrollToSection(introRef)}
@@ -508,7 +514,7 @@ Gnaak's                  </span>
                       className="cursor-pointer"
                       onClick={() => scrollToSection(commuRef)}
                     >
-                      4️⃣ 웹 최적화 
+                      4️⃣ 웹 최적화
                     </span>
                   </div>
                   <span

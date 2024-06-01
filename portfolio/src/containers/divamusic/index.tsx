@@ -20,10 +20,10 @@ import useClear from "@/hooks/clear";
 
 const Divamusic = () => {
   const [sideBarIcon, setSideBarIcon] = useState<boolean>(false);
-    const clearall = useClear();
-    useEffect(() => {
-      clearall();
-    }, []);
+  const clearall = useClear();
+  useEffect(() => {
+    clearall();
+  }, []);
   const {
     menu,
     setMenu,
@@ -52,7 +52,6 @@ const Divamusic = () => {
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
-
 
   return (
     <>
