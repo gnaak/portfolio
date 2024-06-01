@@ -9,21 +9,24 @@ const Diva = () => {
   return (
     <>
       <div
-        className="flex xl:flex-col xl:items-start items-center flex-row xl:justify-between xl:w-[24%] w-full xl:aspect-square  border border-gray-400 p-3 gap-5 rounded-xl shadow-xl hover:cursor-pointer hover:-translate-y-1 hover:scale-105 duration-300"
+        className="flex xl:flex-col xl:items-start items-center flex-row xl:justify-between xl:w-[22%] w-full xl:aspect-square  border border-gray-400 p-3 gap-5 rounded-xl shadow-xl hover:cursor-pointer hover:-translate-y-1 hover:scale-105 duration-300"
         onClick={() => router.push("/divamusic")}
       >
         <div className="2xl:w-20 2xl:h-20 md:w-16 md:h-16 w-12 h-12 flex justify-center items-center border bg-[#080D44] border-gray-400 rounded-xl shrink-0">
           <Image src={diva} alt="디바" className="object-contain" />
         </div>
 
-        <div className="flex flex-col lg:gap-5 justify-between">
+        <div className="flex flex-col lg:gap-5 justify-between  w-full">
           <div className="flex flex-col lg:gap-2">
-            <span className="font-bold 3xl:text-lg">DIVA</span>
+            <div className="flex flex-row justify-between w-full items-center">
+              <span className="font-bold 3xl:text-lg">DIVA</span>
+              <div className="xl:hidden text-lg font-bold ">+</div>
+            </div>
             <span className="font-bold 3xl:text-base md:text-sm text-xs">
               SSAFY 프로젝트 최우수상
             </span>
             <span className="3xl:text-base md:text-sm text-xs">
-              사용자 음역대 기반 음악 추천 및 연습 서비스
+              음역대 기반 음악 추천 및 연습 서비스
             </span>
           </div>
           <div className="3xl:flex flex-row lg:gap-2 hidden">

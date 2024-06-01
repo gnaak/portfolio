@@ -108,11 +108,11 @@ const DarkModeToggle = () => {
             >
               <Image src={lightmode} alt="다크모드" />
               {open ? (
-                <div className="absolute border border-gray-400 top-full left-1/2 transform -translate-x-1/2 right-full w-36 text-xs dark:text-white xl:inline hidden">
+                <div className="absolute border border-gray-400 top-full left-1/2 transform -translate-x-1/2 right-full w-16 items-center justify-center text-xs dark:text-white xl:flex hidden">
                   {darkMode ? (
-                    <span>switch to light mode</span>
+                    <span>라이트 모드</span>
                   ) : (
-                    <span>switch to dark mode</span>
+                    <span>다크 모드</span>
                   )}
                 </div>
               ) : null}

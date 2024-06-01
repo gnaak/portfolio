@@ -1,14 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import zustand from "@/assets/skills/zustand.png";
-import react_query from "@/assets/skills/react_query.png";
 import ts from "@/assets/skills/ts.png";
 import react from "@/assets/skills/react.svg";
+import next from "@/assets/skills/next.png";
 import tailwind from "@/assets/tailwind.png";
-import viewer from "@/assets/projects/viewer.png";
-import infinitequery from "@/assets/projects/infinitequery.png";
-import chart from "@/assets/projects/chart.png";
-import commu from "@/assets/projects/commu.png";
+import mainpage from "@/assets/projects/mainpage.png";
+import project from "@/assets/projects/project.png";
+import mobile1 from "@/assets/projects/mobile1.png";
+import mobile2 from "@/assets/projects/mobile2.png";
+import desktop from "@/assets/projects/desktop.png";
 import As from "./As";
 import Image from "next/image";
 import profile from "@/assets/projects/skawkaks.png";
@@ -17,12 +18,11 @@ import Intro from "./Intro";
 import Readit from "./Readit";
 import useStore from "@/store";
 
-const ProjectReadit = () => {
+const Gnaak = () => {
   const [sideBarIcon, setSideBarIcon] = useState<boolean>(false);
   const {
     menu,
     setMenu,
-    isMenu,
     setIsMenu,
     sideMenu,
     setSideMenu,
@@ -41,7 +41,6 @@ const ProjectReadit = () => {
   const infiniteRef = useRef(null);
   const challengRef = useRef(null);
   const commuRef = useRef(null);
-  const troubleRef = useRef(null);
   const asRef = useRef(null);
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
@@ -65,10 +64,10 @@ const ProjectReadit = () => {
               ref={divRef}
               className="flex flex-col gap-2 xl:px-10 py-20 pb-10"
             >
-              <span className="font-bold text-2xl">Readit</span>
+              <span className="font-bold text-2xl">Gnaak's</span>
               <span className="w-full border border-gray-200"></span>
             </div>
-            <div className="flex flex-col pb-20">
+            <div className="flex flex-col pb-20 ">
               <Readit />
               <div className="flex flex-col xl:px-10">
                 <div
@@ -93,7 +92,13 @@ const ProjectReadit = () => {
                           alt="react"
                           className="xl:w-16 xl:h-16 md:w-12 md:h-12 h-10 w-10 rounded-xl"
                         />
-
+                        <div className="xl:w-16 xl:h-16 md:w-12 md:h-12 w-10 h-10 border border-gray-300 rounded-xl flex justify-center items-center bg-white shrink-0">
+                          <Image
+                            src={next}
+                            alt="next"
+                            className="xl:w-16 xl:h-16"
+                          />
+                        </div>
                         <Image
                           src={ts}
                           alt="ts"
@@ -108,13 +113,6 @@ const ProjectReadit = () => {
                       <div className="flex flex-row gap-2">
                         <div className="xl:w-16 xl:h-16 md:w-12 md:h-12 w-10 h-10 border border-gray-300 rounded-xl flex justify-center items-center bg-white shrink-0">
                           <Image src={zustand} alt="zustand" />
-                        </div>
-                        <div className="xl:w-16 xl:h-16 md:w-12 md:h-12 w-10 h-10 border border-gray-300 rounded-xl flex justify-center items-center bg-white shrink-0">
-                          <Image
-                            src={react_query}
-                            alt="react_query"
-                            className="w-12"
-                          />
                         </div>
                       </div>
                     </div>
@@ -133,46 +131,40 @@ const ProjectReadit = () => {
                   ref={myRef}
                   className="flex flex-col xl:pt-20 md:pt-16 pt-12"
                 >
-                  <span className="font-bold md:text-xl">기여 사항</span>
+                  <span className="font-bold md:text-xl">진행 상황</span>
                   <div>
                     <div
                       ref={viewerRef}
                       className="flex flex-col gap-3 lg:pt-12 pt-10"
                     >
                       <span className="font-bold md:text-base text-sm">
-                        1️⃣ 뷰어 페이지
+                        1️⃣ 메인 페이지
                       </span>
                       <span className="md:text-base text-sm">
-                        뉴스, 비문학 글을 쉽게 읽고 요약하게 도와주는 뷰어
-                        페이지 제작
+                        UX 및 웹 최적화를 고려한 메인 페이지 제작
                       </span>
                       <div className="bg-[#F1F1EF] p-4 md:flex hidden rounded-xl w-[100%] text-black lg:px-5 lg:text-base text-sm">
                         <div className="flex flex-row xl:gap-5 gap-3">
                           📄
                           <div className="flex flex-col w-full">
                             <div className="">
-                              <span className="font-bold">
-                                형광펜, 볼드체, 메모 기능
-                              </span>
-                              을 활용하여 독해에 도움을 줄 수 있게
-                              구현하였습니다. 사용자가 메모를 작성하고자 했던
-                              위치와, 내용을 매칭하는데 도움을 주기 위해
-                              onMouseEnter 이벤트를 활용하여 메모를 작성했던
-                              위치로 이동하면 메모가 나타납니다.
+                              프론트엔드 개발자로 포트폴리오 사이트를 제작이
+                              역량을 가장 있는 그대로 보여줄 수 있다고
+                              생각했습니다. 다양한 레퍼런스를 참고한 결과 css를
+                              이용한 과도한 애니메이션은 오히려 집중을
+                              분산시킨다고 생각햇고, 개발자들이 가장 익숙한
+                              docs와 노션 중 노션의 UI를 차용하여 제작했습니다.
                               <br />
-                              <br /> 임시 저장 후 마이페이지에서 읽던 글 클릭
-                              시, 사용자가 기존에 했던 작업들을 모두 확인하고
-                              수정할 수 있도록 구현했습니다. <br />
-                              <br />글 목록 페이지 이동 외에도 뉴스 링크,
-                              커뮤니티 내부, 읽던 글에서 뷰어 페이지로의
-                              라우팅이 가능해야 했기에 useNavigate의 state를
-                              활용하여 분기 처리 했습니다.
+                              <br />
+                              프로젝트 페이지에서 개발했던 프로젝트의 간략한
+                              서비스를 제공하여 직접 사용해보게 만들고자
+                              사이트를 제작했습니다.
                             </div>
                           </div>
                         </div>
                       </div>
                       <div className="flex flex-row justify-evenly xl:border lg:border-gray-400 xl:py-5 rounded-xl md:shadow-xl shadow-md">
-                        <Image src={viewer} alt="뷰어 페이지 페이지" />
+                        <Image src={mainpage} alt="메인 페이지" />
                       </div>
                     </div>
                   </div>
@@ -182,36 +174,36 @@ const ProjectReadit = () => {
                       className="flex flex-col gap-3 lg:pt-12 pt-10"
                     >
                       <span className="font-bold md:text-base text-sm">
-                        2️⃣ 글 목록 및 커뮤니티 목록 페이지
+                        2️⃣ 프로젝트 페이지
                       </span>
                       <span className="md:text-base text-sm">
-                        글 목록과 커뮤니티 목록을 쉽게 검색 할 수 있도록 검색
-                        기능 제공
+                        프로젝트의 간략한 소개와 사용 기술, 기여 사항,
+                        트러블슈팅, 회고
                       </span>
                       <div className="bg-[#F1F1EF] p-4 md:flex hidden rounded-xl w-[100%] text-black lg:px-5 lg:text-base text-sm">
                         <div className="flex flex-row xl:gap-5 gap-3">
-                          🔍
+                          🎈
                           <div className="flex flex-col w-full">
                             <div className="">
-                              크롤링을 사용하여 뉴스 및 비문학 데이터를 가져와
-                              데이터의 양이 많기 때문에 React Query의 &nbsp;
-                              <span className="font-bold">
-                                useInfiniteQueries를 활용하여 무한스크롤을 구현
+                              진행했던 프로젝트들을 다시 한번 정리해보고 회고할
+                              수 있는 시간을 가졌습니다. 깃허브에 올라간
+                              코드들을 다시 한번 확인하면서 "지금 짠다면 더 좋은
+                              코드를 짤 수 있지 않을까?" 라는 생각을 했습니다.
+                              <br />
+                              <br />
+                              프로젝트 중 DIVA의 음역대 측정, BillyBully의
+                              주사위, Readit의 뷰어 설명란에 &nbsp;
+                              <span className="text-blue-500 dark:text-white underline">
+                                더보기
                               </span>
-                              했습니다. 스크롤 위치마다 다른 도메인의 글이
-                              나타나는게 아니기 때문에 페이지네이션보다
-                              무한스크롤의 방식이 UX 향상에 좋다고 판단했습니다.
-                              또한 검색 필터를 활용해서 사용자가 원하는 종류의
-                              글을 검색할 수 있도록 구현했습니다.
+                              를 추가하여 간접적으로 서비스를 체험할 수 있도록
+                              준비 중입니다.
                             </div>
                           </div>
                         </div>
                       </div>
                       <div className="flex flex-row justify-evenly xl:border lg:border-gray-400 xl:py-5 rounded-xl md:shadow-xl shadow-md">
-                        <Image
-                          src={infinitequery}
-                          alt="글 & 커뮤니티 페이지 페이지"
-                        />
+                        <Image src={project} alt="프로젝트 페이지" />
                       </div>
                     </div>
                   </div>
@@ -220,30 +212,30 @@ const ProjectReadit = () => {
                     className="flex flex-col gap-3 lg:pt-12 pt-10"
                   >
                     <span className="font-bold md:text-base text-sm">
-                      3️⃣ 챌린지 페이지
+                      3️⃣ UX
                     </span>
                     <span className="md:text-base text-sm">
-                      매일 2개의 비문학 문제를 풀고, 그에 따른 점수 제공
+                      반응형 웹, 다크 모드, 목차
                     </span>
                     <div className="bg-[#F1F1EF] p-4 md:flex hidden rounded-xl w-[100%] text-black lg:px-5 lg:text-base text-sm">
                       <div className="flex flex-row xl:gap-5 gap-3">
-                        📈
+                        📱
                         <div className="flex flex-col w-full">
                           <div className="">
-                            chart.js를 활용해 그래프를 구현하여 사용자들의
-                            점수와 본인의 점수를 비교할 수 있습니다.
+                            320, 640, 1024, 1280, 1440, 1920px을 기준으로
+                            사이트를 조금씩 다르게 구성했습니다. 큰 화면에서
+                            많은 정보는 필요할 수 있지만, 작은 화면에서 동일한
+                            정보를 제공하면 과도하 게 많다고 느낄 수 있다고
+                            생각해서 간략한 내용만 담았습니다.
                             <br />
                             <br />
-                            사용자가 챌린지를 진행하지 않은 날이 있는 경우 이전
-                            날의 점수를 배열에 포함하여 표기했으며, 처음
-                            챌린지를 진행한 경우에도 이전 날들을 기본값인
-                            1,000점으로 표기했습니다.
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div className="flex flex-row justify-evenly xl:border lg:border-gray-400 xl:py-5 rounded-xl md:shadow-xl shadow-md">
-                      <Image src={chart} alt="챌린지 페이지" />
+                    <div className="flex flex-row justify-evenly xl:border lg:border-gray-400 xl:py-5 rounded-xl md:shadow-xl shadow-md shrink-0">
+                      <Image src={mobile1} alt="모바일1" />
+                      <Image src={mobile2} alt="모바일2" className="md:inline hidden" />
                     </div>
                   </div>
                   <div
@@ -251,80 +243,23 @@ const ProjectReadit = () => {
                     className="flex flex-col gap-3 lg:pt-12 pt-10"
                   >
                     <span className="font-bold md:text-base text-sm">
-                      4️⃣ 커뮤니티
+                      4️⃣ 웹 최적화
                     </span>
                     <span className="md:text-base text-sm">
-                      함께 글을 읽을 수 있는 커뮤니티에서 구성원이 읽은 글과
-                      요약, 채팅 기능
+                      LCP, TBT, CLS를 고려한 웹 최적화 및 코드 리팩토링
                     </span>
                     <div className="bg-[#F1F1EF] p-4 md:flex hidden rounded-xl w-[100%] text-black lg:px-5 lg:text-base text-sm">
                       <div className="flex flex-row xl:gap-5 gap-3">
-                        📈
+                        ⚙
                         <div className="flex flex-col w-full">
                           <div className="">
-                            채팅을 구현하기 위해 커뮤니티에 늦게 가입한 사용자도
-                            이전의 채팅 내용을 확인할 수 있게 하기 위해
-                            WebSocket 대신&nbsp;
-                            <span className="font-bold">Polling</span>
-                            방식을 택했습니다.
-                            <br />
-                            <br />
-                            커뮤니티의 목적이 동시간대에 같은 글을 읽는 것이
-                            아닌, 글을 읽는데 어느정도 강제성을 주는 것이기
-                            때문에 사용자가 항상 접속해 있다고 가정할 수
-                            없었습니다. 주기적으로 서버에 요청을 보내기에
-                            네트워크에 부하가 발생할 수 있지만, useQuery의
-                            캐싱을 통해 요청 수를 줄일 수 있었습니다.
+                            lighthouse로 웹 성능을 측정해가며 불필요한 코드 제거 및 최적화를 진행했습니다. 데스크탑의 경우 좋은 성능을 보였으나, 모바일 화면의 경우 성능이 85까지 내려와 불필요한 코드를 줄이고 컴포넌트 화를 통해 리팩토링 예정입니다.
                           </div>
                         </div>
                       </div>
                     </div>
                     <div className="flex flex-row justify-evenly xl:border lg:border-gray-400 xl:py-5 rounded-xl md:shadow-xl shadow-md">
-                      <Image src={commu} alt="커뮤니티 페이지" />
-                    </div>
-                  </div>
-                </div>
-                <div
-                  ref={troubleRef}
-                  className="md:flex flex-col xl:pt-20 md:pt-16 hidden gap-3"
-                >
-                  <span className="font-bold md:text-xl">트러블 슈팅</span>
-
-                  <div className="flex flex-col xl:gap-3">
-                    <div className="bg-[#F1F1EF] p-4 flex rounded-xl w-[100%] text-black lg:px-5 lg:text-base text-sm">
-                      <div className="flex flex-row xl:gap-5 gap-3">
-                        ⚠
-                        <div className="flex flex-col w-full">
-                          <div className="flex flex-row">
-                            <span className="whitespace-pre-wrap ">
-                              뷰어 페이지에서 글을 읽을 때 작성했던 메모와
-                              밑줄을 마이페이지 읽은 글에서 확인할 수 있어야
-                              하고 임시 저장 후 다시 돌아왔을 때도 이어서 작업을
-                              할 수 있게 구현해야 했습니다.
-                              <br />
-                              <br />
-                              초기에는 글에서 인덱스를 기준으로 css를 적용하여
-                              형광펜과 이벤트를 추가했습니다. 그러나 css를
-                              적용하기 위해 새로운 태그를 생성하면 전체 글의
-                              인덱스가 생성된 태그를 제외하고 계산하여 인덱스
-                              값이 바뀌는 문제가 있었습니다. <br />
-                              <br />
-                              이를 해결하기 위해 dangerouslySetInnerHTML을
-                              활용했습니다. 보안에 취약하다는 단점이 존재하지만,
-                              안에 포함되는 HTML은 비문학과 뉴스 데이터였기
-                              때문에 채택했습니다
-                              <br />
-                              <br />
-                              메모를 작성한 부분에서 메모가 나타나는 이벤트의
-                              경우, 메모를 작성한 범위에 맨 처음 마운트 시
-                              메모를 담은 배열의 마지막 인덱스 값을 기준으로 1씩
-                              증가하는 id 값을 부여했습니다. 이후 읽은 글 혹은
-                              임시 저장 후 다시 돌아온 경우에 id에 해당하는 메모
-                              인덱스를 통해 이벤트를 추가했습니다.
-                            </span>
-                          </div>
-                        </div>
-                      </div>
+                      <Image src={desktop} alt="데스크톱" />
                     </div>
                   </div>
                 </div>
@@ -351,8 +286,7 @@ const ProjectReadit = () => {
                     setSmallMenu(false);
                   }}
                 >
-                  READIT{" "}
-                </span>
+Gnaak's                </span>
                 <span
                   className="cursor-pointer"
                   onClick={() => {
@@ -378,18 +312,7 @@ const ProjectReadit = () => {
                     setSmallMenu(false);
                   }}
                 >
-                  기여 사항
-                </span>
-
-                <span
-                  className="cursor-pointer md:inline hidden"
-                  onClick={() => {
-                    scrollToSection(troubleRef);
-                    setSmallMenu(false);
-                  }}
-                >
-                  트러블 슈팅
-                </span>
+진행 상황                </span>
                 <span
                   className="cursor-pointer"
                   onClick={() => {
@@ -438,8 +361,7 @@ const ProjectReadit = () => {
                     className="cursor-pointer"
                     onClick={() => scrollToSection(divRef)}
                   >
-                    READIT
-                  </span>
+Gnaak's                  </span>
                   <span
                     className="cursor-pointer"
                     onClick={() => scrollToSection(introRef)}
@@ -456,7 +378,7 @@ const ProjectReadit = () => {
                     className="cursor-pointer"
                     onClick={() => scrollToSection(myRef)}
                   >
-                    기여 사항
+                    진행 상황
                   </span>
 
                   <div className="flex flex-col xl:gap-2 xl:px-5 text-sm">
@@ -464,33 +386,27 @@ const ProjectReadit = () => {
                       className="cursor-pointer"
                       onClick={() => scrollToSection(viewerRef)}
                     >
-                      1️⃣ 뷰어 페이지
+                      1️⃣ 메인 페이지
                     </span>
                     <span
                       className="cursor-pointer"
                       onClick={() => scrollToSection(infiniteRef)}
                     >
-                      2️⃣ 글 목록 페이지
+                      2️⃣ 프로젝트 페이지
                     </span>
                     <span
                       className="cursor-pointer"
                       onClick={() => scrollToSection(challengRef)}
                     >
-                      3️⃣ 챌린지 페이지
+                      3️⃣ UX
                     </span>{" "}
                     <span
                       className="cursor-pointer"
                       onClick={() => scrollToSection(commuRef)}
                     >
-                      4️⃣ 커뮤니티
+                      4️⃣ 웹 최적화
                     </span>
                   </div>
-                  <span
-                    className="cursor-pointer"
-                    onClick={() => scrollToSection(troubleRef)}
-                  >
-                    트러블 슈팅
-                  </span>
                   <span
                     className="cursor-pointer"
                     onClick={() => scrollToSection(asRef)}
@@ -566,7 +482,7 @@ const ProjectReadit = () => {
                     className="cursor-pointer"
                     onClick={() => scrollToSection(myRef)}
                   >
-                    기여 사항
+                    진행 상황
                   </span>
 
                   <div className="flex flex-col xl:gap-2 xl:px-5 text-sm">
@@ -574,33 +490,27 @@ const ProjectReadit = () => {
                       className="cursor-pointer"
                       onClick={() => scrollToSection(viewerRef)}
                     >
-                      1️⃣ 뷰어 페이지
+                      1️⃣ 메인 페이지
                     </span>
                     <span
                       className="cursor-pointer"
                       onClick={() => scrollToSection(infiniteRef)}
                     >
-                      2️⃣ 글 목록 페이지
+                      2️⃣ 프로젝트 페이지
                     </span>
                     <span
                       className="cursor-pointer"
                       onClick={() => scrollToSection(challengRef)}
                     >
-                      3️⃣ 챌린지 페이지
+                      3️⃣ UX
                     </span>
                     <span
                       className="cursor-pointer"
                       onClick={() => scrollToSection(commuRef)}
                     >
-                      4️⃣ 커뮤니티
+                      4️⃣ 웹 최적화 
                     </span>
                   </div>
-                  <span
-                    className="cursor-pointer"
-                    onClick={() => scrollToSection(troubleRef)}
-                  >
-                    트러블 슈팅
-                  </span>
                   <span
                     className="cursor-pointer"
                     onClick={() => scrollToSection(asRef)}
@@ -617,4 +527,4 @@ const ProjectReadit = () => {
   );
 };
 
-export default ProjectReadit;
+export default Gnaak;

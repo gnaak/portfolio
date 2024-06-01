@@ -1,10 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import zustand from "@/assets/skills/zustand.png";
 import react_query from "@/assets/skills/react_query.png";
 import ts from "@/assets/skills/ts.png";
 import react from "@/assets/skills/react.svg";
 import emotion from "@/assets/emotion.png";
-import blender from "@/assets/blender.png";
 import map from "@/assets/projects/map.png";
 import dice from "@/assets/projects/dice.png";
 import cards from "@/assets/projects/cards.png";

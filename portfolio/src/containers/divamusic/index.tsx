@@ -16,9 +16,14 @@ import { useEffect, useRef, useState } from "react";
 import Intro from "./Intro";
 import Diva from "./Diva";
 import useStore from "@/store";
+import useClear from "@/hooks/clear";
 
 const Divamusic = () => {
   const [sideBarIcon, setSideBarIcon] = useState<boolean>(false);
+    const clearall = useClear();
+    useEffect(() => {
+      clearall();
+    }, []);
   const {
     menu,
     setMenu,
@@ -48,14 +53,6 @@ const Divamusic = () => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  useEffect(() => {
-    setNum1(0);
-    setNum2(0);
-    setMenu(false);
-    setIsMenu(false);
-    setSideMenu(false);
-    setSmallMenu(false);
-  }, []);
 
   return (
     <>
@@ -66,7 +63,7 @@ const Divamusic = () => {
               ref={divRef}
               className="flex flex-col gap-2 xl:px-10 py-20 pb-10"
             >
-              <span className="font-bold text-2xl">DIV★</span>
+              <span className="font-bold text-2xl">DIVA</span>
               <span className="w-full border border-gray-200"></span>
             </div>
             <div className="flex flex-col pb-20">
@@ -306,7 +303,7 @@ const Divamusic = () => {
                     setSmallMenu(false);
                   }}
                 >
-                  DIV★
+                  DIVA
                 </span>
                 <span
                   className="cursor-pointer"
@@ -396,7 +393,7 @@ const Divamusic = () => {
                     className="cursor-pointer"
                     onClick={() => scrollToSection(divRef)}
                   >
-                    DIV★
+                    DIVA
                   </span>
                   <span
                     className="cursor-pointer"
@@ -500,7 +497,7 @@ const Divamusic = () => {
                     className="cursor-pointer"
                     onClick={() => scrollToSection(divRef)}
                   >
-                    DIV★
+                    DIVA
                   </span>
                   <span
                     className="cursor-pointer"

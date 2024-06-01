@@ -31,7 +31,7 @@ const Base = () => {
                     <a href="mailto:o1027447735@gmail.com">
                       &nbsp;o1027447735@gmail.com
                     </a>
-                    <a href="tel:+821012345678">&nbsp;010-2744-7735</a>
+                    <a href="tel:+821027447735">&nbsp;010-2744-7735</a>
                     <a href="https://github.com/gnaak">
                       &nbsp;https://github.com/gnaak
                     </a>
