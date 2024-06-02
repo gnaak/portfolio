@@ -1,12 +1,17 @@
 "use client";
 
+import { refType } from "@/types";
 import { useState } from "react";
 
-const Certi = () => {
+const Certi = ({ certiRef }:refType) => {
   const [open, setOpen] = useState<boolean>(false);
 
   return (
     <>
+              <div
+          ref={certiRef}
+          className="w-full flex-col flex items-center xl:pt-20 md:pt-16 pt-12"
+        >
       <div className="lg:w-3/5 xl:px-20 w-[80%]">
         <div className="flex flex-col lg:gap-10 gap-5">
           <div className="flex flex-col gap-2">
@@ -61,6 +66,7 @@ const Certi = () => {
             </>
           ) : null}
         </div>
+      </div>
       </div>
     </>
   );
