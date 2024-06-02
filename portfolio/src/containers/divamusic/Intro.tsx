@@ -7,7 +7,7 @@ const Intro = () => {
     <>
       <span className="font-bold md:text-xl">소개</span>
       <div className="flex flex-col xl:gap-3 gap-2">
-        <div className="flex flex-row justify-between items-center xl:pr-5">
+        <div className="flex flex-row justify-between items-center">
           <span className="md:text-base text-sm">
             사용자 음역 분석 기반 음악 추천 및 연습 서비스
           </span>

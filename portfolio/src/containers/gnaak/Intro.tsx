@@ -5,7 +5,7 @@ const Intro = () => {
     <>
       <span className="font-bold text-xl">소개</span>
       <div className="flex flex-col xl:gap-3 gap-2 ">
-        <div className="flex flex-row justify-between items-center xl:pr-5">
+        <div className="flex flex-row justify-between items-center">
           <div className="md:text-base text-sm">
             Next.js를 이용한 포트폴리오 제작&nbsp;
           </div>

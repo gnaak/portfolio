@@ -6,7 +6,7 @@ const Intro = () => {
     <>
       <span className="font-bold text-xl">소개</span>
       <div className="flex flex-col xl:gap-3 gap-2 ">
-        <div className="flex flex-row justify-between items-center xl:pr-5">
+        <div className="flex flex-row justify-between items-center">
           <div className="md:text-base text-sm">
             문해력을 키우는 가장 쉬운 방법&nbsp;
             <span className="font-bold ">READIT </span>

@@ -188,7 +188,7 @@ const Gnaak = () => {
                               <br />
                               프로젝트 중 DIVA의 음역대 측정, BillyBully의
                               주사위, Readit의 뷰어 설명란에 &nbsp;
-                              <span className="text-blue-500 dark:text-white underline">
+                              <span className="text-blue-500 underline">
                                 더보기
                               </span>
                               를 추가하여 간접적으로 서비스를 체험할 수 있도록

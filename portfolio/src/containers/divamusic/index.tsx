@@ -17,8 +17,11 @@ import Intro from "./Intro";
 import Diva from "./Diva";
 import useStore from "@/store";
 import useClear from "@/hooks/clear";
+import useModal from "@/hooks/useModal";
+import PitchDetector from "../tryme/PitchDetector";
 
 const Divamusic = () => {
+  const [isOpen, open, close] = useModal();
   const [sideBarIcon, setSideBarIcon] = useState<boolean>(false);
   const clearall = useClear();
   useEffect(() => {
@@ -27,7 +30,6 @@ const Divamusic = () => {
   const {
     menu,
     setMenu,
-    isMenu,
     setIsMenu,
     sideMenu,
     setSideMenu,
@@ -35,8 +37,6 @@ const Divamusic = () => {
     num2,
     smallMenu,
     setSmallMenu,
-    setNum1,
-    setNum2,
   } = useStore();
 
   const divRef = useRef(null);
@@ -55,8 +55,12 @@ const Divamusic = () => {
 
   return (
     <>
-      <div className="relative flex-col w-full h-screen flex items-center overflow-hidden select-none  dark:bg-gray-800 dark:text-white">
-        <div className="xl:w-full flex justify-center overflow-auto">
+      <div className="relative flex-col w-full h-screen flex items-center overflow-hidden select-none  dark:bg-gray-800 dark:text-white ">
+        <div
+          className={`xl:w-full flex justify-center ${
+            isOpen ? "overflow-hidden" : "overflow-auto"
+          } `}
+        >
           <div className="lg:w-3/5 w-4/5">
             <div
               ref={divRef}
@@ -140,7 +144,7 @@ const Divamusic = () => {
                       <span className="md:text-base text-sm">
                         캐러셀 자체 커스터마이징 진행
                       </span>
-                      <div className="bg-[#F1F1EF] p-4 md:flex hidden rounded-xl w-[100%] text-black lg:px-5 lg:text-base text-sm">
+                      <div className="bg-[#F1F1EF] p-4 md:flex hidden rounded-xl w-[100%] text-black lg:text-base text-sm">
                         <div className="flex flex-row xl:gap-5 gap-3">
                           🐫
                           <div className="flex flex-col w-full">
@@ -174,10 +178,24 @@ const Divamusic = () => {
                       <span className="font-bold md:text-base text-sm">
                         2️⃣ Web Audio API
                       </span>
-                      <span className="md:text-base text-sm">
-                        기기를 통해 입력된 오디오 소스를 실시간 분석 및 시각화
-                      </span>
-                      <div className="bg-[#F1F1EF] p-4 md:flex hidden rounded-xl w-[100%] text-black lg:px-5 lg:text-base text-sm">
+                      <div className="flex flex-row justify-between items-center md:text-base text-sm">
+                        <span className="">
+                          오디오 소스를 실시간 분석 및 시각화
+                        </span>
+                        <span
+                          className="material-symbols-outlined cursor-pointer flex items-center"
+                          onClick={open}
+                        >
+                          play_circle
+                        </span>
+
+                        {isOpen ? (
+                          <>
+                            <PitchDetector close={close} />
+                          </>
+                        ) : null}
+                      </div>
+                      <div className="bg-[#F1F1EF] p-4 md:flex hidden rounded-xl w-[100%] text-black lg:text-base text-sm">
                         <div className="flex flex-row xl:gap-5 gap-3">
                           🎵
                           <div className="flex flex-col w-full">
@@ -203,7 +221,7 @@ const Divamusic = () => {
                         <Image
                           src={mypage}
                           alt="마이 페이지"
-                          className=" md:inline hidden"
+                          className="md:inline hidden"
                         />
                       </div>
                     </div>
@@ -221,7 +239,7 @@ const Divamusic = () => {
                         렌더링되어야 하는 컴포넌트가 달라질 수 있어 전역으로
                         상태 관리를 진행했습니다.
                       </span>
-                      <div className="bg-[#F1F1EF] p-4 md:flex hidden rounded-xl w-[100%] text-black lg:px-5 lg:text-base text-sm">
+                      <div className="bg-[#F1F1EF] p-4 md:flex hidden rounded-xl w-[100%] text-black lg:text-base text-sm">
                         <div className="flex flex-row xl:gap-5 gap-3">
                           📢
                           <div className="flex flex-col w-full">
@@ -249,7 +267,7 @@ const Divamusic = () => {
                   <span className="font-bold md:text-xl">트러블 슈팅</span>
 
                   <div className="flex flex-col xl:gap-3">
-                    <div className="bg-[#F1F1EF] p-4 flex rounded-xl w-[100%] text-black lg:px-5 lg:text-base text-sm">
+                    <div className="bg-[#F1F1EF] p-4 flex rounded-xl w-[100%] text-black lg:text-base text-sm">
                       <div className="flex flex-row xl:gap-5 gap-3">
                         ⚠
                         <div className="flex flex-col w-full">
