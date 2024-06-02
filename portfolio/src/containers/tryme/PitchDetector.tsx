@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Wiggle from "public/images/wiggle1.png";
 
 interface PitchDetector {
   close: () => void;
@@ -19,6 +20,7 @@ const PitchDetector = ({ close }: PitchDetector) => {
       });
       setAudioStream(stream);
       setOn(true);
+      setHasInputVoice(true);
     } catch (error) {
       console.error("Error accessing microphone:", error);
     }
@@ -32,6 +34,9 @@ const PitchDetector = ({ close }: PitchDetector) => {
       audioStream.removeTrack(audioTrack);
       setAudioStream(null);
       setOn(false);
+      setCount(0);
+
+      setHasInputVoice(false);
     }
   };
 
@@ -161,6 +166,33 @@ const PitchDetector = ({ close }: PitchDetector) => {
     return sampleRate / T0;
   };
 
+  const [count, setCount] = useState(0);
+  const TIMEOUT_SECONDS = 20;
+  useEffect(() => {
+    if (on) {
+      const intervalId = setInterval(() => {
+        setCount((prevCnt) => prevCnt + 1);
+      }, 1000);
+      return () => {
+        clearInterval(intervalId);
+      };
+    }
+  }, [on]);
+
+  useEffect(() => {
+    if (count === TIMEOUT_SECONDS) {
+      console.log("timeisrunningout");
+      handleStopRecording();
+    }
+  }, [count]);
+
+  const minutes = Math.floor(count / 60);
+  const seconds = count % 60;
+
+  const [hasInputVoice, setHasInputVoice] = useState(false);
+
+  // '사용자의 인풋이 있을 때 애니메이션 추가' 로직이 들어갈 곳
+
   return (
     <>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 rounded-xl  border-2 dark:border-black bg-gray-900 text-white 3xl:w-1/6 2xl:w-1/4 lg:w-1/3 md:w-1/2 w-3/4 aspect-3/5">
@@ -177,16 +209,73 @@ const PitchDetector = ({ close }: PitchDetector) => {
                 close
               </span>
             </div>
+            <div className="text-3xl flex items-center justify-center">
+              <span>{minutes < 10 ? `0${minutes}` : minutes}</span>
+              <span>:</span>
+              <span className="text-blue-400">
+                {seconds < 10 ? `0${seconds}` : seconds}
+              </span>
+            </div>
             <div className="flex w-full justify-center text-xl">
               <span>음높이 : </span>
-              <span className="text-skyblue">{valueToDisplay}</span>
+              <span className="text-blue-400">{valueToDisplay}</span>
               <span>Hz</span>
             </div>
           </div>
-          <div className="h-[100px] flex gap-[12px] justify-center items-center">
-            {/* <div className="w-[16px] h-[16px] bg-white rounded-[100px] animate-[loading1_1s_infinite_100ms]"></div>
-            <div className="w-[16px] h-[16px] bg-white rounded-[100px] animate-[loading2_1s_infinite_100ms]"></div>
-            <div className="w-[16px] h-[16px] bg-white rounded-[100px] animate-[loading3_1s_infinite_100ms]"></div> */}
+
+          <div
+            className={`w-full aspect-square ${
+              hasInputVoice && "animate-wiggle"
+            } flex justify-center items-center bg-center bg-cover bg-no-repeat`}
+            style={{ backgroundImage: `url(${Wiggle.src})` }}
+          >
+            <div className="flex gap-[12px] mix-blend-overlay justify-center items-center">
+              <div
+                className={`w-[8px] h-[8px] bg-white rounded-[100px] ${
+                  hasInputVoice && "animate-dv0"
+                }`}
+              ></div>
+              <div
+                className={`w-[8px] h-[8px] bg-white rounded-[100px] ${
+                  hasInputVoice && "animate-dv1"
+                }`}
+              ></div>
+              <div
+                className={`w-[8px] h-[8px] bg-white rounded-[100px] ${
+                  hasInputVoice && "animate-dv2"
+                }`}
+              ></div>
+              <div
+                className={`w-[8px] h-[8px] bg-white rounded-[100px] ${
+                  hasInputVoice && "animate-dv3"
+                }`}
+              ></div>
+              <div
+                className={`w-[8px] h-[8px] bg-white rounded-[100px] ${
+                  hasInputVoice && "animate-dv4"
+                }`}
+              ></div>
+              <div
+                className={`w-[8px] h-[8px] bg-white rounded-[100px] ${
+                  hasInputVoice && "animate-dv5"
+                }`}
+              ></div>
+              <div
+                className={`w-[8px] h-[8px] bg-white rounded-[100px] ${
+                  hasInputVoice && "animate-dv6"
+                }`}
+              ></div>
+              <div
+                className={`w-[8px] h-[8px] bg-white rounded-[100px] ${
+                  hasInputVoice && "animate-dv7"
+                }`}
+              ></div>
+              <div
+                className={`w-[8px] h-[8px] bg-white rounded-[100px] ${
+                  hasInputVoice && "animate-dv8"
+                }`}
+              ></div>
+            </div>
           </div>
           <button className="flex w-3/4 justify-center p-2 bg-blue-700 rounded-xl text-lg font-bold">
             {on ? (

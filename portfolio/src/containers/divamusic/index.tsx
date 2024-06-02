@@ -57,9 +57,8 @@ const Divamusic = () => {
     <>
       <div className="relative flex-col w-full h-screen flex items-center overflow-hidden select-none  dark:bg-gray-800 dark:text-white ">
         <div
-          className={`xl:w-full flex justify-center ${
-            isOpen ? "overflow-hidden" : "overflow-auto"
-          } `}
+          className={`xl:w-full flex justify-center
+            overflow-auto`}
         >
           <div className="lg:w-3/5 w-4/5">
             <div

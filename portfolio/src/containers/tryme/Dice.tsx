@@ -4,13 +4,12 @@ import * as THREE from "three";
 import * as BufferGeometryUtils from "three/addons/utils/BufferGeometryUtils.js";
 import { useMediaQuery } from "react-responsive";
 
-
 interface DiceProps {
   close: () => void;
 }
 
 const Dice = ({ close }: DiceProps) => {
-    const isMidScreen = useMediaQuery({ query: "(min-width: 640px)" });
+  const isMidScreen = useMediaQuery({ query: "(min-width: 640px)" });
 
   const [diceScore, setDiceScore] = useState<number>(0);
   const canvasRef = useRef(null);
@@ -31,7 +30,7 @@ const Dice = ({ close }: DiceProps) => {
 
     scene = new THREE.Scene();
 
-    camera = new THREE.PerspectiveCamera(80, 400, 6, 3000);
+    camera = new THREE.PerspectiveCamera(80, 500, 6, 3000);
     //카메라 위치
     camera.position.set(2, 5.1, -1).multiplyScalar(1);
     camera.zoom = 1.5;
@@ -336,11 +335,9 @@ const Dice = ({ close }: DiceProps) => {
       camera.aspect = 1.44;
       camera.updateProjectionMatrix();
       if (isMidScreen) {
-
         renderer.setSize(590, 400);
       } else {
-                renderer.setSize(290, 200);
-
+        renderer.setSize(280, 200);
       }
     }
   }
@@ -373,21 +370,19 @@ const Dice = ({ close }: DiceProps) => {
     }
   }
 
-  
-
   return (
     <>
       <canvas
         ref={canvasRef}
-        className=" relative bg-white rounded-2xl  dark:bg-gray-900"
+        className=" relative bg-white rounded-2xl dark:bg-gray-900 w-1/3"
       ></canvas>
 
-      <div className="absolute top-10 left-1/2 w-[10%] aspect-square rounded-xl flex items-center justify-center text-3xl -translate-x-1/2 ">
+      <div className="absolute md:top-10 top-5 left-1/2 w-[10%] aspect-square rounded-xl flex items-center justify-center text-3xl -translate-x-1/2 ">
         {diceScore}
       </div>
       <div
         className="
-         absolute top-3 -right-5 w-[10%] aspect-square rounded-xl flex items-center justify-center text-  -translate-x-1/2  "
+         absolute top-3 md:-right-5 -right-3 w-[10%] aspect-square rounded-xl flex items-center justify-center text-  -translate-x-1/2"
         onClick={close}
       >
         <span
