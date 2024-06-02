@@ -202,8 +202,8 @@ const PitchDetector = ({ close }: PitchDetector) => {
               <span
                 className="material-symbols-outlined cursor-pointer"
                 onClick={() => {
-                  close();
                   handleStopRecording();
+                  close();
                 }}
               >
                 close

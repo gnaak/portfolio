@@ -163,9 +163,15 @@ const Divamusic = () => {
                         <Image
                           src={landing}
                           alt="랜딩 페이지"
-                          className="md:inline hidden"
+                          className="md:inline hidden
+                          h-auto w-auto shrink-0"
                         />
-                        <Image src={home} alt="홈 페이지" />
+                        <Image
+                          src={home}
+                          alt="홈 페이지"
+                          className="
+                          h-auto w-auto shrink-0"
+                        />
                       </div>
                     </div>
                   </div>
@@ -216,11 +222,17 @@ const Divamusic = () => {
                         </div>
                       </div>
                       <div className="flex flex-row justify-evenly xl:border lg:border-gray-400 xl:py-5 rounded-xl md:shadow-xl shadow-md">
-                        <Image src={rangecheck} alt="음역대 테스트" />
+                        <Image
+                          src={rangecheck}
+                          alt="음역대 테스트"
+                          className="
+                          h-auto w-auto shrink-0"
+                        />
                         <Image
                           src={mypage}
                           alt="마이 페이지"
-                          className="md:inline hidden"
+                          className="md:inline hidden
+                          h-auto w-auto shrink-0"
                         />
                       </div>
                     </div>
