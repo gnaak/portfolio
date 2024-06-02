@@ -184,17 +184,22 @@ const BillyBully = () => {
                         <span className="">
                           three.js를 활용한 주사위 커스터마이징
                         </span>
-                        <span
-                          className="material-symbols-outlined cursor-pointer flex items-center"
-                          onClick={open}
-                        >
-                          play_circle
-                        </span>
+                        <div className="flex flex-row items-center justify-center gap-1">
+                          <span className="text-blue-500 md:inline hidden">
+                            try me!
+                          </span>
+                          <span
+                            className="material-symbols-outlined cursor-pointer flex items-center"
+                            onClick={open}
+                          >
+                            play_circle
+                          </span>
+                        </div>
 
                         {isOpen ? (
                           <>
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:w-[600px] md:h-[500px] w-[300px] h-[250px] bg-white dark:bg-gray-900  rounded-lg border border-gray-400">
-                              <Dice close={close}/>
+                              <Dice close={close} />
                             </div>
                           </>
                         ) : null}

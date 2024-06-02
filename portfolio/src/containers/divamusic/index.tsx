@@ -187,16 +187,19 @@ const Divamusic = () => {
                         <span className="">
                           오디오 소스를 실시간 분석 및 시각화
                         </span>
-                        <span
-                          className="material-symbols-outlined cursor-pointer flex items-center"
-                          onClick={open}
-                        >
-                          play_circle
-                        </span>
+                        <div className="flex flex-row items-center justify-center gap-1">
+                          <span className="text-blue-500 md:inline hidden">try me!</span>
+
+                          <span
+                            className="material-symbols-outlined cursor-pointer flex items-center"
+                            onClick={open}
+                          >
+                            play_circle
+                          </span>
+                        </div>
 
                         {isOpen ? (
                           <>
-
                             <RangeCheckPage close={close} />
                           </>
                         ) : null}
