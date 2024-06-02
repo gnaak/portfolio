@@ -7,7 +7,7 @@ const RangeCheckGuide: React.FC = () => {
       <Image
         src={Cactus}
         alt="캐릭터"
-        className=" md:w-[260px] md:inline hidden"
+        className=" md:w-[260px] md:inline w-[120px]"
       />
       <ul className="md:text-lg lg:text-base flex flex-col gap-6 md:p-0 pt-10 h-full justify-center ">
         <li className="flex gap-2">
