@@ -22,7 +22,6 @@ const PitchDetector = ({ close }: PitchDetector) => {
       setOn(true);
       setHasInputVoice(true);
     } catch (error) {
-      console.error("Error accessing microphone:", error);
     }
   };
   const handleStopRecording = () => {
@@ -181,7 +180,6 @@ const PitchDetector = ({ close }: PitchDetector) => {
 
   useEffect(() => {
     if (count === TIMEOUT_SECONDS) {
-      console.log("timeisrunningout");
       handleStopRecording();
     }
   }, [count]);

@@ -18,7 +18,7 @@ import Diva from "./Diva";
 import useStore from "@/store";
 import useClear from "@/hooks/clear";
 import useModal from "@/hooks/useModal";
-import PitchDetector from "../tryme/PitchDetector";
+import RangeCheckPage from "../tryme/PitchDetector";
 
 const Divamusic = () => {
   const [isOpen, open, close] = useModal();
@@ -196,7 +196,8 @@ const Divamusic = () => {
 
                         {isOpen ? (
                           <>
-                            <PitchDetector close={close} />
+
+                            <RangeCheckPage close={close} />
                           </>
                         ) : null}
                       </div>

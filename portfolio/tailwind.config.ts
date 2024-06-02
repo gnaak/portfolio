@@ -75,6 +75,18 @@ const config: Config = {
         ...DetectionBarKeyFrames[6],
         ...DetectionBarKeyFrames[7],
         ...DetectionBarKeyFrames[8],
+        loading1: {
+          "10%": { backgroundColor: "#32c5ff" },
+          "40%": { height: "90px" },
+        },
+        loading2: {
+          "10%": { backgroundColor: "#32c5ff" },
+          "60%": { height: "90px" },
+        },
+        loading3: {
+          "10%": { backgroundColor: "#32c5ff" },
+          "80%": { height: "90px" },
+        },
       },
       animation: {
         fadeInLeft: "fadeInLeft 0.5s forwards",
