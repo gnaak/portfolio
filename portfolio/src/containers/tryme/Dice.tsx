@@ -315,7 +315,6 @@ const Dice = ({ close }: DiceProps) => {
             setIsScoreVisible(false);
           }, 2000);
         }, 1000);
-        setDiceScore(0);
       }
     );
   };
@@ -340,7 +339,7 @@ const Dice = ({ close }: DiceProps) => {
 
         renderer.setSize(590, 400);
       } else {
-                renderer.setSize(295, 200);
+                renderer.setSize(290, 200);
 
       }
     }
@@ -402,7 +401,7 @@ const Dice = ({ close }: DiceProps) => {
       </div>
       <div
         className="
-        absolute top-full left-1/2 p-3 -translate-y-20 rounded-xl text-black flex items-center bg-white justify-center text-sm border border-gray-400 -translate-x-1/2 "
+        absolute top-full left-1/2 p-2 md:-translate-y-20 -translate-y-12 rounded-xl text-black flex items-center bg-white justify-center md:text-sm text-xs border border-gray-400 -translate-x-1/2 "
         onClick={() => {
           throwDice();
         }}

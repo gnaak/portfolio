@@ -13,7 +13,7 @@ const Gnaak = () => {
         className="flex xl:flex-col xl:items-start items-center flex-row xl:justify-between xl:w-[22%] w-full xl:aspect-square  border border-gray-400 p-3 gap-5 rounded-xl shadow-xl hover:cursor-pointer hover:-translate-y-1 hover:scale-105 duration-300"
         onClick={() => router.push("/gnaak")}
       >
-        <div className="2xl:w-20 2xl:h-20 md:w-16 md:h-16 w-12 h-12 flex justify-center items-center border bg-[#] border-gray-400 rounded-xl shrink-0">
+        <div className="2xl:w-20 2xl:h-20 md:w-16 md:h-16 w-12 h-12 flex justify-center items-center border bg-white border-gray-400 rounded-xl shrink-0">
           <Image
             src={gnaak}
             alt="gnaak"
