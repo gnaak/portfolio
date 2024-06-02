@@ -1,12 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
-import lightmode from "@/assets/lightmode.svg";
 import Image from "next/image";
 import link from "@/assets/link.png";
 import useStore from "@/store";
 import { useMediaQuery } from "react-responsive";
 import { usePathname, useRouter } from "next/navigation";
-import home from "@/assets/home.png";
 
 const DarkModeToggle = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -87,12 +85,14 @@ const DarkModeToggle = () => {
       <div className="xl:px-10 md:px-3 px-1">
         <div className="flex flex-row p-2 justify-between w-30 items-center">
           <div
-            className="md:w-8 md:h-8 w-6 h-6 relative"
+            className="md:w-8 md:h-8 w-6 h-6 relative flex items-center justify-center"
             onMouseEnter={() => setOpen(true)}
             onMouseLeave={() => setOpen(false)}
             onClick={toggleDarkMode}
           >
-            <Image src={lightmode} alt="다크모드" />
+            <span className="material-symbols-outlined cursor-pointer">
+              light_mode
+            </span>
             {open && (
               <div className="absolute border border-gray-400 top-full left-1/2 transform -translate-x-1/2 right-full w-20 items-center justify-center text-xs dark:text-white xl:flex hidden">
                 {darkMode ? <span>라이트 모드</span> : <span>다크 모드</span>}
@@ -104,8 +104,11 @@ const DarkModeToggle = () => {
               <Image src={link} alt="깃허브" />
             </a>
           </div>
-          <div className="md:w-7 md:h-7 w-5 h-5" onClick={handleHomeClick}>
-            <Image src={home} alt="홈" />
+          <div
+            className="md:w-8 md:h-8 w-6 h-6 relative flex items-center justify-center"
+            onClick={handleHomeClick}
+          >
+            <span className="material-symbols-outlined">home</span>{" "}
           </div>
         </div>
       </div>

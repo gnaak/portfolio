@@ -2,13 +2,16 @@ import React, { useRef, useState } from "react";
 import * as CANNON from "cannon-es";
 import * as THREE from "three";
 import * as BufferGeometryUtils from "three/addons/utils/BufferGeometryUtils.js";
+import { useMediaQuery } from "react-responsive";
 
 
 interface DiceProps {
   close: () => void;
 }
 
-const Dice= ({ close }:DiceProps) => {
+const Dice = ({ close }: DiceProps) => {
+    const isMidScreen = useMediaQuery({ query: "(min-width: 640px)" });
+
   const [diceScore, setDiceScore] = useState<number>(0);
   const canvasRef = useRef(null);
   let renderer: THREE.WebGLRenderer | null;
@@ -59,7 +62,7 @@ const Dice= ({ close }:DiceProps) => {
 
   const createFloor = () => {
     const floor = new THREE.Mesh(
-      new THREE.PlaneGeometry(1000, 1000),
+      new THREE.PlaneGeometry(600, 400),
       new THREE.ShadowMaterial({
         opacity: 1,
       })
@@ -333,7 +336,13 @@ const Dice= ({ close }:DiceProps) => {
     if (camera && renderer) {
       camera.aspect = 1.44;
       camera.updateProjectionMatrix();
-      renderer.setSize(1080, 750);
+      if (isMidScreen) {
+
+        renderer.setSize(590, 400);
+      } else {
+                renderer.setSize(295, 200);
+
+      }
     }
   }
 
@@ -369,17 +378,37 @@ const Dice= ({ close }:DiceProps) => {
 
   return (
     <>
-      <canvas ref={canvasRef} className="border border-black"></canvas>
-      <div>{diceScore}</div>
+      <canvas
+        ref={canvasRef}
+        className=" relative bg-white rounded-2xl  dark:bg-gray-900"
+      ></canvas>
 
-      <button
-        className=""
+      <div className="absolute top-10 left-1/2 w-[10%] aspect-square rounded-xl flex items-center justify-center text-3xl -translate-x-1/2 ">
+        {diceScore}
+      </div>
+      <div
+        className="
+         absolute top-3 -right-5 w-[10%] aspect-square rounded-xl flex items-center justify-center text-  -translate-x-1/2  "
+        onClick={close}
+      >
+        <span
+          className="material-symbols-outlined cursor-pointer"
+          onClick={() => {
+            close();
+          }}
+        >
+          close
+        </span>
+      </div>
+      <div
+        className="
+        absolute top-full left-1/2 p-3 -translate-y-20 rounded-xl text-black flex items-center bg-white justify-center text-sm border border-gray-400 -translate-x-1/2 "
         onClick={() => {
           throwDice();
         }}
       >
-        ROLL
-      </button>
+        주사위 굴리기
+      </div>
     </>
   );
 };

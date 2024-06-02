@@ -16,14 +16,18 @@ import Intro from "./Intro";
 import Readit from "./BillyBully";
 import useStore from "@/store";
 import useClear from "@/hooks/clear";
+import useModal from "@/hooks/useModal";
+import Dice from "../tryme/Dice";
 
 const BillyBully = () => {
+    const [isOpen, open, close] = useModal();
+    const [sideBarIcon, setSideBarIcon] = useState<boolean>(false);
+
   const clearall = useClear();
   useEffect(() => {
     clearall();
   }, []);
 
-  const [sideBarIcon, setSideBarIcon] = useState<boolean>(false);
   const {
     menu,
     setMenu,
@@ -176,9 +180,26 @@ const BillyBully = () => {
                       <span className="font-bold md:text-base text-sm">
                         2️⃣ 주사위
                       </span>
-                      <span className="md:text-base text-sm">
-                        three.js를 활용한 주사위 커스터마이징
-                      </span>
+                      <div className="flex flex-row justify-between items-center md:text-base text-sm">
+                        <span className="">
+                          three.js를 활용한 주사위 커스터마이징
+                        </span>
+                        <span
+                          className="material-symbols-outlined cursor-pointer flex items-center"
+                          onClick={open}
+                        >
+                          play_circle
+                        </span>
+
+                        {isOpen ? (
+                          <>
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:w-[600px] md:h-[500px] w-[300px] h-[250px] bg-white dark:bg-gray-900  rounded-lg border border-gray-400">
+                              <Dice close={close}/>
+                            </div>
+                          </>
+                        ) : null}
+                      </div>
+
                       <div className="bg-[#F1F1EF] p-4 md:flex hidden rounded-xl w-[100%] text-black lg:px-5 lg:text-base text-sm">
                         <div className="flex flex-row xl:gap-5 gap-3">
                           🎲
