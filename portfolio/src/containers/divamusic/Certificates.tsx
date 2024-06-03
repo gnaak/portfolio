@@ -57,7 +57,7 @@ const Certificate = ({ certiRef, oneRef, twoRef, threeRef }: refType) => {
         <div>
           <div
             ref={twoRef}
-            className="flex flex-col gap-3 lg:pt-12 pt-10"
+            className="flex flex-col gap-3 lg:pt-12 pt-10 border border-black"
           >
             <span className="font-bold md:text-base text-sm">
               2️⃣ Web Audio API

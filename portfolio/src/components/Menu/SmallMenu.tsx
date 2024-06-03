@@ -33,13 +33,7 @@ const SmallMenu = ({
               className="cursor-pointer"
               onClick={() => scrollToSection(skillRef!)}
             >
-              {path === "/" ? (
-                <>SKILLS</>
-              ) : path === "/gnaak" ? (
-                <>진행 상황</>
-              ) : (
-                <>사용 기술</>
-              )}
+              {path === "/" ? <>SKILLS</> : <>사용 기술</>}
             </span>
             {path === "/" ? (
               <span
@@ -53,27 +47,42 @@ const SmallMenu = ({
               </span>
             ) : null}
             <span
-              className="cursor-pointer"
-              onClick={() => scrollToSection(certiRef!)}
+              className="cursor-pointer md:inline hidden"
+              onClick={() => {
+                scrollToSection(certiRef!);
+                setSmallMenu(false);
+              }}
             >
               {path === "/" ? (
                 <>CERTIFICATES</>
               ) : path === "/gnaak" ? (
                 <>진행 상황</>
               ) : (
-                <>사용 기술</>
+                <>기여 사항</>
               )}
             </span>
-            <span
-              className="cursor-pointer"
-              onClick={() => scrollToSection(expRef!)}
-            >
-              {path === "/" ? (
-                <>EXPERIENCE</>
-              ) : path === "/gnaak" ? null : (
-                <>트러블 슈팅</>
-              )}
-            </span>
+            {path === "/gnaak" ? null : (
+              <span
+                className="cursor-pointer md:inline hidden"
+                onClick={() => {
+                  scrollToSection(expRef!);
+                  setSmallMenu(false);
+                }}
+              >
+                {path === "/" ? <>EXPERIENCE</> : <>트러블 슈팅</>}
+              </span>
+            )}
+            {path === "/" ? null : (
+              <span
+                className="cursor-pointer md:inline hidden"
+                onClick={() => {
+                  scrollToSection(expRef!);
+                  setSmallMenu(false);
+                }}
+              >
+                <>회고</>
+              </span>
+            )}
           </div>
           <div className="flex flex-row justify-center">
             <span

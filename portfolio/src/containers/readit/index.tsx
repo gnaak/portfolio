@@ -1,20 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-import zustand from "@/assets/skills/zustand.png";
-import react_query from "@/assets/skills/react_query.png";
-import ts from "@/assets/skills/ts.png";
-import react from "@/assets/skills/react.svg";
-import tailwind from "@/assets/tailwind.png";
-import viewer from "@/assets/projects/viewer.png";
-import infinitequery from "@/assets/projects/infinitequery.png";
-import chart from "@/assets/projects/chart.png";
-import commu from "@/assets/projects/commu.png";
 import As from "./As";
-import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import Intro from "./Intro";
+import { useEffect, useRef } from "react";
 import Readit from "./Readit";
-import useStore from "@/store";
 import useClear from "@/hooks/clear";
 import Menu from "@/components/Menu";
 import Skills from "./Skills";
