@@ -21,7 +21,7 @@ const Readit = ({ baseRef }: refType) => {
             />
           </div>
         </div>
-        <div className="xl:w-2/3 xl:py-7 md:flex items-center justify-center xl:px-8 hidden">
+        <div className="xl:w-2/3 xl:py-7 md:flex items-center justify-center hidden ">
           <div className="xl:w-2/3 xl:flex flex-col xl:gap-1">
             <div className="flex flex-row xl:h-2/3 justify-start items- xl:gap-5 gap-3">
               <div className="flex flex-col xl:h-2/3 xl:text-lg items-start md:text-base text-sm">
