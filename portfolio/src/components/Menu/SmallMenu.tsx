@@ -47,7 +47,7 @@ const SmallMenu = ({
               </span>
             ) : null}
             <span
-              className="cursor-pointer md:inline hidden"
+              className="cursor-pointer"
               onClick={() => {
                 scrollToSection(certiRef!);
                 setSmallMenu(false);
