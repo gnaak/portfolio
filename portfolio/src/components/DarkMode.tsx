@@ -5,6 +5,7 @@ import link from "@/assets/link.png";
 import useStore from "@/store";
 import { useMediaQuery } from "react-responsive";
 import { usePathname, useRouter } from "next/navigation";
+import useClear from "@/hooks/clear";
 
 const DarkModeToggle = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -49,6 +50,12 @@ const DarkModeToggle = () => {
   const handleHomeClick = () => {
     location.length > 1 ? router.push("/") : handletop();
   };
+
+    const clearall = useClear();
+    useEffect(() => {
+      clearall();
+    }, []);
+  
 
   return (
     <div className="fixed top-0 3xl:right-0 w-screen right-0 flex flex-row items-center justify-between select-none bg-white opacity-90 dark:bg-gray-900 dark:text-white">

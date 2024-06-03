@@ -6,7 +6,7 @@ import Exp from "@/containers/main/Experience";
 import Projects from "@/containers/main/Projects/Projects";
 import { useEffect, useRef, useState } from "react";
 import useClear from "@/hooks/clear";
-import Menu from "@/components/Menu";
+import Menu from "@/components/Menu/index";
 
 const Main = () => {
   const clearall = useClear();
