@@ -4,7 +4,7 @@ import Skills from "@/containers/main/Skills/Skills";
 import Certi from "@/containers/main/Certificates";
 import Exp from "@/containers/main/Experience";
 import Projects from "@/containers/main/Projects/Projects";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import useClear from "@/hooks/clear";
 import Menu from "@/components/Menu/index";
 

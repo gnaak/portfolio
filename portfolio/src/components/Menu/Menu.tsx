@@ -15,21 +15,11 @@ const MainMenu = ({
   oneRef,
   twoRef,
   threeRef,
+  fourRef,
   asRef,
 }: refType) => {
   const router = useRouter();
-  const [sideBarIcon, setSideBarIcon] = useState<boolean>(false);
-  const {
-    menu,
-    setMenu,
-    setIsMenu,
-    sideMenu,
-    setSideMenu,
-    num1,
-    num2,
-    smallMenu,
-    setSmallMenu,
-  } = useStore();
+  const { menu, setMenu, setIsMenu, num2, setSmallMenu } = useStore();
   const path = usePathname();
   const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
@@ -112,7 +102,7 @@ const MainMenu = ({
                 </>
               ) : null}
               <span
-                className="cursor-pointer"
+                className="cursor-pointer "
                 onClick={() => scrollToSection(certiRef!)}
               >
                 {path === "/" ? (
@@ -120,19 +110,90 @@ const MainMenu = ({
                 ) : path === "/gnaak" ? (
                   <>진행 상황</>
                 ) : (
-                  <>기여 사항</>
+                  <>
+                    <span>기여 사항</span>
+                  </>
+                )}
+                {path === "/" ? null : (
+                  <div className="flex flex-col xl:gap-2 py-2 xl:px-3 text-sm">
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => scrollToSection(oneRef!)}
+                    >
+                      {path === "/divamusic"
+                        ? "1️⃣ 캐러셀"
+                        : path === "/readit"
+                        ? "1️⃣ 뷰어 페이지"
+                        : path === "/billybully"
+                        ? "1️⃣ 맵 & 캐릭터"
+                        : path === "/gnaak"
+                        ? "1️⃣ 메인 페이지"
+                        : null}
+                    </span>
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => {
+                        scrollToSection(twoRef!);
+                      }}
+                    >
+                      {path === "/divamusic"
+                        ? "2️⃣ Web Audio API"
+                        : path === "/readit"
+                        ? "2️⃣ 글 목록"
+                        : path === "/billybully"
+                        ? "2️⃣ 주사위"
+                        : path === "/gnaak"
+                        ? "2️⃣ 프로젝트 페이지"
+                        : null}
+                    </span>
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => scrollToSection(threeRef!)}
+                    >
+                      {path === "/divamusic"
+                        ? "3️⃣ Jotai"
+                        : path === "/readit"
+                        ? "3️⃣ 챌린지 페이지"
+                        : path === "/billybully"
+                        ? "3️⃣ Zustand"
+                        : path === "/gnaak"
+                        ? "3️⃣ UX"
+                        : null}
+                    </span>
+                    {path === "/divamusic" || path === '/billybully' ? null : (
+                      <span
+                        className="cursor-pointer"
+                        onClick={() => scrollToSection(fourRef!)}
+                      >
+                        {path === "/divamusic"
+                          ? null
+                          : path === "/readit"
+                          ? "4️⃣ 커뮤니티"
+                          : path === "/billybully"
+                          ? null
+                          : path === "/gnaak"
+                          ? "4️⃣ 웹 최적화"
+                          : null}
+                      </span>
+                    )}
+                  </div>
                 )}
               </span>
-              <span
-                className="cursor-pointer"
-                onClick={() => scrollToSection(expRef!)}
-              >
-                {path === "/" ? (
+              {path === "/" ? (
+                <span
+                  className="cursor-pointer"
+                  onClick={() => scrollToSection(expRef!)}
+                >
                   <>EXPERIENCE</>
-                ) : path === "/gnaak" ? null : (
+                </span>
+              ) : path === "/gnaak" ? null : (
+                <span
+                  className="cursor-pointer"
+                  onClick={() => scrollToSection(expRef!)}
+                >
                   <>트러블 슈팅</>
-                )}
-              </span>
+                </span>
+              )}
               <span
                 className="cursor-pointer"
                 onClick={() => scrollToSection(asRef!)}

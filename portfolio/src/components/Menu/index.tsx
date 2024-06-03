@@ -12,13 +12,20 @@ const Menu = ({
   expRef,
   oneRef,
   twoRef,
+  fourRef,
   threeRef,
   asRef,
 }: refType) => {
   return (
     <>
       <div className="fixed top-20 left-0 w-1/6 xl:h-screen flex flex-col xl:justify-between z-30  select-none  dark:text-white">
-        <SmallMenu />
+        <SmallMenu
+          baseRef={baseRef}
+          skillRef={skillRef}
+          pjtRef={pjtRef}
+          certiRef={certiRef}
+          expRef={expRef}
+        />
         <MainMenu
           baseRef={baseRef}
           skillRef={skillRef}
@@ -40,6 +47,7 @@ const Menu = ({
         oneRef={oneRef}
         twoRef={twoRef}
         threeRef={threeRef}
+        fourRef={fourRef}
         asRef={asRef}
       />
     </>
