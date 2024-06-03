@@ -7,7 +7,7 @@ import notion from "@/assets/notion.png";
 const Readit = ({ baseRef }: refType) => {
   return (
     <>
-      <div ref={baseRef} className="flex flex-col gap-2 xl:px-10 py-20 pb-10">
+      <div ref={baseRef} className="flex flex-col gap-2 py-20 pb-10">
         <span className="font-bold text-2xl">Readit</span>
         <span className="w-full border border-gray-200"></span>
       </div>
@@ -24,7 +24,7 @@ const Readit = ({ baseRef }: refType) => {
             />
           </div>
         </div>
-        <div className="xl:w-2/3 xl:py-7 md:flex items-center justify-center xl:px-8 hidden">
+        <div className="xl:w-2/3 xl:py-7 md:flex items-center justify-center hidden ">
           <div className="xl:w-2/3 xl:flex flex-col xl:gap-1">
             <div className="flex flex-row xl:h-2/3 justify-start items- xl:gap-5 gap-3">
               <div className="flex flex-col xl:h-2/3 xl:text-lg items-start md:text-base text-sm">
