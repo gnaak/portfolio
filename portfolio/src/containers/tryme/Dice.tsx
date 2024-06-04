@@ -377,7 +377,7 @@ const Dice = ({ close }: DiceProps) => {
         className=" relative bg-white rounded-2xl dark:bg-gray-900 w-1/3"
       ></canvas>
 
-      <div className="absolute md:top-10 top-5 left-1/2 w-[10%] aspect-square rounded-xl flex items-center justify-center text-3xl -translate-x-1/2 ">
+      <div className="fixed md:top-10 top-5 left-1/2 w-[10%] aspect-square rounded-xl flex items-center justify-center text-3xl -translate-x-1/2 ">
         {diceScore}
       </div>
       <div

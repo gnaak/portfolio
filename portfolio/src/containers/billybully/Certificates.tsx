@@ -59,7 +59,7 @@ const Certificate = ({ certiRef, oneRef, twoRef, threeRef }: refType) => {
 
               {isOpen ? (
                 <>
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:w-[600px] md:h-[500px] w-[300px] h-[250px] bg-white dark:bg-gray-900  rounded-lg border border-gray-400">
+                  <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:w-[600px] md:h-[500px] w-[300px] h-[250px] bg-white dark:bg-gray-900  rounded-lg border border-gray-400">
                     <Dice close={close} />
                   </div>
                 </>

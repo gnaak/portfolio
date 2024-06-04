@@ -85,7 +85,7 @@ const handleStopRecording = () => {
 
   return (
     <>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 rounded-xl  border-2 dark:border-black bg-gray-900 text-white lg:w-[400px] md:w-1/2 w-3/4 aspect-3/5">
+      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 rounded-xl  border-2 dark:border-black bg-gray-900 text-white lg:w-[400px] md:w-1/2 w-3/4 aspect-3/5">
         <div className="flex flex-col items-center h-full p-5 pb-0  ">
           <div className="flex flex-row justify-end w-full ">
             <span
