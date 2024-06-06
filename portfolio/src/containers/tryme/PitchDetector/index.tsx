@@ -59,7 +59,7 @@ const handleStopRecording = () => {
 
   setCurrentPhase(LoadingPhase);
   const { minNoteName, maxNoteName } = convertHztoNote(pitchArray);
-  if (pitchArray.length < 10) {
+  if (pitchArray.length < 5) {
     alert('소음이 없는 환경에서 측정해주세요');
     setCurrentPhase(GuidePhase);
     return;

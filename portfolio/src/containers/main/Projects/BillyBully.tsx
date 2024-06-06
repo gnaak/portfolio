@@ -3,9 +3,15 @@
 import billybully from "@/assets/projects/BILLYBULLY.png";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const BillyBully = () => {
   const router = useRouter();
+
+  useEffect(() => {
+    router.prefetch("/billybully");
+  }, [router]);
+
   return (
     <>
       <div
@@ -19,9 +25,7 @@ const BillyBully = () => {
           <div className="flex flex-col lg:gap-2">
             <div className="flex flex-row justify-between w-full items-center">
               <span className="font-bold 3xl:text-lg">Billy Bully</span>
-              <div className="xl:hidden text-lg font-bold ">
-                +
-              </div>
+              <div className="xl:hidden text-lg font-bold ">+</div>
             </div>
             <span className="font-bold 3xl:text-base md:text-sm text-xs">
               프론트엔드(리드)

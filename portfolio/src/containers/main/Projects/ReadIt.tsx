@@ -3,9 +3,15 @@
 import readit from "@/assets/projects/readit.png";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const Readit = () => {
   const router = useRouter();
+
+  useEffect(() => {
+    router.prefetch("/readit");
+  }, [router]);
+
   return (
     <>
       <div

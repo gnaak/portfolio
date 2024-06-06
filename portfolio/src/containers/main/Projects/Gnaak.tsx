@@ -4,9 +4,14 @@ import gnaak from "@/assets/projects/skawkaks.png";
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const Gnaak = () => {
   const router = useRouter();
+
+  useEffect(() => {
+    router.prefetch("/gnaak");
+  }, [router]);
   return (
     <>
       <div

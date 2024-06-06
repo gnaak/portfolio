@@ -3,9 +3,14 @@
 import diva from "@/assets/projects/DIVA.png";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const Diva = () => {
   const router = useRouter();
+  
+  useEffect(() => {
+    router.prefetch("/divamusic");
+  }, [router]);
   return (
     <>
       <div
