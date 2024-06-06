@@ -8,17 +8,14 @@ import Image from "next/image";
 import RangeCheckPage from "../tryme/PitchDetector";
 
 const Certificate = ({ certiRef, oneRef, twoRef, threeRef }: refType) => {
-    const [isOpen, open, close] = useModal();
+  const [isOpen, open, close] = useModal();
 
   return (
     <>
       <div ref={certiRef} className="flex flex-col xl:pt-20 md:pt-16 pt-12">
         <span className="font-bold md:text-xl">기여 사항</span>
         <div>
-          <div
-            ref={oneRef}
-            className="flex flex-col gap-3 lg:pt-12 pt-10"
-          >
+          <div ref={oneRef} className="flex flex-col gap-3 lg:pt-12 pt-10">
             <span className="font-bold md:text-base text-sm">1️⃣ 캐러셀</span>
             <span className="md:text-base text-sm">
               캐러셀 자체 커스터마이징 진행
@@ -44,21 +41,20 @@ const Certificate = ({ certiRef, oneRef, twoRef, threeRef }: refType) => {
                 alt="랜딩 페이지"
                 className="md:inline hidden
                           h-auto w-auto shrink-0"
+                unoptimized
               />
               <Image
                 src={home}
                 alt="홈 페이지"
                 className="
                           h-auto w-auto shrink-0"
+                unoptimized
               />
             </div>
           </div>
         </div>
         <div>
-          <div
-            ref={twoRef}
-            className="flex flex-col gap-3 lg:pt-12 pt-10"
-          >
+          <div ref={twoRef} className="flex flex-col gap-3 lg:pt-12 pt-10">
             <span className="font-bold md:text-base text-sm">
               2️⃣ Web Audio API
             </span>
@@ -107,12 +103,14 @@ const Certificate = ({ certiRef, oneRef, twoRef, threeRef }: refType) => {
                 alt="음역대 테스트"
                 className="
                           h-auto w-auto shrink-0"
+                unoptimized
               />
               <Image
                 src={mypage}
                 alt="마이 페이지"
                 className="md:inline hidden
                           h-auto w-auto shrink-0"
+                unoptimized
               />
             </div>
           </div>
@@ -146,6 +144,6 @@ const Certificate = ({ certiRef, oneRef, twoRef, threeRef }: refType) => {
       </div>
     </>
   );
-} 
+};
 
 export default Certificate;
