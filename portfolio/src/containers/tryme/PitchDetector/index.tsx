@@ -57,16 +57,17 @@ const handleStopRecording = () => {
     setAudioStream(null);
   }
 
-  setCurrentPhase(LoadingPhase);
   const { minNoteName, maxNoteName } = convertHztoNote(pitchArray);
   if (pitchArray.length < 5) {
     alert('소음이 없는 환경에서 측정해주세요');
     setCurrentPhase(GuidePhase);
     return;
-  }
-
+    }
+    
   setMinNoteName(minNoteName);
   setMaxNoteName(maxNoteName);
+  setCurrentPhase(LoadingPhase);
+  
 };
   // isTimeout이 바뀌는 경우는 타이머 컴포넌트에서 20초가 지날 때 뿐
   useEffect(() => {
@@ -77,8 +78,10 @@ const handleStopRecording = () => {
 
   useEffect(() => {
     if (currentPhase === LoadingPhase) {
-      const timeoutId = setTimeout(() => {}, 1000);
-      setCurrentPhase(ResultPhase);
+      const timeoutId = setTimeout(() => {
+        setCurrentPhase(ResultPhase);
+
+      }, 2000);
       return () => clearTimeout(timeoutId);
     }
   }, [currentPhase]);
