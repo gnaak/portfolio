@@ -2,9 +2,7 @@
 ### <a href='https://gnaak.vercel.app/'>포트폴리오</a> 
 
 ### 프로젝트 생성 (05.27)
-✔ npx creat-next-app
-
-✔ npx creat-next-app
+✔ npx create-next-app
 
 ✔ .eslintc.json
 > ```
