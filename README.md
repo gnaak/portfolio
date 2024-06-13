@@ -44,7 +44,7 @@
 ></head>
 >```
 
-✔ resposive wev
+✔ responsive web
 >```
 >screens: {
 >  xs: "375px",
