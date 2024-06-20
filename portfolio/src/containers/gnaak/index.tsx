@@ -39,7 +39,6 @@ const Gnaak = () => {
               threeRef={threeRef}
               fourRef={fourRef}
             />
-            <Exp expRef={expRef} />
             <As asRef={asRef} />
           </div>
         </div>
