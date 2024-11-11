@@ -70,7 +70,7 @@ const Certificate = ({
                     프로젝트 중 DIVA의 음역대 측정, BillyBully의 주사위,
                     Readit의 뷰어 설명란에 &nbsp;
                     <span className="text-blue-500 underline">더보기</span>를
-                    추가하여 간접적으로 서비스를 체험할 수 있도록 준비 중입니다.
+                    추가하여 간단한 음역대 측정, 주사위 굴리기, 형광펜 및 볼드체 기능을 추가하였습니다.
                   </div>
                 </div>
               </div>
@@ -94,7 +94,6 @@ const Certificate = ({
                   다르게 구성했습니다. 큰 화면에서 많은 정보는 필요할 수 있지만,
                   작은 화면에서 동일한 정보를 제공하면 과도하 게 많다고 느낄 수
                   있다고 생각해서 간략한 내용만 담았습니다.
-                  <br />
                   <br />
                 </div>
               </div>

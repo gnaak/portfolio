@@ -396,7 +396,8 @@ const Dice = ({ close }: DiceProps) => {
       </div>
       <div
         className="
-        absolute top-full left-1/2 p-2 md:-translate-y-20 -translate-y-12 rounded-xl text-black flex items-center bg-white justify-center md:text-sm text-xs border border-gray-400 -translate-x-1/2 "
+        absolute top-full left-1/2 p-2 md:-translate-y-20 -translate-y-12 rounded-xl text-black flex items-center bg-white justify-center md:text-sm text-xs border border-gray-400 -translate-x-1/2
+         cursor-pointer"
         onClick={() => {
           throwDice();
         }}

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { refType } from "@/types";
 
 const Exp = ({ expRef }: refType) => {
-  const [open, setOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(true);
 
   return (
     <>

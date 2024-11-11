@@ -5,7 +5,7 @@ import chart from "@/assets/projects/chart.png";
 import commu from "@/assets/projects/commu.png";
 import useModal from "@/hooks/useModal";
 import Image from "next/image";
-
+import Readit from "../tryme/Readit";
 const Certificate = ({
   certiRef,
   oneRef,
@@ -24,9 +24,29 @@ const Certificate = ({
             <span className="font-bold md:text-base text-sm">
               1️⃣ 뷰어 페이지
             </span>
-            <span className="md:text-base text-sm">
-              뉴스, 비문학 글을 쉽게 읽고 요약하게 도와주는 뷰어 페이지 제작
-            </span>
+
+            <div className="flex flex-row justify-between items-center md:text-base text-sm">
+              <span className="">
+                뉴스, 비문학 글을 쉽게 읽고 요약하게 도와주는 뷰어 페이지 제작
+              </span>
+              <div className="lg:flex flex-row items-center justify-center gap-1 hidden">
+                <span className="text-blue-500 md:inline hidden">try me!</span>
+                <span
+                  className="material-symbols-outlined cursor-pointer flex items-center"
+                  onClick={open}
+                >
+                  play_circle
+                </span>
+              </div>
+
+              {isOpen ? (
+                <>
+                  <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:w-[50%] md:h-[70%] bg-white dark:bg-gray-900  rounded-lg border border-gray-400">
+                    <Readit close={close} />
+                  </div>
+                </>
+              ) : null}
+            </div>
             <div className="bg-[#F1F1EF] p-4 md:flex hidden rounded-xl w-[100%] text-black lg:px-5 lg:text-base text-sm">
               <div className="flex flex-row xl:gap-5 gap-3">
                 📄
