@@ -79,7 +79,7 @@ const Readit = ({ baseRef }: refType) => {
                   priority={false}
                 />
                 <span className="text-blue-600 underline dark:text-white">
-                  <a href="https://github.com/gnaak/divamusic">Link</a>
+                  <a href="https://github.com/gnaak/readit">Link</a>
                 </span>
               </div>
             </div>
